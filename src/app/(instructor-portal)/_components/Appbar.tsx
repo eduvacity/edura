@@ -257,7 +257,7 @@ export default function AppBar({
                 </p>
               </div>
               <Link
-                href="/students/settings"
+                href="/student/settings"
                 onClick={() => setAppsAnchor(null)}
                 className="text-[13px] text-[#4D6C62] hover:underline"
               >
@@ -292,7 +292,7 @@ export default function AppBar({
             {/* Footer actions */}
             <div className="flex items-center justify-between px-2 py-1">
               <Link
-                href="/students/settings"
+                href="/student/settings"
                 onClick={() => setAppsAnchor(null)}
                 className="text-[13px] text-slate-700 hover:underline"
               >

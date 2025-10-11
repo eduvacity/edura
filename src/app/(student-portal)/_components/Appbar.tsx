@@ -1,20 +1,19 @@
 "use client"
 
-import { MenuIconAlt, NotificationBell } from "@/components/SVGs/portal"
-import { Badge, IconButton, Menu, MenuItem, Divider } from "@mui/material"
-import Image from "next/image"
-import Link from "next/link"
-import { navLinks } from "./navLinks"
+import { MenuIconAlt, NotificationIcon } from "@/components/SVGs/portal"
+import { Badge, Divider, IconButton, Menu, MenuItem } from "@mui/material"
+import clsx from "clsx"
 import {
   ChevronDown,
   Info,
   LayoutGrid,
   Search as SearchIcon,
-  Sparkles,
   Trophy,
 } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 import { FormEvent, useMemo, useState } from "react"
-import clsx from "clsx"
+import { navLinks } from "./navLinks"
 
 interface AppBarProps {
   isSidebarOpen: boolean
@@ -116,7 +115,7 @@ export default function AppBar({
           className={clsx(
             "w-full h-[42px] pl-10 pr-3 rounded-[12px] bg-white",
             "border border-[#E0E0E0] text-[#212121] placeholder:text-[#A1A1A1] font-sans font-normal",
-            "outline-none focus:ring-0 focus:ring-[#38494E]/30 focus:border-[#4D6C62]"
+            "outline-none focus:ring-[0.5px] focus:ring-[#4D6C62]/30 focus:border-[#4D6C62]"
           )}
         />
       </form>
@@ -161,7 +160,7 @@ export default function AppBar({
                 badgeContent={notificationsCount > 0 ? notificationsCount : 0}
                 invisible={notificationsCount <= 0}
               >
-                <NotificationBell className="w-[22px] h-[22px] lg:w-[26px] lg:h-[26px]" />
+                <NotificationIcon />
               </Badge>
             </div>
           </IconButton>
@@ -258,7 +257,7 @@ export default function AppBar({
                 </p>
               </div>
               <Link
-                href="/students/settings"
+                href="/student/settings"
                 onClick={() => setAppsAnchor(null)}
                 className="text-[13px] text-[#4D6C62] hover:underline"
               >
@@ -293,7 +292,7 @@ export default function AppBar({
             {/* Footer actions */}
             <div className="flex items-center justify-between px-2 py-1">
               <Link
-                href="/students/settings"
+                href="/student/settings"
                 onClick={() => setAppsAnchor(null)}
                 className="text-[13px] text-slate-700 hover:underline"
               >

@@ -50,7 +50,7 @@ export default function SubmitQuiz({ answers, topic, description }: Props) {
               onClick={() => {
                 submitted
                   ? router.push(
-                      `/students/classes/topics/topic/${topic}?description=${description}`
+                      `/student/classes/topics/topic/${topic}?description=${description}`
                     )
                   : handleClose()
               }}

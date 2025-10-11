@@ -5,7 +5,13 @@ import { DrawerIcon } from "@/components/SVGs"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import clsx from "clsx"
-import { accountNav, navLinks } from "./navLinks"
+import {
+  accountNav,
+  communicationLinks,
+  learningLinks,
+  navLinks,
+  productivityLinks,
+} from "./navLinks"
 import ProfileRow from "@/app/(instructor-portal)/_components/profile/ProfileRow"
 
 interface SidebarProps {
@@ -156,8 +162,162 @@ export default function Sidebar({
                 })}
               </ul>
             </nav>
+
+            {/* LEARNING */}
+            <div className="w-[226px] h-[170px] px-3 flex flex-col gap-2">
+              <h2 className="font-sans font-normal text-[14px]/[20px] tracking-normal text-[#616161]">
+                Learning
+              </h2>
+              <nav aria-label="Primary">
+                <ul className="flex flex-col gap-2">
+                  {learningLinks.map((link) => {
+                    const selected = pathname.startsWith(link.href)
+                    return (
+                      <li key={link.href} className="group relative">
+                        <Link
+                          href={link.href}
+                          aria-current={selected ? "page" : undefined}
+                          title={link.name}
+                          className={clsx(
+                            "flex items-center rounded-[12px] p-3 transition-all",
+                            collapsed
+                              ? "w-[46px] justify-center"
+                              : "w-[226px] justify-start",
+                            "h-[46px] font-sans font-medium text-[16px] leading-[22px]",
+                            selected
+                              ? "text-white bg-[#38494E] border-[1.5px] shadow-[-4px_-2px_6px_0px_#1E1E1E33_inset]"
+                              : "text-[#424242] hover:bg-[#38494E]/15"
+                          )}
+                        >
+                          <span aria-hidden>{link.icon}</span>
+                          <span
+                            className={clsx(
+                              "ml-2 transition-opacity",
+                              collapsed
+                                ? "opacity-0 lg:sr-only absolute -left-[9999px]"
+                                : "opacity-100"
+                            )}
+                          >
+                            {link.name}
+                          </span>
+                        </Link>
+
+                        {collapsed && (
+                          <span className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-2 rounded-md bg-gray-900 text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100">
+                            {link.name}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </nav>
+            </div>
+
+            {/* PRODUCTIVITY */}
+            <div className="w-[226px] h-[122px] px-3 flex flex-col gap-2">
+              <h2 className="font-sans font-normal text-[14px]/[20px] tracking-normal text-[#616161]">
+                Productivity
+              </h2>
+              <nav aria-label="Primary">
+                <ul className="flex flex-col gap-2">
+                  {productivityLinks.map((link) => {
+                    const selected = pathname.startsWith(link.href)
+                    return (
+                      <li key={link.href} className="group relative">
+                        <Link
+                          href={link.href}
+                          aria-current={selected ? "page" : undefined}
+                          title={link.name}
+                          className={clsx(
+                            "flex items-center rounded-[12px] p-3 transition-all",
+                            collapsed
+                              ? "w-[46px] justify-center"
+                              : "w-[226px] justify-start",
+                            "h-[46px] font-sans font-medium text-[16px] leading-[22px]",
+                            selected
+                              ? "text-white bg-[#38494E] border-[1.5px] shadow-[-4px_-2px_6px_0px_#1E1E1E33_inset]"
+                              : "text-[#424242] hover:bg-[#38494E]/15"
+                          )}
+                        >
+                          <span aria-hidden>{link.icon}</span>
+                          <span
+                            className={clsx(
+                              "ml-2 transition-opacity",
+                              collapsed
+                                ? "opacity-0 lg:sr-only absolute -left-[9999px]"
+                                : "opacity-100"
+                            )}
+                          >
+                            {link.name}
+                          </span>
+                        </Link>
+
+                        {collapsed && (
+                          <span className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-2 rounded-md bg-gray-900 text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100">
+                            {link.name}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </nav>
+            </div>
+
+            {/* COMMUNITY */}
+            <div className="w-[226px] h-[170px] px-3 flex flex-col gap-2">
+              <h2 className="font-sans font-normal text-[14px]/[20px] tracking-normal text-[#616161]">
+                Community
+              </h2>
+              <nav aria-label="Primary">
+                <ul className="flex flex-col gap-2">
+                  {communicationLinks.map((link) => {
+                    const selected = pathname.startsWith(link.href)
+                    return (
+                      <li key={link.href} className="group relative">
+                        <Link
+                          href={link.href}
+                          aria-current={selected ? "page" : undefined}
+                          title={link.name}
+                          className={clsx(
+                            "flex items-center rounded-[12px] p-3 transition-all",
+                            collapsed
+                              ? "w-[46px] justify-center"
+                              : "w-[226px] justify-start",
+                            "h-[46px] font-sans font-medium text-[16px] leading-[22px]",
+                            selected
+                              ? "text-white bg-[#38494E] border-[1.5px] shadow-[-4px_-2px_6px_0px_#1E1E1E33_inset]"
+                              : "text-[#424242] hover:bg-[#38494E]/15"
+                          )}
+                        >
+                          <span aria-hidden>{link.icon}</span>
+                          <span
+                            className={clsx(
+                              "ml-2 transition-opacity",
+                              collapsed
+                                ? "opacity-0 lg:sr-only absolute -left-[9999px]"
+                                : "opacity-100"
+                            )}
+                          >
+                            {link.name}
+                          </span>
+                        </Link>
+
+                        {collapsed && (
+                          <span className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-2 rounded-md bg-gray-900 text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100">
+                            {link.name}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </nav>
+            </div>
+            {/* ACCOUNT */}
             <div className="flex flex-col gap-4">
-              <div className="mt-3 h-px w-full bg-[#F5F5F5] rounded-lg" />
+              <div className="h-px w-full bg-[#F5F5F5] rounded-lg" />
 
               <nav className="px-3" aria-label="Primary">
                 <ul className="flex flex-col gap-2">
@@ -203,7 +363,7 @@ export default function Sidebar({
                   })}
                 </ul>
               </nav>
-              <div className="mt-3 h-px w-full bg-[#F5F5F5] rounded-lg" />
+              <div className="h-px w-full bg-[#F5F5F5] rounded-lg" />
             </div>
           </div>
           <div className="mt-4">

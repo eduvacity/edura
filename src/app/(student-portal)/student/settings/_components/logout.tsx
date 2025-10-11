@@ -61,7 +61,7 @@ export default function LogUserOut({ tab }: Props) {
               disableRipple
               className="bg-[#EEEEEE]"
               onClick={() => {
-                loggedout ? router.push(`/students/login`) : handleClose()
+                loggedout ? router.push(`/student/login`) : handleClose()
               }}
             >
               <CloseIcon className="text-[#2F2F2F]" />

@@ -111,7 +111,7 @@ export default function StudentClasses() {
                   </Link>
                 ) : (
                   <Link
-                    href={`/students/assignments/assignment/${course.id}?topic=${course.title}&description=${course.description}`}
+                    href={`/student/assignments/assignment/${course.id}?topic=${course.title}&description=${course.description}`}
                     className="font-arial font-normal text-base/[18.4px] text-[#4D6C62] underline"
                   >
                     Continue

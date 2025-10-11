@@ -26,7 +26,7 @@ export default function StudentClassDetail({ params }: any) {
         <section className="flex-[1] xl:max-w-[920px] w-full flex flex-col gap-[17px]">
           {data?.map((topic, index) => (
             <Link
-              href={`/students/classes/topics/topic/${topic.id}?topic=${topic.title}`}
+              href={`/student/classes/topics/topic/${topic.id}?topic=${topic.title}`}
               key={index}
               className="bg-white w-full h-[91px] p-5 rounded-[14px] border border-solid border-[#DDDDDD] flex flex-col"
             >

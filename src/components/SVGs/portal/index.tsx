@@ -42,6 +42,46 @@ export function EyevisibilityOffIcon() {
     </svg>
   )
 }
+export function ClosedBook() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.5 18V7C3.5 3 4.5 2 8.5 2H15.5C19.5 2 20.5 3 20.5 7V17C20.5 17.14 20.5 17.28 20.49 17.42"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.35 15H20.5V18.5C20.5 20.43 18.93 22 17 22H7C5.07 22 3.5 20.43 3.5 18.5V17.85C3.5 16.28 4.78 15 6.35 15Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 7H16"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 10.5H13"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
 export function NotificationBell(props: IconProps) {
   return (
     <svg
@@ -97,19 +137,68 @@ export function MenuIconAlt(props: IconProps) {
     </svg>
   )
 }
-export function DashboardIcon(props: IconProps) {
+export function DashboardIcon({ className }: IconProps) {
   return (
     <svg
-      width="22"
-      height="24"
-      viewBox="0 0 22 24"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={props.className}
+      className={className}
     >
       <path
-        d="M1.22222 13.2754H8.55556C9.22778 13.2754 9.77778 12.7014 9.77778 12V1.79709C9.77778 1.09564 9.22778 0.521729 8.55556 0.521729H1.22222C0.55 0.521729 0 1.09564 0 1.79709V12C0 12.7014 0.55 13.2754 1.22222 13.2754ZM1.22222 23.4783H8.55556C9.22778 23.4783 9.77778 22.9043 9.77778 22.2029V17.1014C9.77778 16.4 9.22778 15.8261 8.55556 15.8261H1.22222C0.55 15.8261 0 16.4 0 17.1014V22.2029C0 22.9043 0.55 23.4783 1.22222 23.4783ZM13.4444 23.4783H20.7778C21.45 23.4783 22 22.9043 22 22.2029V12C22 11.2985 21.45 10.7246 20.7778 10.7246H13.4444C12.7722 10.7246 12.2222 11.2985 12.2222 12V22.2029C12.2222 22.9043 12.7722 23.4783 13.4444 23.4783ZM12.2222 1.79709V6.89854C12.2222 7.59999 12.7722 8.1739 13.4444 8.1739H20.7778C21.45 8.1739 22 7.59999 22 6.89854V1.79709C22 1.09564 21.45 0.521729 20.7778 0.521729H13.4444C12.7722 0.521729 12.2222 1.09564 12.2222 1.79709Z"
-        fill="currentcolor"
+        d="M7.875 14.925V3.075C7.875 1.95 7.395 1.5 6.2025 1.5H3.1725C1.98 1.5 1.5 1.95 1.5 3.075V14.925C1.5 16.05 1.98 16.5 3.1725 16.5H6.2025C7.395 16.5 7.875 16.05 7.875 14.925Z"
+        stroke="currentColor"
+        strokeWidth="1.125"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.5 8.175V3.075C16.5 1.95 16.02 1.5 14.8275 1.5H11.7975C10.605 1.5 10.125 1.95 10.125 3.075V8.175C10.125 9.3 10.605 9.75 11.7975 9.75H14.8275C16.02 9.75 16.5 9.3 16.5 8.175Z"
+        stroke="currentColor"
+        strokeWidth="1.125"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.5 14.925V13.575C16.5 12.45 16.02 12 14.8275 12H11.7975C10.605 12 10.125 12.45 10.125 13.575V14.925C10.125 16.05 10.605 16.5 11.7975 16.5H14.8275C16.02 16.5 16.5 16.05 16.5 14.925Z"
+        stroke="currentColor"
+        strokeWidth="1.125"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function NotificationIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="21"
+      height="20"
+      viewBox="0 0 21 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.2988 5.36682V8.14182"
+        stroke="#212121"
+        strokeWidth="1.30762"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+      />
+      <path
+        d="M10.312 1.66699C7.24533 1.66699 4.76199 4.15033 4.76199 7.21699V8.96699C4.76199 9.53366 4.52866 10.3837 4.23699 10.867L3.17866 12.6337C2.52866 13.7253 2.97866 14.942 4.17866 15.342C8.16199 16.667 12.4703 16.667 16.4537 15.342C17.5787 14.967 18.062 13.6503 17.4537 12.6337L16.3953 10.867C16.1037 10.3837 15.8703 9.52533 15.8703 8.96699V7.21699C15.862 4.16699 13.362 1.66699 10.312 1.66699Z"
+        stroke="#212121"
+        strokeWidth="1.30762"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+      />
+      <path
+        d="M13.0734 15.6838C13.0734 17.2088 11.8234 18.4588 10.2984 18.4588C9.5401 18.4588 8.8401 18.1422 8.3401 17.6422C7.8401 17.1422 7.52344 16.4422 7.52344 15.6838"
+        stroke="#212121"
+        strokeWidth="1.30762"
+        strokeMiterlimit="10"
       />
     </svg>
   )
@@ -2505,17 +2594,24 @@ export function EmbeddedIcon(props: IconProps) {
 export function ResourceIcon({ className }: IconProps) {
   return (
     <svg
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
       <path
-        d="M38.4586 8.76516H23.8248M2.78865 8.76516C2.78865 5.94814 2.78865 4.53964 3.4234 3.5043C3.77827 2.92443 4.26484 2.43785 4.84471 2.08298C5.87822 1.44824 7.28856 1.44824 10.1056 1.44824C12.9226 1.44824 14.3311 1.44824 15.3664 2.08298C15.9463 2.43785 16.4329 2.92443 16.7877 3.5043C17.4225 4.53781 17.4225 5.94814 17.4225 8.76516C17.4225 11.5822 17.4225 12.9907 16.7877 14.026C16.4329 14.6059 15.9463 15.0925 15.3664 15.4473C14.3329 16.0821 12.9226 16.0821 10.1056 16.0821C7.28856 16.0821 5.88005 16.0821 4.84471 15.4473C4.26527 15.0925 3.77819 14.6055 3.4234 14.026C2.78865 12.9925 2.78865 11.5822 2.78865 8.76516ZM5.13373 24.8294C7.04893 22.9142 8.00562 21.9576 9.13974 21.6832C9.77459 21.5306 10.4365 21.5306 11.0714 21.6832C12.2055 21.9576 13.1622 22.9142 15.0774 24.8294C16.9926 26.7446 17.9493 27.7013 18.2237 28.8355C18.3735 29.4706 18.3735 30.1319 18.2237 30.7671C17.9493 31.9012 16.9926 32.8598 15.0774 34.7731C13.1622 36.6865 12.2055 37.645 11.0714 37.9194C10.4365 38.0719 9.77459 38.0719 9.13974 37.9194C8.00562 37.645 7.04893 36.6883 5.13373 34.7731C3.21852 32.8579 2.26184 31.9012 1.98745 30.7671C1.83491 30.1323 1.83491 29.4703 1.98745 28.8355C2.26184 27.7013 3.21852 26.7428 5.13373 24.8294ZM23.8248 30.7159C23.8248 27.8989 23.8248 26.4904 24.4595 25.455C24.8144 24.8752 25.301 24.3886 25.8808 24.0337C26.9143 23.399 28.3247 23.399 31.1417 23.399C33.9587 23.399 35.3672 23.399 36.4044 24.0337C36.9824 24.3886 37.469 24.8752 37.8239 25.455C38.4586 26.4886 38.4586 27.8989 38.4586 30.7159C38.4586 33.5329 38.4586 34.9414 37.8239 35.9786C37.4688 36.5567 36.9825 37.043 36.4044 37.3981C35.3672 38.0328 33.9587 38.0328 31.1417 38.0328C28.3247 38.0328 26.9162 38.0328 25.8808 37.3981C25.3016 37.0438 24.8145 36.5574 24.4595 35.9786C23.8248 34.9414 23.8248 33.5329 23.8248 30.7159Z"
-        stroke="currentColor"
-        strokeWidth="2.06383"
+        d="M16.5 8.25V12.75C16.5 15.75 15.75 16.5 12.75 16.5H5.25C2.25 16.5 1.5 15.75 1.5 12.75V5.25C1.5 2.25 2.25 1.5 5.25 1.5H6.375C7.5 1.5 7.7475 1.83 8.175 2.4L9.3 3.9C9.585 4.275 9.75 4.5 10.5 4.5H12.75C15.75 4.5 16.5 5.25 16.5 8.25Z"
+        stroke="#212121"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M6 1.5H12.75C14.25 1.5 15 2.25 15 3.75V4.785"
+        stroke="#212121"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -2666,21 +2762,362 @@ export function ClassesIcon(props: IconProps) {
     </svg>
   )
 }
-export function AssignmentIcon(props: IconProps) {
+export function CoursesIcon({ className }: IconProps) {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={props.className}
+      className={className}
     >
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M0 2.66673C0 1.95948 0.280951 1.28121 0.781048 0.78111C1.28115 0.281013 1.95942 6.10352e-05 2.66667 6.10352e-05H21.3333C22.0406 6.10352e-05 22.7189 0.281013 23.219 0.78111C23.719 1.28121 24 1.95948 24 2.66673V21.3334C24 22.0406 23.719 22.7189 23.219 23.219C22.7189 23.7191 22.0406 24.0001 21.3333 24.0001H2.66667C1.95942 24.0001 1.28115 23.7191 0.781048 23.219C0.280951 22.7189 0 22.0406 0 21.3334V2.66673ZM14.5853 6.20673C14.1147 5.02939 12.428 5.09606 12.0493 6.30539L9.71333 13.7801L9.196 12.7441C9.08414 12.5205 8.91226 12.3325 8.69962 12.2011C8.48698 12.0697 8.24196 12.0001 7.992 12.0001H5.33333C4.97971 12.0001 4.64057 12.1405 4.39052 12.3906C4.14048 12.6406 4 12.9798 4 13.3334C4 13.687 4.14048 14.0262 4.39052 14.2762C4.64057 14.5263 4.97971 14.6667 5.33333 14.6667H7.176L8.792 17.9001C9.33467 18.9841 10.9213 18.8561 11.2827 17.7001L13.488 10.6427L14.7587 13.8201C14.9627 14.3321 15.4587 14.6667 16.0093 14.6667H18.6667C19.0203 14.6667 19.3594 14.5263 19.6095 14.2762C19.8595 14.0262 20 13.687 20 13.3334C20 12.9798 19.8595 12.6406 19.6095 12.3906C19.3594 12.1405 19.0203 12.0001 18.6667 12.0001H16.9027L14.5853 6.20673Z"
-        fill="currentcolor"
+        d="M2.625 13.5V5.25C2.625 2.25 3.375 1.5 6.375 1.5H11.625C14.625 1.5 15.375 2.25 15.375 5.25V12.75C15.375 12.855 15.375 12.96 15.3675 13.065"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.7625 11.25H15.375V13.875C15.375 15.3225 14.1975 16.5 12.75 16.5H5.25C3.8025 16.5 2.625 15.3225 2.625 13.875V13.3875C2.625 12.21 3.585 11.25 4.7625 11.25Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 5.25H12"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 7.875H9.75"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function ResourcesIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M16.5 8.25V12.75C16.5 15.75 15.75 16.5 12.75 16.5H5.25C2.25 16.5 1.5 15.75 1.5 12.75V5.25C1.5 2.25 2.25 1.5 5.25 1.5H6.375C7.5 1.5 7.7475 1.83 8.175 2.4L9.3 3.9C9.585 4.275 9.75 4.5 10.5 4.5H12.75C15.75 4.5 16.5 5.25 16.5 8.25Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M6 1.5H12.75C14.25 1.5 15 2.25 15 3.75V4.785"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function CalendarIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M6 1.5V3.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 1.5V3.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.625 6.81738H15.375"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.7713 10.2749H11.778"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.7713 12.5249H11.778"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.99686 10.2749H9.00359"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.99686 12.5249H9.00359"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.22049 10.2749H6.22723"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.22049 12.5249H6.22723"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function TodoIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M15.75 5.25V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V5.25C2.25 3 3.375 1.5 6 1.5H12C14.625 1.5 15.75 3 15.75 5.25Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.875 3.375V4.875C10.875 5.7 11.55 6.375 12.375 6.375H13.875"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 9.75H9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 12.75H12"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function MessageIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M16.5 4.6875V8.51248C16.5 9.46498 16.185 10.2675 15.6225 10.8225C15.0675 11.385 14.265 11.7 13.3125 11.7V13.0575C13.3125 13.5675 12.7425 13.875 12.3225 13.59L11.595 13.11C11.6625 12.8775 11.6925 12.6225 11.6925 12.3525V9.30002C11.6925 7.77002 10.6725 6.75 9.1425 6.75H4.05C3.945 6.75 3.8475 6.75751 3.75 6.76501V4.6875C3.75 2.775 5.025 1.5 6.9375 1.5H13.3125C15.225 1.5 16.5 2.775 16.5 4.6875Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.6925 9.30002V12.3525C11.6925 12.6225 11.6625 12.8775 11.595 13.11C11.3175 14.2125 10.4025 14.9025 9.1425 14.9025H7.1025L4.8375 16.41C4.5 16.6425 4.05 16.395 4.05 15.99V14.9025C3.285 14.9025 2.6475 14.6475 2.205 14.205C1.755 13.755 1.5 13.1175 1.5 12.3525V9.30002C1.5 7.87502 2.385 6.89251 3.75 6.76501C3.8475 6.75751 3.945 6.75 4.05 6.75H9.1425C10.6725 6.75 11.6925 7.77002 11.6925 9.30002Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function LiveIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M9.3975 15.3151H4.6575C2.2875 15.3151 1.5 13.7401 1.5 12.1576V5.84256C1.5 3.47256 2.2875 2.68506 4.6575 2.68506H9.3975C11.7675 2.68506 12.555 3.47256 12.555 5.84256V12.1576C12.555 14.5276 11.76 15.3151 9.3975 15.3151Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.6397 12.8251L12.5547 11.3626V6.6301L14.6397 5.1676C15.6597 4.4551 16.4997 4.8901 16.4997 6.1426V11.8576C16.4997 13.1101 15.6597 13.5451 14.6397 12.8251Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.625 8.25C9.24632 8.25 9.75 7.74632 9.75 7.125C9.75 6.50368 9.24632 6 8.625 6C8.00368 6 7.5 6.50368 7.5 7.125C7.5 7.74632 8.00368 8.25 8.625 8.25Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function CommunityIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M13.4996 5.37C13.4546 5.3625 13.4021 5.3625 13.3571 5.37C12.3221 5.3325 11.4971 4.485 11.4971 3.435C11.4971 2.3625 12.3596 1.5 13.4321 1.5C14.5046 1.5 15.3671 2.37 15.3671 3.435C15.3596 4.485 14.5346 5.3325 13.4996 5.37Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.7266 10.8301C13.7541 11.0026 14.8866 10.8226 15.6816 10.2901C16.7391 9.58512 16.7391 8.43012 15.6816 7.72512C14.8791 7.19262 13.7316 7.01262 12.7041 7.19262"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.47785 5.37C4.52285 5.3625 4.57535 5.3625 4.62035 5.37C5.65535 5.3325 6.48035 4.485 6.48035 3.435C6.48035 2.3625 5.61785 1.5 4.54535 1.5C3.47285 1.5 2.61035 2.37 2.61035 3.435C2.61785 4.485 3.44285 5.3325 4.47785 5.37Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.25008 10.8301C4.22258 11.0026 3.09008 10.8226 2.29508 10.2901C1.23758 9.58512 1.23758 8.43012 2.29508 7.72512C3.09758 7.19262 4.24508 7.01262 5.27258 7.19262"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.99957 10.9725C8.95457 10.965 8.90207 10.965 8.85707 10.9725C7.82207 10.935 6.99707 10.0875 6.99707 9.03754C6.99707 7.96504 7.85957 7.10254 8.93207 7.10254C10.0046 7.10254 10.8671 7.97254 10.8671 9.03754C10.8596 10.0875 10.0346 10.9425 8.99957 10.9725Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.81754 13.335C5.76004 14.04 5.76004 15.195 6.81754 15.9C8.01754 16.7025 9.98254 16.7025 11.1825 15.9C12.24 15.195 12.24 14.04 11.1825 13.335C9.99004 12.54 8.01754 12.54 6.81754 13.335Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function AssignmentIcon({ className }: IconProps) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M16.5 12.555V3.50252C16.5 2.60252 15.765 1.93502 14.8725 2.01002H14.8275C13.2525 2.14502 10.86 2.94752 9.525 3.78752L9.3975 3.87002C9.18 4.00502 8.82 4.00502 8.6025 3.87002L8.415 3.75752C7.08 2.92502 4.695 2.13002 3.12 2.00252C2.2275 1.92752 1.5 2.60252 1.5 3.49502V12.555C1.5 13.275 2.085 13.95 2.805 14.04L3.0225 14.07C4.65 14.2875 7.1625 15.1125 8.6025 15.9L8.6325 15.915C8.835 16.0275 9.1575 16.0275 9.3525 15.915C10.7925 15.12 13.3125 14.2875 14.9475 14.07L15.195 14.04C15.915 13.95 16.5 13.275 16.5 12.555Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 4.11743V15.3674"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.8125 6.36743H4.125"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.375 8.61743H4.125"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )

@@ -142,7 +142,7 @@ export default function InstructorQuizPage() {
           row.email,
           row.phone,
           <IconButton disableRipple>
-            <Link href={`/instructor/students/student/12332`}>
+            <Link href={`/instructor/student/student/12332`}>
               <ViewEyeIcon />
             </Link>
           </IconButton>

@@ -48,7 +48,7 @@ export default function SubmitAssignment({ answers }: Props) {
               disableRipple
               className="bg-[#EEEEEE]"
               onClick={() => {
-                submitted ? router.push(`/students/assignments`) : handleClose()
+                submitted ? router.push(`/student/assignments`) : handleClose()
               }}
             >
               <CloseIcon className="text-[#2F2F2F]" />
@@ -67,13 +67,13 @@ export default function SubmitAssignment({ answers }: Props) {
               <div className="w-full max-w-[226px] flex flex-col justify-center items-center gap-2">
                 <button
                   className={`w-fit h-[55px] py-[15px] px-[18px] shadow-[0px_4px_2px_0px_#00000005] rounded-[7px] bg-[#3FA46E] border border-solid border-[#C1C1C1] font-arial font-bold text-base/[18.4px] text-white transition-all duration-300 hover:scale-[0.99] hover:bg-[#3FA46E]/95 flex justify-center items-center`}
-                  onClick={() => router.push("/students/classes")}
+                  onClick={() => router.push("/student/classes")}
                 >
                   Continue Learning
                 </button>
                 <button
                   className={`w-fit h-[55px] shadow-[0px_4px_2px_0px_#00000005] py-[15px] px-[18px] rounded-[7px] bg-transparent font-arial font-bold text-base/[18.4px] text-[#3FA46E] transition-all duration-300 hover:scale-[0.99] hover:bg-[#3FA46E]/5 flex justify-center items-center`}
-                  onClick={() => router.push(`/students/assignments`)}
+                  onClick={() => router.push(`/student/assignments`)}
                 >
                   Back
                 </button>

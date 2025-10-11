@@ -31,8 +31,8 @@ export default function StudentPortalLayout({
         />
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto bg-[#F7F7F9] p-2 lg:p-4 xl:p-6 transition-all">
-          <div className="space-y-6">{children}</div>
+        <main className="flex-1 overflow-y-auto bg-[#F5F5F5] p-2  transition-all">
+          <div>{children}</div>
         </main>
       </div>
     </div>
