@@ -92,7 +92,7 @@ export default function StudentClasses() {
                     </span>
                   </div>
                   <CircularProgress
-                    color="#071C23"
+                    color="#4D6C62"
                     className="w-[52px] h-[52px]"
                     percentage={course.completion}
                     text="text-[11px]/[19.5px]"
@@ -105,14 +105,14 @@ export default function StudentClasses() {
                 {course.completion === 100 ? (
                   <Link
                     href="/"
-                    className="font-arial font-normal text-base/[18.4px] text-[#071C23] underline"
+                    className="font-arial font-normal text-base/[18.4px] text-[#4D6C62] underline"
                   >
                     View Feedback
                   </Link>
                 ) : (
                   <Link
                     href={`/students/assignments/assignment/${course.id}?topic=${course.title}&description=${course.description}`}
-                    className="font-arial font-normal text-base/[18.4px] text-[#071C23] underline"
+                    className="font-arial font-normal text-base/[18.4px] text-[#4D6C62] underline"
                   >
                     Continue
                   </Link>

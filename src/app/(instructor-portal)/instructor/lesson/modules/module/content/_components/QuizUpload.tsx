@@ -41,7 +41,7 @@ function reorder(
 }
 
 const clsx =
-  "w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-[#DDDDDD] text-[#071C23] bg-[#F5F6F7] focus:outline-none"
+  "w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-[#DDDDDD] text-[#4D6C62] bg-[#F5F6F7] focus:outline-none"
 
 export default function QuizUpload({ moduleId }: { moduleId: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -204,8 +204,8 @@ export default function QuizUpload({ moduleId }: { moduleId: string }) {
                 href={`/instructor/lesson/modules/module/${moduleId}`}
                 className="flex gap-2 items-center cursor-pointer"
               >
-                <ArrowRight className="transform rotate-180 text-[#071C23]" />
-                <h1 className="text-xl lg-md:text-[24px] leading-[30.8px] font-bold font-satoshi tracking-normal text-[#071C23]">
+                <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+                <h1 className="text-xl lg-md:text-[24px] leading-[30.8px] font-bold font-satoshi tracking-normal text-[#4D6C62]">
                   Quiz
                 </h1>
               </Link>

@@ -10,14 +10,14 @@ export default function LiveLessonsSection() {
     >
       <div className="w-full max-w-[1586px] mx-auto flex flex-col gap-[43px]  px-2.5 xl:px-9 2xl:px-12 3xl:px-8">
         <div className="w-full flex flex-col px-2">
-          <Badge className="w-[120px] lg-md:w-[140px] px-[15px] py-[7px] text-[#071C23] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-avant-garde  bg-[#D9F1FF] hover:bg-[#D9F1FF] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center">
+          <Badge className="w-[120px] lg-md:w-[140px] px-[15px] py-[7px] text-[#4D6C62] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-sans  bg-[#D9F1FF] hover:bg-[#D9F1FF] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center">
             Live Lesson
           </Badge>
           <div className="px-2 lg:px-0">
-            <h4 className="mt-4 lg-md:mt-0 w-full text-xl/[30px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
-              Learning at Eduvacity
+            <h4 className="mt-4 lg-md:mt-0 w-full text-xl/[30px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left">
+              Learning at Edura
             </h4>
-            <p className="text-base text-left font-medium font-avant-garde text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
+            <p className="text-base text-left font-medium font-sans text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
               We offer a distinctive blend of learning approaches, featuring
               lectures from top faculty, interactive group discussions, and
               mentoring sessions, all designed to keep learners engaged and
@@ -35,7 +35,7 @@ export default function LiveLessonsSection() {
                 <div
                   className={`h-[285.77px] ${v.icon} bg-cover bg-no-repeat rounded-[13.3px] border-[0.63px] border-solid border-[#FFF2DA] bg-[#28282833]`}
                 ></div>
-                <div className="text-xl lg-md:text-[22px]/[32px] font-semibold font-avant-garde text-[#071C23]">
+                <div className="text-xl lg-md:text-[22px]/[32px] font-semibold font-sans text-[#4D6C62]">
                   {v?.title}
                 </div>
                 <p className="text-base/[28px] font-normal font-arial text-[#868B93] leading-[30px]">

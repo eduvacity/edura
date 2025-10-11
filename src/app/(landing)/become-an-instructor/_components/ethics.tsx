@@ -17,14 +17,14 @@ export default function OurEthicsSection() {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12 ">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col">
-            <p className="font-normal font-avant-garde text-2xl text-left text-pcolor uppercase tracking-[0.5px]">
+            <p className="font-normal font-sans text-2xl text-left text-pcolor uppercase tracking-[0.5px]">
               Our ethics
             </p>
             <div className="flex flex-col">
-              <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
+              <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left">
                 Ready to make an impact?
               </h2>
-              <p className="font-normal font-avant-garde text-sm lg-md:text-xl text-left text-[#788B8F] tracking-[0.5px]">
+              <p className="font-normal font-sans text-sm lg-md:text-xl text-left text-[#788B8F] tracking-[0.5px]">
                 Our ethics keep us connected and guide us as one team.
               </p>
             </div>
@@ -38,10 +38,10 @@ export default function OurEthicsSection() {
                 >
                   {v.icon}
                   <div className="w-full flex flex-col gap-[10px]">
-                    <h4 className="text-2xl/[39px] font-normal font-avant-garde text-[#071C23] tracking-[0.5px]">
+                    <h4 className="text-2xl/[39px] font-normal font-sans text-[#4D6C62] tracking-[0.5px]">
                       {v.name}
                     </h4>
-                    <p className="text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                    <p className="text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                       {v.description}
                     </p>
                   </div>

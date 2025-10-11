@@ -44,7 +44,7 @@ const MultiValueRemove = (props: any) => {
 }
 
 const controlStyles = {
-  base: "peer w-full h-[54px] px-6 rounded-[6.94px] border border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#071C23] hover:border-pcolor focus:outline-none focus:border-pcolor disabled:bg-[#F4F4F4] focus:bg-[#F4F4F4] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F4F4F4]",
+  base: "peer w-full h-[54px] px-6 rounded-[6.94px] border border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#4D6C62] hover:border-pcolor focus:outline-none focus:border-pcolor disabled:bg-[#F4F4F4] focus:bg-[#F4F4F4] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F4F4F4]",
   focus: "border-[#BDBCBC]",
   nonFocus: "border-[#BDBCBC]",
   error:
@@ -56,13 +56,13 @@ const placeholderStyles = "text-[#4D4D4D] pl-1 py-0.5"
 const selectInputStyles = "pl-1 py-0.5"
 const valueContainerStyles = "gap-1"
 const singleValueStyles =
-  "font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#071C23] ml-1"
+  "font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#4D6C62] ml-1"
 const multiValueStyles =
   "bg-[#334138] h-[32px] border border-solid border-[#334138] bg-[#334138] hover:bg-red-500 rounded-[8px] items-center px-[10px] py-[6px] gap-[3px] ml-1"
 const multiValueLabelStyles =
   "font-semibold font-arial text-center font-arial text-sm lg-md:textbase/[18.4px] text-[#FFFFFF] py-1 px-2"
 const multiValueRemoveStyles =
-  "hover:bg-red-500 hover:text-[#071C23] text-greytext hover:border-red-300 rounded-md cursor-poarial"
+  "hover:bg-red-500 hover:text-[#4D6C62] text-greytext hover:border-red-300 rounded-md cursor-poarial"
 const indicatorsContainerStyles = "p-1 gap-1"
 const clearIndicatorStyles =
   "text-greytext p-1 rounded-md hover:bg-transparent hover:text-[#334138] cursor-poarial"
@@ -71,13 +71,13 @@ const menuStyles =
 const groupHeadingStyles =
   "ml-3 mt-2 mb-1 text-greytext text-sm lg-md:textbase/[18.4px]"
 const optionStyles = {
-  base: "bg-white cursor-pointer border border-solid border-[#F4F4F4] hover:cursor-poarial px-3 py-2 rounded  py-4 px-2 font-normal font-arial text-left font-arial text-sm lg-md:textbase/[18.4px] text-[#071C23]",
+  base: "bg-white cursor-pointer border border-solid border-[#F4F4F4] hover:cursor-poarial px-3 py-2 rounded  py-4 px-2 font-normal font-arial text-left font-arial text-sm lg-md:textbase/[18.4px] text-[#4D6C62]",
   focus: "bg-[#F4F4F4] active:bg-[#F4F4F4]",
   selected: "after:text-primary text-[#D1D5DB]",
 }
 
 const noOptionsMessageStyles =
-  "font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#071C23] py-2"
+  "font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#4D6C62] py-2"
 
 export default function CustomSelect({
   isMulti,
@@ -98,7 +98,7 @@ export default function CustomSelect({
   return (
     <div className="w-full relative flex flex-col gap-[9.92px]">
       <label
-        className="text-[#071C23] font-medium font-arial text-sm lg-md:textbase/[18.4px] text-left capitalize"
+        className="text-[#4D6C62] font-medium font-arial text-sm lg-md:textbase/[18.4px] text-left capitalize"
         htmlFor={id}
       >
         {label}

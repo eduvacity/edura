@@ -12,10 +12,10 @@ export default function CoreValuesSection() {
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col">
             <div className="w-full flex flex-col gap-4">
-              <h4 className="max-w-[722px] text-2xl/[45px] font-semibold font-avant-garde text-pcolor tracking-[0.5px] text-left capitalize">
+              <h4 className="max-w-[722px] text-2xl/[45px] font-semibold font-sans text-pcolor tracking-[0.5px] text-left capitalize">
                 Our Core Values
               </h4>
-              <span className="max-w-[841px] text-[#424242] text-sm lg:text-base lg-md:text-lg font-medium font-avant-garde">
+              <span className="max-w-[841px] text-[#424242] text-sm lg:text-base lg-md:text-lg font-medium font-sans">
                 Enabling learners to take control of their career growth through
                 accessible and high-quality education.
               </span>
@@ -30,10 +30,10 @@ export default function CoreValuesSection() {
                 >
                   {v.icon}
                   <div className="w-full flex flex-col gap-[10px]">
-                    <h4 className="text-xl/[39px] font-semibold font-avant-garde text-[#071C23] tracking-[0.5px]">
+                    <h4 className="text-xl/[39px] font-semibold font-sans text-[#4D6C62] tracking-[0.5px]">
                       {v.name}
                     </h4>
-                    <p className="text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                    <p className="text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                       {v.description}
                     </p>
                   </div>

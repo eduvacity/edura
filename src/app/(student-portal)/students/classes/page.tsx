@@ -8,7 +8,7 @@ export default function StudentClasses() {
     <div className="w-full relative p-2 lg:p-4 xl:p-6">
       {/* Greeting Section */}
       <div className="flex flex-col mb-6">
-        <h1 className="text-[26px] lg-md:text-[28px] font-bold font-satoshi -tracking-[0.001em] text-[#071C23]">
+        <h1 className="text-[26px] lg-md:text-[28px] font-bold font-satoshi -tracking-[0.001em] text-[#4D6C62]">
           Introduction to UI/UX Design
         </h1>
         <span className="font-satoshi font-medium text-sm leading-[24.08px] text-left text-[#868686]">

@@ -31,7 +31,7 @@ export default function Herosection() {
           <div className="w-[116.px] h-[64px] flex relative px-4 lg:px-0 items-center">
             <div className="w-[80px] h-[80px] rounded-full flex justify-center items-center bg-[#41A36E] border-2 border-[#67B58B] border-solid shadow-[0px_3.98px_3.98px_0px_#00000008]">
               <Image
-                src="/images/eduvacity-cap.png"
+                src="/images/Edura-cap.png"
                 width={48}
                 height={48}
                 quality={100}
@@ -50,7 +50,7 @@ export default function Herosection() {
           </div>
 
           <div className="flex flex-col xl:w-[652px] justify-start items-start gap-4 px-1.5 lg-md:px-0">
-            <h1 className="font-avant-garde font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
+            <h1 className="font-sans font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
               Assetium Impact Scholarship Program
             </h1>
             <div className="flex flex-col gap-4">
@@ -68,14 +68,14 @@ export default function Herosection() {
             <div className="w-full max-w-[465px] flex flex-col lg:flex-row justify-start items-start gap-6 px-4 lg-md:px-0">
               <Link
                 href="#scholarship-courses"
-                className="w-full lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                className="w-full lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 Apply now <ArrwoUpCicled />
               </Link>
               <Link
-                href="https://wa.me/08101831001?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20eduvacity's%20scholarship%20programs."
+                href="https://wa.me/08101831001?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20Edura's%20scholarship%20programs."
                 target="_blank"
-                className="w-full lg:w-1/2 lg-md:w-[152px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                className="w-full lg:w-1/2 lg-md:w-[152px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 Learn More
               </Link>

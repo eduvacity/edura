@@ -106,8 +106,8 @@ export default function MenuDropdown({ item, selected }: any) {
                     selected={selectedItem}
                     className={
                       selectedItem
-                        ? "w-full py-4 px-4 flex items-center justify-between gap-2 font-medium font-avant-garde text-base text-left text-pcolor tracking-[0.5px] hover:text-white hover:scale-[0.99] capitalize"
-                        : "w-full py-3 px-4 flex items-center justify-between gap-2 font-medium font-avant-garde text-base text-left text-[red] tracking-[0.5px] hover:text-pcolor hover:scale-[0.99] capitalize"
+                        ? "w-full py-4 px-4 flex items-center justify-between gap-2 font-medium font-sans text-base text-left text-pcolor tracking-[0.5px] hover:text-white hover:scale-[0.99] capitalize"
+                        : "w-full py-3 px-4 flex items-center justify-between gap-2 font-medium font-sans text-base text-left text-[red] tracking-[0.5px] hover:text-pcolor hover:scale-[0.99] capitalize"
                     }
                   >
                     <span className="w-full">{child.name}</span>
@@ -143,7 +143,7 @@ export default function MenuDropdown({ item, selected }: any) {
                 ? content?.subpages?.map((item: any, index: any) => {
                     return (
                       <div key={`item-${index}`}>
-                        <span className="font-semibold font-avant-garde text-sm tracking-[0em] py-[14px] px-0 text-left capitalize">
+                        <span className="font-semibold font-sans text-sm tracking-[0em] py-[14px] px-0 text-left capitalize">
                           {item.name}
                         </span>
 
@@ -177,20 +177,20 @@ export default function MenuDropdown({ item, selected }: any) {
                                       cont.active === true ? (
                                         ""
                                       ) : (
-                                        <span className="w-[108px] py-[2px] px-2 rounded-full border-[0.82px] border-solid bg-[#FBF0DD] text-[#E3A229] font-medium font-avant-garde text-xs tracking[0.5px]">
+                                        <span className="w-[108px] py-[2px] px-2 rounded-full border-[0.82px] border-solid bg-[#FBF0DD] text-[#E3A229] font-medium font-sans text-xs tracking[0.5px]">
                                           Coming soon...
                                         </span>
                                       )
                                     }
                                   />
-                                  <span className="font-bold font-avant-garde text-xs tracking-[0em] text-[#101828] capitalize">
+                                  <span className="font-bold font-sans text-xs tracking-[0em] text-[#101828] capitalize">
                                     {cont.title}
                                   </span>
                                   <div className="w-full flex gap-1 mt-6">
-                                    <span className="font-medium font-avant-garde text-xs text-left tracking-[0em] pr-2 border-r border-solid border-[#D7DEE0]">
+                                    <span className="font-medium font-sans text-xs text-left tracking-[0em] pr-2 border-r border-solid border-[#D7DEE0]">
                                       Cohort starts: {cont.starts}
                                     </span>
-                                    <span className="font-medium font-avant-garde text-xs text-left tracking-[0em]">
+                                    <span className="font-medium font-sans text-xs text-left tracking-[0em]">
                                       {cont.duration}
                                     </span>
                                   </div>
@@ -213,8 +213,8 @@ export default function MenuDropdown({ item, selected }: any) {
         onMouseLeave={handlePopoverClose}
         className={
           selected
-            ? "font-semibold font-avant-garde lg-md:text-sm text-pcolor tracking-[0.5px] hover:text-white flex items-center justify-between cursor-pointer gap-2 capitalize"
-            : "font-semibold font-avant-garde lg-md:text-sm text-white tracking-[0.5px] hover:text-pcolor flex items-center justify-between gap-2 capitalize"
+            ? "font-semibold font-sans lg-md:text-sm text-pcolor tracking-[0.5px] hover:text-white flex items-center justify-between cursor-pointer gap-2 capitalize"
+            : "font-semibold font-sans lg-md:text-sm text-white tracking-[0.5px] hover:text-pcolor flex items-center justify-between gap-2 capitalize"
         }
       >
         {item.name}{" "}

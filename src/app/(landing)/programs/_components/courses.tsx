@@ -84,17 +84,17 @@ export default function ProgramSection() {
       <div className="w-full relative flex flex-col xl:flex-row xl:justify-center xl:items-center gap-12">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full max-w-[708px] flex flex-col gap-1 px-1">
-            <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
+            <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left">
               Choose top rated programs
             </h2>
-            <p className="text-base text-left font-medium font-avant-garde text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
+            <p className="text-base text-left font-medium font-sans text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
               Learn from international experts and earn certifications from top
               universities worldwide.
             </p>
           </div>
           <div className="w-full flex flex-col lg-md:flex-row gap-4 lg-md:gap-2 3xl:gap-12 lg:px-0 xl:px-6 px-0 lg-md:px-6 3xl:px-0">
             <div className="w-full lg-md:w-[450px] lg:w-[420px] xl:w-[420px] 3xl:w-[450px] bg-white border border-[#DDDDDD] h-[300px] lg-md:h-[480px] rounded-[10px]">
-              <div className="w-full h-[60px] px-[15px] py-[10px] border-b border-[#DDDDDD] font-semibold font-avant-garde text-lg/[39px] text-[#4A4A4A]">
+              <div className="w-full h-[60px] px-[15px] py-[10px] border-b border-[#DDDDDD] font-semibold font-sans text-lg/[39px] text-[#4A4A4A]">
                 Categories
               </div>
               <div className="px-4 py-8 grid grid-cols-2 lg:grid-cols-1 gap-2">
@@ -112,7 +112,7 @@ export default function ProgramSection() {
                         >
                           <div className="flex flex-row space-x-[10px] items-center">
                             {v?.icon}
-                            <span className="font-semibold font-avant-garde text-xs/[24px] lg:text-sm/[24px] lg-md:text-lg/[39px] text-[#4A4A4A]">
+                            <span className="font-semibold font-sans text-xs/[24px] lg:text-sm/[24px] lg-md:text-lg/[39px] text-[#4A4A4A]">
                               {v.name}
                             </span>
                           </div>
@@ -120,7 +120,7 @@ export default function ProgramSection() {
                             {v.isReady ? (
                               <KeyboardArrowRightIcon />
                             ) : (
-                              <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-avant-garde py-[5px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
+                              <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-sans py-[5px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
                                 Coming Soon
                               </Badge>
                             )}
@@ -132,7 +132,7 @@ export default function ProgramSection() {
                         <div className="w-full py-[12px] pb-[5px] bg-[#EFFFF7] border-l-[3px] border-[#3FA46E] px-[10px] flex flex-row justify-between items-center">
                           <div className="flex flex-row space-x-[10px] items-center">
                             {v.icon}
-                            <span className="font-semibold font-avant-garde text-xs/[24px] lg:text-sm/[24px] lg-md:text-lg/[39px] text-[#071C23]">
+                            <span className="font-semibold font-sans text-xs/[24px] lg:text-sm/[24px] lg-md:text-lg/[39px] text-[#4D6C62]">
                               {v?.name}
                             </span>
                           </div>
@@ -140,7 +140,7 @@ export default function ProgramSection() {
                             {v.isReady ? (
                               <KeyboardArrowRightIcon />
                             ) : (
-                              <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-avant-garde py-[5px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
+                              <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-sans py-[5px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
                                 Coming Soon
                               </Badge>
                             )}
@@ -176,7 +176,7 @@ export default function ProgramSection() {
                     ></div>
                     <div className="flex flex-col gap-4 px-4">
                       <div className="flex flex-row justify-between items-center">
-                        <h4 className="text-xs lg:text-sm lg:text-lg font-bold font-arial tracking-[0.5px] text-[#071C23]">
+                        <h4 className="text-xs lg:text-lg font-bold font-arial tracking-[0.5px] text-[#4D6C62]">
                           {program.courseName}
                         </h4>
                         <Badge className="text-xs rounded-[20px] font-normal font-arial bg-[#DFF1FF] shadow-none hover:bg-[#DFF1FF] text-[#2C3A50] border-[0.8px] border-[#DBDBDB]">

@@ -28,10 +28,10 @@ export default function Herosection() {
       <div className="w-full relative flex flex-col lg:flex-row xl:justify-center xl:items-center gap-2 lg:gap-14 px-6 lg-md:pl-8 xl:pl-12 xl:pr-8">
         <div className="w-full max-w-[620px] grid grid-cols-1 gap-12 xl:place-content-center">
           <div className="w-full ">
-            <h1 className="font-semibold font-avant-garde text-sm text-pcolor">
+            <h1 className="font-semibold font-sans text-sm text-pcolor">
               Blog
             </h1>
-            <p className="font-avant-garde font-bold text-[28px]/[38px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[58px] tracking-[0.5px] text-left text-white">
+            <p className="font-sans font-bold text-[28px]/[38px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[58px] tracking-[0.5px] text-left text-white">
               Resource library
             </p>
           </div>
@@ -43,9 +43,9 @@ export default function Herosection() {
                 value={email}
                 onChange={(e: any) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-[456px] h-[64px] p-[18.67px] rounded-[21.33px] border-[1.33px] border-solid border-[#1B3139] bg-[#1018280D] focus:outline-none hover:border-pcolor focus:border-pcolor font-normal font-avant-garde text-sm text-left text-white placeholder:text-[#858C8E]"
+                className="w-[456px] h-[64px] p-[18.67px] rounded-[21.33px] border-[1.33px] border-solid border-[#1B3139] bg-[#1018280D] focus:outline-none hover:border-pcolor focus:border-pcolor font-normal font-sans text-sm text-left text-white placeholder:text-[#858C8E]"
               />
-              <button className="w-[120px] h-[54px] font-medium font-avant-garde text-base xl:text-base text-white flex justify-center items-center gap-2 bg-pcolor border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer">
+              <button className="w-[120px] h-[54px] font-medium font-sans text-base xl:text-base text-white flex justify-center items-center gap-2 bg-pcolor border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer">
                 Get started
               </button>
             </form>

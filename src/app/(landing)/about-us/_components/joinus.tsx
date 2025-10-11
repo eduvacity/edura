@@ -12,7 +12,7 @@ export default function JoinUsSection() {
       <div className="w-full relative flex justify-center items-center ">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div
-            className={`w-full max-w-[1464px] min-h-[450px] lg:rounded-[20px] bg-[#071C23] 
+            className={`w-full max-w-[1464px] min-h-[450px] lg:rounded-[20px] bg-[#4D6C62] 
           bg-[url('/pattern.svg')] bg-contain lg-md:px-[40px] px-[20px] py-[60px] lg:px-[50px] lg:py-[60px]`}
           >
             <div className="w-full flex flex-col justify-center items-center lg:flex-row gap-6 lg:gap-0">
@@ -35,8 +35,8 @@ export default function JoinUsSection() {
 
                 <div className="w-full flex flex-row justify-center items-center">
                   <Link
-                    href="https://portal.eduvacity.com/student-auth/signin"
-                    className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                    href="https://portal.Edura.com/student-auth/signin"
+                    className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
                   >
                     Join the team <ArrwoUpCicled />
                   </Link>

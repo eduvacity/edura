@@ -56,8 +56,8 @@ export default function ModuleContentDetail({ params }: any) {
             href={`/instructor/lesson/modules/module/${moduleId}`}
             className="flex gap-2 items-center cursor-pointer"
           >
-            <ArrowRight className="transform rotate-180 text-[#071C23]" />
-            <h1 className="text-[26px] lg-md:text-[26px] leading-[34.8px] font-bold font-satoshi -tracking-[0.001em] text-[#071C23]">
+            <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+            <h1 className="text-[26px] lg-md:text-[26px] leading-[34.8px] font-bold font-satoshi -tracking-[0.001em] text-[#4D6C62]">
               Add Content
             </h1>
           </Link>
@@ -237,7 +237,7 @@ export default function ModuleContentDetail({ params }: any) {
                   Add Contents
                 </h2>
               </div>
-              <div className="w-full grid grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-[17px] py-[22px] px-4">
+              <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-[17px] py-[22px] px-4">
                 {contents?.map((item, index) => (
                   <Link
                     key={index}
@@ -253,10 +253,10 @@ export default function ModuleContentDetail({ params }: any) {
               </div>
             </div>
             <div className="w-full flex flex-col">
-              <h4 className="w-full px-4 font-satoshi font-bold text-[18px]/[24.3px] text-[#071C23] tracking-normal">
+              <h4 className="w-full px-4 font-satoshi font-bold text-[18px]/[24.3px] text-[#4D6C62] tracking-normal">
                 More Content
               </h4>
-              <div className="w-full grid grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-[17px] py-[22px] px-4">
+              <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-[17px] py-[22px] px-4">
                 {moreContents?.map((item, idx) => (
                   <Link
                     key={idx}

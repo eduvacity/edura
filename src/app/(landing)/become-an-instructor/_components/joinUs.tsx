@@ -18,7 +18,7 @@ export default function WhyJoinUsSection() {
                 data-aos="fade-right"
                 data-aos-once={true}
               >
-                <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+                <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
                   Why you should join us?
                 </h2>
                 <div className="w-full grid grid-cols-1 gap-8">
@@ -26,7 +26,7 @@ export default function WhyJoinUsSection() {
                     return (
                       <div
                         key={i}
-                        className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]"
+                        className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]"
                       >
                         <span className="flex-shrink-0">
                           <WhiteCheckCircled />

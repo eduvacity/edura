@@ -19,10 +19,10 @@ export default function RequirementSection() {
           <div className="w-full flex flex-col lg:flex-row gap-24 justify-center items-center">
             <div className="max-w-[776px] flex flex-col gap-6 ">
               <div className="max-w-[555px] flex flex-col gap-4">
-                <p className="w-full font-avant-garde font-bold flex flex-col text-pcolor text-2xl/[32px] lg-md:text-[35px]/[49px] -tracking-[2%]">
+                <p className="w-full font-sans font-bold flex flex-col text-pcolor text-2xl/[32px] lg-md:text-[35px]/[49px] -tracking-[2%]">
                   Scholarship Requirements
                 </p>
-                <p className="w-full text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px] flex flex-col gap-1">
+                <p className="w-full text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px] flex flex-col gap-1">
                   Review the criteria needed to qualify for our scholarships.
                   Ensure you meet all requirements before applying.
                   <span>
@@ -33,7 +33,7 @@ export default function RequirementSection() {
               </div>
               <Link
                 href="/scholarship/apply"
-                className="w-[170px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                className="w-[170px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 Apply now
               </Link>
@@ -46,7 +46,7 @@ export default function RequirementSection() {
                 >
                   <div className="flex items-center gap-4 w-full h-full bg-white py-3 border-l-8 border-solid border-pcolor rounded-lg px-6">
                     {item.icon}{" "}
-                    <p className="font-avant-garde font-normal text-left text-sm lg-md:text-base text-[#2E3948] tracking-[0.5px]">
+                    <p className="font-sans font-normal text-left text-sm lg-md:text-base text-[#2E3948] tracking-[0.5px]">
                       {item.title}
                     </p>
                   </div>

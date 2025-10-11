@@ -22,7 +22,7 @@ export default function InstructorLessons() {
             ></div>
             <div className="w-full flex flex-col gap-3 px-4 py-4">
               <div className="w-full flex justify-between gap-[14px]">
-                <h4 className="font-satoshi font-bold text-lg leading-[24.3px] -tracking-[0.001em] text-left text-[#071C23]">
+                <h4 className="font-satoshi font-bold text-lg leading-[24.3px] -tracking-[0.001em] text-left text-[#4D6C62]">
                   {course.title}
                 </h4>
                 <div className="w-20px] h-[20px] flex justify-end items-end transform rotate-[270deg]">

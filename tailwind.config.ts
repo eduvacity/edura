@@ -33,7 +33,7 @@ const config: Config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         pcolor: "#3FA46E",
-        pdarkcolor: "#071C23",
+        pdarkcolor: "#4D6C62",
         bgcolor: "#F9EDD7",
         orange: "#E3A22B",
         primary: {
@@ -81,6 +81,17 @@ const config: Config = {
 
       fontFamily: {
         arial: ["Arial", "Helvetica", "sans-serif"],
+        sans: [
+          "var(--font-sans)",
+          "ui-sans-serif",
+          "system-ui",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+        ],
         satoshi: ["Satoshi", "Helvetica", "sans-serif"],
         jost: ["Jost", "Helvetica", "sans"],
         "avant-garde": ['"ITC Avant Garde Gothic"', "sans-serif"],

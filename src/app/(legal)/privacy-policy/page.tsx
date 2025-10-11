@@ -5,59 +5,59 @@ export default function PrivacyPolicy() {
     <div className="w-full relative flex min-h-[100vh] place-content-center overflow-hidden px-1 lg-md:px-4 py-24">
       <div className="w-full flex flex-col gap-4 max-w-[1280px] z-50 bg-white px-12 py-14">
         <div className="w-full max-w-[1280px] flex flex-col ">
-          <h1 className="w-full text-xl lg:text-2xl xl:text-[28px]/[30px] text-[#011B23] tracking-[0.5px] text-center font-semibold font-avant-garde px-4 uppercase">
+          <h1 className="w-full text-xl lg:text-2xl xl:text-[28px]/[30px] text-[#011B23] tracking-[0.5px] text-center font-semibold font-sans px-4 uppercase">
             Privacy Policy
           </h1>
-          <p className="w-full text-center text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+          <p className="w-full text-center text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
             Last Updated: October 24, 2024
           </p>
         </div>
         <div className="flex flex-col  gap-[45px] w-full">
-          <h2 className="text-left mx-0 mt-12 -mb-6 p-0 text-[38px]/[46px] lg-md:text-[24px]/[28px] font-medium font-avant-garde text-[#011B23]">
+          <h2 className="text-left mx-0 mt-12 -mb-6 p-0 text-[38px]/[46px] lg-md:text-[24px]/[28px] font-medium font-sans text-[#011B23]">
             1. Effective Date This Policy shall become effective from the _____
             day of ________________, 20______
           </h2>
-          <h2 className="text-left mx-0  p-0 text-[38px]/[46px] lg-md:text-[48px]/[56px] font-medium font-avant-garde text-[#011B23]">
+          <h2 className="text-left mx-0  p-0 text-[38px]/[46px] lg-md:text-[48px]/[56px] font-medium font-sans text-[#011B23]">
             2. Introduction:
           </h2>
           <div className="text-justify font-arial font-normal text-base text-[#011B23] flex flex-col gap-4">
-            <Link href="https://www.eduvacity.com">Eduvacity.com</Link> is
-            provided for by Eduvacity Limited. At Eduvacity, your privacy and
-            personal information are of our utmost concern and priority. We wish
-            to assure you that all private and confidential information provided
-            by you to us will be protected and safeguarded at all times, and the
-            same extends to our affiliates, privies, agents and representatives.
-            It suffices to state throughout this website, the terms “we”, “us”
-            and “our” refer to Eduvacity. The aim of this policy is to
-            demonstrate how we shall use, collate, share and even safeguard your
-            personal information during the course of your relationship with us
-            as a learner or intending learner. We wish to reiterate that this
-            policy applies to all learners, intending learners, applicants,
-            partners and every other individual whose information we hold. This
-            policy shall also attempt to state your rights. Please note, that in
-            visiting this website and the usage of our services, you agree to
-            this policy. As such, any dispute arising over privacy upon use of
-            our services is subject to this policy and our terms of service and
-            any limitation therein relating to damages and dispute resolution.
-            Our resolution as to the terms of service are incorporated by
-            reference into this policy. Take further notice, that our website
-            and services are not directed to you if by any law/regulation within
-            any jurisdiction, we are prevented from making available to you any
-            information on our website, and same is not for any use that would
-            be contrary to local law or regulation.
+            <Link href="https://www.Edura.com">Edura.com</Link> is provided for
+            by Edura Limited. At Edura, your privacy and personal information
+            are of our utmost concern and priority. We wish to assure you that
+            all private and confidential information provided by you to us will
+            be protected and safeguarded at all times, and the same extends to
+            our affiliates, privies, agents and representatives. It suffices to
+            state throughout this website, the terms “we”, “us” and “our” refer
+            to Edura. The aim of this policy is to demonstrate how we shall use,
+            collate, share and even safeguard your personal information during
+            the course of your relationship with us as a learner or intending
+            learner. We wish to reiterate that this policy applies to all
+            learners, intending learners, applicants, partners and every other
+            individual whose information we hold. This policy shall also attempt
+            to state your rights. Please note, that in visiting this website and
+            the usage of our services, you agree to this policy. As such, any
+            dispute arising over privacy upon use of our services is subject to
+            this policy and our terms of service and any limitation therein
+            relating to damages and dispute resolution. Our resolution as to the
+            terms of service are incorporated by reference into this policy.
+            Take further notice, that our website and services are not directed
+            to you if by any law/regulation within any jurisdiction, we are
+            prevented from making available to you any information on our
+            website, and same is not for any use that would be contrary to local
+            law or regulation.
           </div>
 
           <div className="w-full flex flex-col gap-8">
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Definitions
               </h2>
 
               <div className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
                 <span>&quot;consent&quot;</span>
                 <span>
-                  means an account created by the Learner on the
-                  Eduvacity&apos;s Website
+                  means an account created by the Learner on the Edura&apos;s
+                  Website
                 </span>
                 <span>&quot;Course Contents&quot;</span>
                 <span>
@@ -71,12 +71,12 @@ export default function PrivacyPolicy() {
                   This means the individual (natural/artificial) responsible,
                   alone or jointly, for determining the purpose and means of the
                   processing of personal data. It should be noted that for the
-                  purposes of this policy, Eduvacity is the data controller of
-                  all personal data relating to data subjects;
+                  purposes of this policy, Edura is the data controller of all
+                  personal data relating to data subjects;
                 </span>
                 <span>&quot;data processor&quot;</span>
                 <span>
-                  This means the office present in Eduvacity responsible for
+                  This means the office present in Edura responsible for
                   ensuring that all processing of personal data is in compliance
                   with the relevant Data Protection Legislation;
                 </span>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
                 <span>&quot;data subject&quot;</span>
                 <span>
                   This means a living, identified, or identifiable individual/
-                  entity whose information or data is held by Eduvacity;
+                  entity whose information or data is held by Edura;
                 </span>
                 <span>&quot;Personal Data&quot;</span>
                 <span>
@@ -115,26 +115,26 @@ export default function PrivacyPolicy() {
                   restriction, erasure or destruction.
                 </span>
               </div>
-              <h6 className=" text-justify text-[20px]/[30px] font-semibold font-avant-garde text-[#101828]">
+              <h6 className=" text-justify text-[20px]/[30px] font-semibold font-sans text-[#101828]">
                 Data Protection Officer & Scope of Policy
               </h6>
               <div className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
-                <Link href="https://www.eduvacity.com">Eduvacity&apos;s</Link>{" "}
-                Data Protection Office is responsible for working together with
-                the Human Resources team and other relevant Departments in
+                <Link href="https://www.Edura.com">Edura&apos;s</Link> Data
+                Protection Office is responsible for working together with the
+                Human Resources team and other relevant Departments in
                 administering this policy and for developing and implementing
                 any applicable related policies, procedures, and guidelines. All
                 managers, departmental heads and supervisors are responsible for
                 ensuring that all employees, agents, contractors, or other
-                parties working on behalf of Eduvacity adhere strictly to this
+                parties working on behalf of Edura adhere strictly to this
                 policy and where applicable, implement such practices,
                 processes, controls, and training as are reasonably necessary to
                 ensure such compliance. Any questions relating to this policy,
-                Eduvacity&apos;s collection, processing, or holding of personal
+                Edura&apos;s collection, processing, or holding of personal
                 data, or to the Data Protection Legislation should be referred
                 to the Data Protection Office.
               </div>
-              <h6 className="text-justify text-lg font-bold font-avant-garde text-[#101828] px-2">
+              <h6 className="text-justify text-lg font-bold font-sans text-[#101828] px-2">
                 Consent
               </h6>
               <p className="text-justify text-lg font-normal font-arial text-[#101828] px-2 ">
@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
                 first provided your consent, we will obtain your consent to the
                 new purpose or purposes.
               </p>
-              <h6 className="text-justify text-lg font-bold font-avant-garde text-[#101828] px-2">
+              <h6 className="text-justify text-lg font-bold font-sans text-[#101828] px-2">
                 Age Restriction
               </h6>
               <p className="text-justify text-lg font-normal font-arial text-[#101828] px-2 ">
@@ -166,7 +166,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data Protection Principles
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -214,7 +214,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data We Collect.
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -244,27 +244,27 @@ export default function PrivacyPolicy() {
                 collect the following personal information:
               </p>
               <ul className="w-full flex flex-col gap-4">
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   Username and password;
                 </li>{" "}
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   Contact information;
                 </li>{" "}
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   Educational background (e.g., academic history, CV, employment
                   status etc.);
                 </li>{" "}
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   financial information where you make any payment for our
                   services;
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   and Any other information you provide to us.
                 </li>
               </ul>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Using Your Personal Data
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -274,72 +274,72 @@ export default function PrivacyPolicy() {
                 Your information will solely be used and disclosed for the
                 following purposes:
               </p>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 a. To help us verify your identity;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 b. To carry out our obligations ensuing from any contracts
                 entered into between you and us;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 c. To provide you with the best products, services and
                 information you request from us;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 d. To assist you with enquiries and improve our customer
                 service;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 e. To assist us in carrying out marketing analysis and customer
                 profiling (including transactional information), conduct
                 research, including creating statistical and testing
                 information;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 f. To allow us to effectively communicate with you in any way
                 (including e-mail, telephone, visit, and text or multimedia
                 messages);
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 g. For our billing and account purposes;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 h. To help prevent and detect fraud or loss;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 i. To update our records;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 j. To make recommendations and suggestions to you about services
                 offered by us unless you have previously asked us not to do so;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 k. To send you service or support messages, such as updates,
                 security alerts, email notifications and /or newsletters;
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 l. To conduct investigations and risk assessments; and
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 m. For compliance with legal and regulatory obligations.
               </h6>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
                 Please Note that, employees, agents, contractors, or other
-                parties working on behalf of Eduvacity shall collect your
-                personal data only to the extent required for the performance of
-                their job duties and only in accordance with this policy.
+                parties working on behalf of Edura shall collect your personal
+                data only to the extent required for the performance of their
+                job duties and only in accordance with this policy.
                 <span>
                   {" "}
                   Additionally, employees, agents, contractors, or other parties
-                  working on behalf of Eduvacity shall process your personal
-                  data only when the performance of their job duties requires
-                  it. Your personal data held by Eduvacity cannot be processed
-                  for any unrelated reasons.
+                  working on behalf of Edura shall process your personal data
+                  only when the performance of their job duties requires it.
+                  Your personal data held by Edura cannot be processed for any
+                  unrelated reasons.
                 </span>
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data Accuracy
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -354,31 +354,31 @@ export default function PrivacyPolicy() {
             </div>
 
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data Retention
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
-                Here at Eduvacity, we shall not keep personal data longer than
-                is necessary in light of the purpose and/or purposes for which
-                that personal data was originally collected, held, and
-                processed. In the case of your educational data, the purpose for
-                which the data was collected is to provide you with our
-                educational services which will equip you with technical skills
-                needed for the careers of the future. Unless Eduvacity receives
-                a valid request to erase your educational data, the data is
-                retained permanently. This allows your record of participation
-                and progress in our educational program to be maintained. If the
+                Here at Edura, we shall not keep personal data longer than is
+                necessary in light of the purpose and/or purposes for which that
+                personal data was originally collected, held, and processed. In
+                the case of your educational data, the purpose for which the
+                data was collected is to provide you with our educational
+                services which will equip you with technical skills needed for
+                the careers of the future. Unless Edura receives a valid request
+                to erase your educational data, the data is retained
+                permanently. This allows your record of participation and
+                progress in our educational program to be maintained. If the
                 data were deleted, we would have no record of your performance
                 and completion of our educational program. The following are
                 other data that we retain:
                 <ul className="w-full flex flex-col gap-4">
-                  <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                  <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                     We will retain your information for as long as needed to
                     provide you with our services, comply with our legal and
                     statutory obligations or verify your information with a
                     financial institution.
                   </li>
-                  <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                  <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                     We are statutory obligated to retain the data you provide us
                     with in order to process transactions, ensure settlements,
                     make refunds, identify fraud and in compliance with laws and
@@ -388,7 +388,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data Confidentiality
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -403,11 +403,11 @@ export default function PrivacyPolicy() {
                 and enforcing appropriate security measures such as non-sharing
                 of passwords and other platform login details, adherence with
                 physical security protocols on our premises, dealing with only
-                authorized officers of Eduvacity.
+                authorized officers of Edura.
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Disclosures
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -428,25 +428,25 @@ export default function PrivacyPolicy() {
                 <span>Furthermore, please note the following:</span>
               </p>
               <ul className="w-full flex flex-col gap-4">
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   You have the right to request an erasure of your data at any
                   time.
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   We will notify you if we are transferring your data.
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   If you submit content in a public forum or a social media
                   post, or use a similar feature on our website, that content is
                   publicly visible.
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   We may disclose Personally Identifiable Information if
                   required to do so by law or in an act of urgent circumstances
                   to protect the personal safety of users of our service or
                   members of the public.
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                   To the extent practicable and legally permitted, we will
                   attempt to advise you prior to any such disclosure, so that
                   you may seek a protective order or other relief limiting such
@@ -455,7 +455,7 @@ export default function PrivacyPolicy() {
               </ul>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Transfer of Personal Data
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -470,15 +470,15 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Transfer of Personal Data of Nigerian Citizens to a Foreign
                 Country
               </h2>
               <div className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
                 10.1. The content you post as a Learner (including courses)
-                remains yours. By posting any content, you allow Eduvacity to
-                reuse and share it, but you do not lose any ownership rights you
-                may have over your content.
+                remains yours. By posting any content, you allow Edura to reuse
+                and share it, but you do not lose any ownership rights you may
+                have over your content.
                 <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
                   Where your personal data is to be transferred to a country
                   outside Nigeria, we undertake to ensure that adequate measures
@@ -502,7 +502,7 @@ export default function PrivacyPolicy() {
               </div>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Your Rights
               </h2>
               <p className="text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -510,29 +510,29 @@ export default function PrivacyPolicy() {
                 to the following principal rights under the Data Protection
                 Legislation:
               </p>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 a. The right to be notified if we are transferring your personal
                 information.
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 b. The right to request an erasure of your personal data at any
                 time.
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 c. The right to request that we rectify inaccurate personal
                 information.
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 d. The right to request at any time that we halt further
                 dissemination of your data or cease to use your personal
                 information.
               </h6>
-              <h6 className="text-justify text-lg font-normal font-avant-garde text-[#101828] px-2 italic">
+              <h6 className="text-justify text-lg font-normal font-sans text-[#101828] px-2 italic">
                 e. The right to request for copies of your personal information.
               </h6>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Web Security
               </h2>
               <p className="text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -547,7 +547,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Training
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -561,7 +561,7 @@ export default function PrivacyPolicy() {
             </div>
 
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Use of Cookies
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -580,7 +580,7 @@ export default function PrivacyPolicy() {
             </div>
 
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Data Breach Management Procedure
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -589,26 +589,26 @@ export default function PrivacyPolicy() {
                 disclosure of, or access to your personal data, we shall:
               </p>
               <ul className="w-full flex flex-col gap-4">
-                <li className="text-justify text-lg font-normal font-avant-garde text-[rgb(16,24,40)] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[rgb(16,24,40)] px-2 italic">
                   a. Notify you within 24 hours of the occurrence of the data
                   breach;
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[rgb(16,24,40)] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[rgb(16,24,40)] px-2 italic">
                   b. Properly investigate the breach and take the necessary
                   steps to mitigate such breach;
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[rgb(16,24,40)] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[rgb(16,24,40)] px-2 italic">
                   c. Identify remediation requirements and track the resolution
                   of such breach; and
                 </li>
-                <li className="text-justify text-lg font-normal font-avant-garde text-[rgb(16,24,40)] px-2 italic">
+                <li className="text-justify text-lg font-normal font-sans text-[rgb(16,24,40)] px-2 italic">
                   d. Notify the Information Commissioner’s Office or any other
                   regulatory authority, where necessary
                 </li>{" "}
               </ul>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Links to Third Party Websites
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -632,7 +632,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Limitation of Liability
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">
@@ -643,7 +643,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div className="w-full flex flex-col gap-4">
-              <h2 className=" text-justify text-2xl font-semibold font-avant-garde text-[#101828] tracking-[0.5px]">
+              <h2 className=" text-justify text-2xl font-semibold font-sans text-[#101828] tracking-[0.5px]">
                 Alterations to this Privacy Policy
               </h2>
               <p className=" text-justify font-arial font-normal text-base text-[#101828] flex flex-col gap-4">

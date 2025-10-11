@@ -8,7 +8,7 @@ import Herosection from "./_components/herosection"
 import LiveLessonsSection from "./_components/liveLesson"
 import ProgrammesCardsSection from "./_components/programmesCards"
 import ProgramSection from "./_components/programsSections"
-import WhyEduvacitySection from "./_components/whyUsSection"
+import WhyEduraSection from "./_components/whyUsSection"
 
 export default function HomePage() {
   return (
@@ -19,10 +19,10 @@ export default function HomePage() {
           <div className="w-full max-w-[380px] sm:max-w-[518px] flex justify-start items-center gap-2 md:gap-4">
             <ABUZariaAffliate className="w-[48px] h-[48px] sm:w-[58px] sm:h-[58px]" />
             <div className="flex flex-col">
-              <h6 className="font-semibold font-avant-garde text-xs/[18px] italic tracking-[0.5px] text-left text-[#071C23]">
-                Eduvacity is Affiliated with
+              <h6 className="font-semibold font-sans text-xs/[18px] italic tracking-[0.5px] text-left text-[#4D6C62]">
+                Edura is Affiliated with
               </h6>
-              <h4 className="font-bold font-avant-garde text-sm  md:text-[21px]/[28px] tracking-[0.5px] text-left text-pcolor">
+              <h4 className="font-bold font-sans text-sm  md:text-[21px]/[28px] tracking-[0.5px] text-left text-pcolor">
                 Ahmadu Bello University, Zaria
               </h4>
             </div>
@@ -30,7 +30,7 @@ export default function HomePage() {
         </div>
       </div>
       <ProgramSection />
-      <WhyEduvacitySection />
+      <WhyEduraSection />
       <EmpoweringSection />
       <LiveLessonsSection />
       <ProgrammesCardsSection />

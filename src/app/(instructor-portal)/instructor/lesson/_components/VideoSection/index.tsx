@@ -38,7 +38,7 @@ const VideoSection: React.FC = () => {
         <div className="relative w-full">
           {!isPlaying ? (
             <div className="relative w-full h-[420.42px]">
-              <div className="absolute inset-0 h-full bg-[linear-gradient(91.35deg,_#071C23_-4.16%,_rgba(49,_50,_50,_0.9)_22.82%,_rgba(149,_152,_152,_0.05)_109.42%)] z-10 rounded-[15.52px]" />
+              <div className="absolute inset-0 h-full bg-[linear-gradient(91.35deg,_#4D6C62_-4.16%,_rgba(49,_50,_50,_0.9)_22.82%,_rgba(149,_152,_152,_0.05)_109.42%)] z-10 rounded-[15.52px]" />
               <Image
                 src="/images/thumbnail1.jpeg"
                 alt="course introduction video thumbnail"

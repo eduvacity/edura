@@ -173,7 +173,7 @@ function ModuleItem({
                   <input
                     {...field}
                     placeholder="New Module"
-                    className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-[#DDDDDD] text-[#071C23] bg-[#F5F6F7] focus:outline-none"
+                    className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-[#DDDDDD] text-[#4D6C62] bg-[#F5F6F7] focus:outline-none"
                   />
                 )}
               />
@@ -266,7 +266,7 @@ function ModuleItem({
                               toggleEditMode("lesson", lessonIndex, moduleIndex)
                             }
                             autoFocus
-                            className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-solid border-[#DDDDDD] font-arial text-sm lg-md:text-base/[18.4px] text-[#071C23] bg-[#F5F6F7] focus:outline-none"
+                            className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-solid border-[#DDDDDD] font-arial text-sm lg-md:text-base/[18.4px] text-[#4D6C62] bg-[#F5F6F7] focus:outline-none"
                           />
                         )}
                       />
@@ -548,8 +548,8 @@ export default function AddModule({ params }: any) {
           href={`/instructor/lesson/topics/${params?.id}?course=${course}`}
           className="flex mb-6 gap-2 items-center cursor-pointer"
         >
-          <ArrowRight className="transform rotate-180 text-[#071C23]" />
-          <h1 className="text-[26px] lg-md:text-[26px] leading-[34.8px] font-bold font-satoshi -tracking-[0.001em] text-[#071C23]">
+          <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+          <h1 className="text-[26px] lg-md:text-[26px] leading-[34.8px] font-bold font-satoshi -tracking-[0.001em] text-[#4D6C62]">
             Create your Module
           </h1>
         </Link>

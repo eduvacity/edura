@@ -6,6 +6,7 @@ import {
   QuizIcon,
   SettingIcon,
 } from "@/components/SVGs/portal"
+import { HelpCircleIcon } from "lucide-react"
 
 export const navLinks = [
   { name: "Dashboard", href: "/instructor/dashboard", icon: <DashboardIcon /> },
@@ -18,5 +19,13 @@ export const navLinks = [
     icon: <AssignmentIcon />,
   },
   { name: "Quiz", href: "/instructor/quiz", icon: <QuizIcon /> },
-  { name: "Settings", href: "/instructor/settings", icon: <SettingIcon /> },
+]
+
+export const accountNav = [
+  {
+    name: "Account & Settings",
+    href: "/instructor/settings",
+    icon: <SettingIcon />,
+  },
+  { name: "Help", href: "/instructor/help", icon: <HelpCircleIcon /> },
 ]

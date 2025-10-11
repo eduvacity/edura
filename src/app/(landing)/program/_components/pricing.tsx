@@ -11,7 +11,7 @@ export default function PricingSection({ course }: any) {
         <div className="w-full max-w-[1280px] px-4 py-12 flex flex-col justify-center items-center bg-white">
           <div className="w-full flex flex-col gap-[28px]">
             <div className="w-full flex flex-col justify-start items-center lg-md:px-10">
-              <h2 className="w-full text-4xl/[40px] lg-md:text-4xl/[50px] font-semibold font-avant-garde text-[#101828] -tracking-[0.02em] text-left">
+              <h2 className="w-full text-4xl/[40px] lg-md:text-4xl/[50px] font-semibold font-sans text-[#101828] -tracking-[0.02em] text-left">
                 Pricing
               </h2>
             </div>

@@ -175,11 +175,11 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
       ]}
     >
       {numSelected > 0 ? (
-        <div className="flex-[1_1_100%] text-[#071C23] font-satoshi font-bold trext-[22px] leading-[29.7px]">
+        <div className="flex-[1_1_100%] text-[#4D6C62] font-satoshi font-bold trext-[22px] leading-[29.7px]">
           {numSelected} selected
         </div>
       ) : (
-        <div className="flex-[1_1_100%] text-[#071C23] font-satoshi font-bold trext-[22px] leading-[29.7px]">
+        <div className="flex-[1_1_100%] text-[#4D6C62] font-satoshi font-bold trext-[22px] leading-[29.7px]">
           Course in progress
         </div>
       )}

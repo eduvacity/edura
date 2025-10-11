@@ -11,7 +11,7 @@ export default function CareerPathSection({ careers }: any) {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12 ">
         <div className="w-full max-w-[1500px] xl:py-12 flex flex-col justify-center items-center 3xl:gap-[64px]">
           <div className="w-full max-w-[1280px] xl:py-12 flex flex-col gap-8 3xl:gap-[64px] xl:px-8 3xl:px-0">
-            <h2 className="w-full text-2xl/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+            <h2 className="w-full text-2xl/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
               Career path
             </h2>
             <div className="w-full flex flex-col lg:flex-row gap-12 lg:justify-center">
@@ -31,7 +31,7 @@ export default function CareerPathSection({ careers }: any) {
                     return (
                       <div
                         key={i}
-                        className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]"
+                        className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]"
                       >
                         <span className="flex-shrink-0">
                           <WhiteCheckCircled />

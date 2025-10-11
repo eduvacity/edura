@@ -116,7 +116,7 @@ export default function PublishSection({ topic }: Props) {
                   <div className="w-full grid grid-cols-1 px-4 py-8 gap-6">
                     <div className="w-full relative flex flex-col gap-[9.92px]">
                       <label
-                        className="text-[#071C23] font-medium font-arial text-sm lg-md:text-base/[18.4px] text-left capitalize"
+                        className="text-[#4D6C62] font-medium font-arial text-sm lg-md:text-base/[18.4px] text-left capitalize"
                         htmlFor="copy"
                       >
                         Your sales page link
@@ -125,11 +125,11 @@ export default function PublishSection({ topic }: Props) {
                         <div
                           className={`w-full h-[60px] px-6 rounded-[7px] border-[0.99px] border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-[15.87px]/[18.25px] font-normal cursor-text text-[#4D4D4D] hover:border-pcolor focus:outline-none focus:border-pcolor disabled:bg-[#F8F8F8] focus:bg-[#F8F8F8] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F5F5F5]`}
                         >
-                          http:eduvacity/ggdy38836d/ui/uxdesigncoures
+                          http:Edura/ggdy38836d/ui/uxdesigncoures
                         </div>
                         <div className="w-fit h-[50px] py-[13px] px-[20px] rounded-[3px] bg-[#DAEEE3] absolute right-[3px] top-[5px]">
                           <CopyToClipboard
-                            text={` http:eduvacity/ggdy38836d/ui/uxdesigncoures`}
+                            text={` http:Edura/ggdy38836d/ui/uxdesigncoures`}
                             onCopy={() =>
                               toast.success("Code copied to clipboard")
                             }

@@ -44,7 +44,7 @@ export default function LiveLessonsSection() {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12 ">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col gap-4">
-            <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
+            <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left">
               Courses Available
             </h2>
 
@@ -86,7 +86,7 @@ export default function LiveLessonsSection() {
                               <span className="uppercase font-arial font-normal text-sm text-[#727272]">
                                 Course
                               </span>
-                              <p className="font-arial font-bold text-base/[20.7px] text-[#071c23]">
+                              <p className="font-arial font-bold text-base/[20.7px] text-[#4D6C62]">
                                 {course.course}
                               </p>
                             </div>
@@ -99,7 +99,7 @@ export default function LiveLessonsSection() {
                               <span className="uppercase font-arial font-normal text-sm text-[#727272]">
                                 Program
                               </span>
-                              <p className="font-arial font-bold text-base/[20.7px] text-[#071c23]">
+                              <p className="font-arial font-bold text-base/[20.7px] text-[#4D6C62]">
                                 {course.program}
                               </p>
                             </div>
@@ -114,7 +114,7 @@ export default function LiveLessonsSection() {
                               <span className="uppercase font-arial font-normal text-sm text-[#727272]">
                                 Deadline
                               </span>
-                              <p className="font-arial font-bold text-base/[20.7px] text-[#071c23]">
+                              <p className="font-arial font-bold text-base/[20.7px] text-[#4D6C62]">
                                 {course.deadline}
                               </p>
                             </div>
@@ -127,15 +127,15 @@ export default function LiveLessonsSection() {
                             <span className="uppercase font-arial font-normal text-sm text-[#727272]">
                               Value
                             </span>
-                            <p className="font-arial font-bold text-base/[20.7px] text-[#071c23]">
+                            <p className="font-arial font-bold text-base/[20.7px] text-[#4D6C62]">
                               {course.value}
                             </p>
                           </div>
                         </div>
                       </div>
                       <Link
-                        href="https://portal.eduvacity.com/student-auth/signin"
-                        className="mt-3 w-full h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer z-10"
+                        href="https://portal.Edura.com/student-auth/signin"
+                        className="mt-3 w-full h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer z-10"
                       >
                         Apply now <ArrwoUpCicled />
                       </Link>

@@ -12,7 +12,7 @@ export default function ContactInformationSection() {
       <div className="w-full relative flex justify-center items-center ">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div
-            className={`w-full lg:h-[600px] lg:rounded-[20px] bg-[#071C23] 
+            className={`w-full lg:h-[600px] lg:rounded-[20px] bg-[#4D6C62] 
           bg-[url('/pattern.svg')] bg-contain lg-md:px-[40px] px-[20px] py-[60px] lg:px-[50px] lg:py-[60px]`}
           >
             <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-0 justify-between">
@@ -23,7 +23,7 @@ export default function ContactInformationSection() {
                   </p>
                   <span
                     className={
-                      "text-[35px]/[40px] lg:text-[50px]/[60px] xl:text-[50px]/[59px] -tracking-[0.02em] text-[#fff] font-semibold font-avant-garde text-left"
+                      "text-[35px]/[40px] lg:text-[50px]/[60px] xl:text-[50px]/[59px] -tracking-[0.02em] text-[#fff] font-semibold font-sans text-left"
                     }
                   >
                     Have any questions?
@@ -47,7 +47,7 @@ export default function ContactInformationSection() {
                 <div className="flex flex-row items-center gap-2">
                   <WhatsAppIcon />
                   <Link
-                    href="https://wa.me/07088315122?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20eduvacity."
+                    href="https://wa.me/07088315122?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20Edura."
                     target="_blank"
                     className="text-lg font-normal font-arial text-[#fff]"
                   >
@@ -57,10 +57,10 @@ export default function ContactInformationSection() {
                 <div className="flex flex-row items-center gap-2">
                   <EmailIcon />
                   <Link
-                    href="mailto:help@eduvacity.com"
+                    href="mailto:help@Edura.com"
                     className="text-lg font-normal font-arial text-[#fff]"
                   >
-                    help@eduvacity.com
+                    help@Edura.com
                   </Link>
                 </div>
               </div>

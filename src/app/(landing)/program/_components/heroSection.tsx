@@ -53,7 +53,7 @@ export default function Herosection({ course }: any) {
             )}
           </span>{" "}
           <div className="flex flex-col xl:w-[652px] justify-start items-start gap-4 px-1.5 lg-md:px-0">
-            <h1 className="font-avant-garde font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
+            <h1 className="font-sans font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
               <span className="block text-pcolor text-xl lg:text-xl xl:text-xl/[38px] capitalize">
                 {course?.school?.schoolName
                   ? `${course?.school?.schoolName}:`
@@ -67,15 +67,15 @@ export default function Herosection({ course }: any) {
               </p>
               <p className="max-w-[420px] px-4 lg-md:px-0 font-normal font-arial text-sm/[24px] lg-md:text-xl lg:lg-md:text-[15px]/[24px] xl:text-sm 3xl:text-sm/[26.67px] text-left text-[#FFFCF7] tracking-[0.5px]">
                 {`${course?.duration} ${course?.durationType}`} | Recorded
-                Lectures by eduvacity | Mentorship from eduvacity Experts
+                Lectures by Edura | Mentorship from Edura Experts
               </p>
             </div>
           </div>
           <div className="w-full flex flex-col gap-4">
             <div className="w-full max-w-[465px] flex flex-col lg:flex-row justify-start items-start gap-6 px-4 lg-md:px-0">
               <Link
-                href="https://portal.eduvacity.com/student-auth/signin"
-                className="w-full lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                href="https://portal.Edura.com/student-auth/signin"
+                className="w-full lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 Enroll now <ArrwoUpCicled />
               </Link>
@@ -83,7 +83,7 @@ export default function Herosection({ course }: any) {
                 onClick={() => {
                   window.open("/Students Handbook.pdf", "_blank")
                 }}
-                className="w-full lg:w-1/2 lg-md:w-[182px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                className="w-full lg:w-1/2 lg-md:w-[182px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 border-2 border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 View handbook
               </button>

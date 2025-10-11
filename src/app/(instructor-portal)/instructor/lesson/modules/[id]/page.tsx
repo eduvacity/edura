@@ -15,8 +15,8 @@ export default function LessonModules({ params }: any) {
           href={`/instructor/lesson`}
           className="flex mb-6 gap-2 items-center cursor-pointer"
         >
-          <ArrowRight className="transform rotate-180 text-[#071C23]" />
-          <h1 className="text-[26px] lg-md:text-[28px] font-bold font-satoshi -tracking-[0.001em] text-[#071C23]">
+          <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+          <h1 className="text-[26px] lg-md:text-[28px] font-bold font-satoshi -tracking-[0.001em] text-[#4D6C62]">
             {course}
           </h1>
         </Link>
@@ -31,7 +31,7 @@ export default function LessonModules({ params }: any) {
             className="bg-white w-full h-[177px] py-5 px-4 rounded-[14px] border border-solid border-[#DDDDDD] flex flex-col transition-all  duration-300 hover:scale-[0.99] cursor-pointer"
           >
             <div className="w-full h-full flex flex-col gap-[13px]">
-              <h4 className="font-satoshi font-bold text-[22px] leading-[25.57px] -tracking-[0.001em] text-left text-[#071C23]">
+              <h4 className="font-satoshi font-bold text-[22px] leading-[25.57px] -tracking-[0.001em] text-left text-[#4D6C62]">
                 {course.title}
               </h4>
               <span className="max-w-[400px] font-satoshi font-normal text-sm leading-[24.08px] line-clamp-3 text-left text-[#868686] text-ellipsis">

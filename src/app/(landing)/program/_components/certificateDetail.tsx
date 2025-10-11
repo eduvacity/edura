@@ -17,22 +17,22 @@ export default function CertificateDetailSection({
         <div className="w-full max-w-[1507px] flex items-center flex-col gap-[43px] bg-white">
           <div className="w-full max-w-[1280px] flex-col gap-6 px-[32px] pt-12 py-24 flex justify-center items-center">
             <div className="w-full flex flex-col gap-1">
-              <h4 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-medium font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
+              <h4 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-medium font-sans text-[#011B23] tracking-[0.5px] text-left">
                 {course?.courseName}
               </h4>
-              <p className="w-full text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+              <p className="w-full text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                 {course?.description}
               </p>
             </div>
             <div className="w-full flex flex-col gap-1">
-              <h4 className="w-full text-base/[50px] lg-md:text-[22px]/[27.5px] font-medium font-avant-garde text-[#000000] tracking-[0.5px] text-left">
+              <h4 className="w-full text-base/[50px] lg-md:text-[22px]/[27.5px] font-medium font-sans text-[#000000] tracking-[0.5px] text-left">
                 Learning path
               </h4>
             </div>
             {loading ? (
               <Loader />
             ) : "title" in detail ? (
-              <p className=" text-center w-full text-base font-medium font-avant-garde text-[#011B23] -tracking-[0.02em] opacity-60">
+              <p className=" text-center w-full text-base font-medium font-sans text-[#011B23] -tracking-[0.02em] opacity-60">
                 No learning path details found
               </p>
             ) : (

@@ -51,7 +51,7 @@ export default function CodeOutput({
     <div className="w-full relative flex flex-col h-[75vh]">
       <div
         className={`w-full h-[90px] rounded-t-[10px] ${
-          isDarkMode ? "bg-[#071C23]" : "bg-[#7E7E7E]"
+          isDarkMode ? "bg-[#4D6C62]" : "bg-[#7E7E7E]"
         } flex gap-8 items-center justify-between place-content-center px-4`}
       >
         <div className="w-[66px] flex gap-[6.08px]">

@@ -158,7 +158,7 @@ export default function MenuLists() {
                             minHeight: 48,
                           }}
                           selected={selected}
-                          className="w-full flex justify-between font-medium font-avant-garde text-base gap-[10px] items-center text-white"
+                          className="w-full flex justify-between font-medium font-sans text-base gap-[10px] items-center text-white"
                         >
                           <span className="w-full">{item.name}</span>{" "}
                           <AngleDownWard
@@ -192,8 +192,8 @@ export default function MenuLists() {
                                       selected={selectedItem}
                                       className={
                                         selectedItem
-                                          ? "w-full py-6 px-4 flex justify-between items-center font-medium font-avant-garde text-lg text-left text-pcolor tracking-[0.5px] hover:text-white hover:scale-[0.99] capitalize"
-                                          : "w-full py-6 px-4 flex justify-between items-center font-medium font-avant-garde text-lg text-left text-white tracking-[0.5px] hover:text-pcolor hover:scale-[0.99] capitalize"
+                                          ? "w-full py-6 px-4 flex justify-between items-center font-medium font-sans text-lg text-left text-pcolor tracking-[0.5px] hover:text-white hover:scale-[0.99] capitalize"
+                                          : "w-full py-6 px-4 flex justify-between items-center font-medium font-sans text-lg text-left text-white tracking-[0.5px] hover:text-pcolor hover:scale-[0.99] capitalize"
                                       }
                                     >
                                       <span className="w-full">
@@ -219,7 +219,7 @@ export default function MenuLists() {
                                                   key={`item-${index}`}
                                                   className="w-full flex flex-col gap-1"
                                                 >
-                                                  <span className="font-semibold font-avant-garde text-base tracking-[0em] text-[#101828] py-8 px-2 text-left capitalize">
+                                                  <span className="font-semibold font-sans text-base tracking-[0em] text-[#101828] py-8 px-2 text-left capitalize">
                                                     {cont.name}
                                                   </span>
 
@@ -262,7 +262,7 @@ export default function MenuLists() {
                                                                   true ? (
                                                                     ""
                                                                   ) : (
-                                                                    <span className="w-[108px] py-[2px] px-2 rounded-full border-[0.82px] border-solid bg-[#FBF0DD] text-[#E3A229] font-medium font-avant-garde text-xs tracking[0.5px]">
+                                                                    <span className="w-[108px] py-[2px] px-2 rounded-full border-[0.82px] border-solid bg-[#FBF0DD] text-[#E3A229] font-medium font-sans text-xs tracking[0.5px]">
                                                                       Coming
                                                                       soon...
                                                                     </span>
@@ -270,16 +270,16 @@ export default function MenuLists() {
                                                                 }
                                                               />
 
-                                                              <span className="font-bold font-avant-garde text-sm tracking-[0em] text-[#101828] capitalize">
+                                                              <span className="font-bold font-sans text-sm tracking-[0em] text-[#101828] capitalize">
                                                                 {sub.title}
                                                               </span>
                                                               <div className="w-full flex gap-1 mt-2">
-                                                                <span className="font-medium font-avant-garde text-xs text-left tracking-[0em] pr-2 border-r border-solid border-[#D7DEE0]">
+                                                                <span className="font-medium font-sans text-xs text-left tracking-[0em] pr-2 border-r border-solid border-[#D7DEE0]">
                                                                   {" "}
                                                                   Cohort starts:{" "}
                                                                   {sub.starts}
                                                                 </span>
-                                                                <span className="font-medium font-avant-garde text-xs text-left tracking-[0em]">
+                                                                <span className="font-medium font-sans text-xs text-left tracking-[0em]">
                                                                   {sub.duration}
                                                                 </span>
                                                               </div>
@@ -318,7 +318,7 @@ export default function MenuLists() {
                             py: 0,
                             minHeight: 48,
                           }}
-                          className="w-[320px] font-medium font-avant-garde text-base text-white"
+                          className="w-[320px] font-medium font-sans text-base text-white"
                         >
                           {item.name}
                         </ListItemButton>
@@ -332,14 +332,14 @@ export default function MenuLists() {
                 <MenuItem disableRipple>
                   <span
                     onClick={() => router.push("/auth/login")}
-                    className="w-[160px] py-3 flex items-center gap-[10px] justify-start font-bold font-avant-garde text-sm rounded-[49px] bg-transparent hover:scale-[0.99] cursor-pointer"
+                    className="w-[160px] py-3 flex items-center gap-[10px] justify-start font-bold font-sans text-sm rounded-[49px] bg-transparent hover:scale-[0.99] cursor-pointer"
                   >
                     <UserIcon className="flex-shrink-0" /> Student portal
                   </span>
                 </MenuItem>
                 <MenuItem onClick={handleClose} disableRipple>
                   <button
-                    className="w-[140px] py-3 px-5 flex items-center justify-center font-medium font-avant-garde text-sm rounded-[49px] bg-pcolor hover:scale-[0.99] cursor-pointer"
+                    className="w-[140px] py-3 px-5 flex items-center justify-center font-medium font-sans text-sm rounded-[49px] bg-pcolor hover:scale-[0.99] cursor-pointer"
                     onClick={() => router.push("/signup")}
                   >
                     Apply now

@@ -327,8 +327,8 @@ export default function VideoUpload({ moduleId }: { moduleId: string }) {
                 href={`/instructor/lesson/modules/module/${moduleId}`}
                 className="flex gap-2 items-center cursor-pointer"
               >
-                <ArrowRight className="transform rotate-180 text-[#071C23]" />
-                <h1 className="text-xl lg-md:text-[24px] leading-[30.8px] font-bold font-satoshi tracking-normal text-[#071C23]">
+                <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+                <h1 className="text-xl lg-md:text-[24px] leading-[30.8px] font-bold font-satoshi tracking-normal text-[#4D6C62]">
                   Add Video
                 </h1>
               </Link>

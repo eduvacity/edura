@@ -5,15 +5,15 @@ export default function CookiePolicy() {
     <div className="w-full relative flex min-h-[100vh] place-content-center overflow-hidden px-1 lg-md:px-4 py-24">
       <div className="w-full flex flex-col gap-4 max-w-[1280px] z-50 bg-white px-12 py-14">
         <div className="w-full flex flex-col gap-4 max-w-[1280px] z-50 bg-white px-12 py-14">
-          <h1 className="w-full text-xl lg:text-2xl xl:text-[28px]/[30px] text-[#011B23] tracking-[0.5px] text-center font-semibold font-avant-garde px-4 uppercase">
+          <h1 className="w-full text-xl lg:text-2xl xl:text-[28px]/[30px] text-[#011B23] tracking-[0.5px] text-center font-semibold font-sans px-4 uppercase">
             Cookie policy
           </h1>
-          <p className="w-full text-center text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+          <p className="w-full text-center text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
             Last Updated: October 24, 2024
           </p>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <h6 className=" text-justify text-[20px]/[30px] font-medium font-avant-garde text-[#011B23]">
+          <h6 className=" text-justify text-[20px]/[30px] font-medium font-sans text-[#011B23]">
             What are cookies?
           </h6>
           <p className=" text-justify font-arial font-normal text-base text-[#011B23] flex flex-col gap-4">
@@ -33,7 +33,7 @@ export default function CookiePolicy() {
               visits other Apps.
             </span>
           </p>
-          <h6 className="text-justify text-[20px]/[30px] font-medium font-avant-garde text-[#011B23]">
+          <h6 className="text-justify text-[20px]/[30px] font-medium font-sans text-[#011B23]">
             Cookies we use
           </h6>
           <p className=" text-justify font-arial font-normal text-base text-[#011B23] flex flex-col gap-4">
@@ -44,10 +44,10 @@ export default function CookiePolicy() {
             <table className="table-fixed py-8 table min-w-full border-collapse">
               <thead>
                 <tr className="w-full border-b border-solid border-pcolor px-4">
-                  <th className="text-left w-[200px] text-[20px]/[24.2px] font-medium font-avant-garde text-[#011B23] border-r border-solid border-pcolor p-4">
+                  <th className="text-left w-[200px] text-[20px]/[24.2px] font-medium font-sans text-[#011B23] border-r border-solid border-pcolor p-4">
                     Type of cookie
                   </th>
-                  <th className="text-left text-[20px]/[30px] font-medium font-avant-garde text-[#011B23] border-r border-solid border-pcolor p-4">
+                  <th className="text-left text-[20px]/[30px] font-medium font-sans text-[#011B23] border-r border-solid border-pcolor p-4">
                     Purpose
                   </th>
                 </tr>

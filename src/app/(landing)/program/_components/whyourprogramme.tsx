@@ -17,7 +17,7 @@ export default function WhyOurProgrammeSection() {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12">
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col px-2">
-            <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left ">
+            <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left ">
               Why join the program
             </h2>
           </div>
@@ -30,10 +30,10 @@ export default function WhyOurProgrammeSection() {
                 >
                   {v.icon}
                   <div className="w-full flex flex-col gap-[10px]">
-                    <h4 className="text-2xl/[39px] font-normal font-avant-garde text-[#071C23] tracking-[0.5px]">
+                    <h4 className="text-2xl/[39px] font-normal font-sans text-[#4D6C62] tracking-[0.5px]">
                       {v.name}
                     </h4>
-                    <p className="text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                    <p className="text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                       {v.description}
                     </p>
                   </div>

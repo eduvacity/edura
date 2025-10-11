@@ -9,7 +9,7 @@ const questions = [
   {
     id: 1,
     question: "Do you have post-graduate courses?",
-    answer: `We do not offer postgraduate courses yet, but you can visit our website at www.eduvacity.com and click on explore courses to see all the courses we offer. 
+    answer: `We do not offer postgraduate courses yet, but you can visit our website at www.Edura.com and click on explore courses to see all the courses we offer. 
 `,
   },
   {
@@ -50,13 +50,13 @@ const questions = [
   },
   {
     id: 12,
-    question: "Are eduvacity graduate eligible for NYSC",
+    question: "Are Edura graduate eligible for NYSC",
     answer: `Yes, students who graduate from our degree programs offered in partnership with universities are fully eligible for NYSC. All NYSC documentation and processing are handled on the university campus, just like for on-campus students.`,
   },
   {
     id: 13,
     question: "Can I take a study break?",
-    answer: `Eduvacity students can take a study break, but the student seeking the break must provide a valid reason and submit the request to the admission officer via the program managers. `,
+    answer: `Edura students can take a study break, but the student seeking the break must provide a valid reason and submit the request to the admission officer via the program managers. `,
   },
 ]
 export default function FaqsSection() {
@@ -76,10 +76,10 @@ export default function FaqsSection() {
         <div className="w-full max-w-[1500px] flex flex-col justify-center items-center gap-[43px]">
           <div className="w-full flex flex-col">
             <div className="w-full flex flex-col gap-1 justify-center items-center">
-              <h4 className="w-[140px] px-[15px] text-pcolor text-xs/[24px] lg-md:text-[30px]/[24px] font-medium font-avant-garde rounded-[20px] flex justify-center items-center">
+              <h4 className="w-[140px] px-[15px] text-pcolor text-xs/[24px] lg-md:text-[30px]/[24px] font-medium font-sans rounded-[20px] flex justify-center items-center">
                 FAQs
               </h4>
-              <span className="max-w-[722px] text-base/[50px] lg-md:text-2xl/[45px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+              <span className="max-w-[722px] text-base/[50px] lg-md:text-2xl/[45px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
                 Frequently asked questions
               </span>
             </div>
@@ -113,13 +113,13 @@ export default function FaqsSection() {
                   id={`panel${index + 1}d-header`}
                   className={
                     expanded === `panel${index + 1}`
-                      ? "w-full font-avant-garde font-medium text-left text-lg text-[#011B23] border-none py-2"
-                      : "w-full font-avant-garde font-medium text-left text-lg text-[#011B23] py-4 px-4 border-none"
+                      ? "w-full font-sans font-medium text-left text-lg text-[#011B23] border-none py-2"
+                      : "w-full font-sans font-medium text-left text-lg text-[#011B23] py-4 px-4 border-none"
                   }
                 >
                   {item.question}
                 </AccordionSummary>
-                <AccordionDetails className="w-full font-avant-garde font-normal text-left text-base text-[#505F79] tracking-[0.5px]">
+                <AccordionDetails className="w-full font-sans font-normal text-left text-base text-[#505F79] tracking-[0.5px]">
                   {item.answer}
                 </AccordionDetails>
               </Accordion>

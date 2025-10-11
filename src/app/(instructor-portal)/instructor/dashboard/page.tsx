@@ -46,7 +46,7 @@ export default function StudentDashboard() {
                   <h3 className="text-[#868686] font-medium font-satoshi text-lg leading-[30.96px]">
                     {item.title}
                   </h3>
-                  <p className="text-[#071C23] font-bold font-arial text-[22px] leading-[25.3px] tracking-[0.02em]">
+                  <p className="text-[#4D6C62] font-bold font-arial text-[22px] leading-[25.3px] tracking-[0.02em]">
                     {item.total}
                   </p>
                 </div>

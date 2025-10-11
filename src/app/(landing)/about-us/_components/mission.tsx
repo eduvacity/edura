@@ -29,16 +29,16 @@ export default function MissionAndVisionSection() {
         <div className="w-full flex flex-col gap-[43px]">
           <div className="relative w-full flex flex-col lg:flex-row gap-24 justify-center items-center">
             <div className="w-full max-w-[1500px] flex-col lg:flex-row gap-8 py-12 flex justify-center items-center">
-              <div className="h-full lg-md:h-[400px]  py-2 bg-[#071C23] rounded-lg border border-solid border-[#A8A8A8] flex flex-col justify-center items-center">
+              <div className="h-full lg-md:h-[400px]  py-2 bg-[#4D6C62] rounded-lg border border-solid border-[#A8A8A8] flex flex-col justify-center items-center">
                 <div className="max-w-[94vw] lg-md:w-[621px] xl:w-[550px] h-full flex flex-col gap-6 py-[45px] px-6 lg-md:px-[46px]">
                   <span className="w-[62px] h-[62px]">
                     <Target />
                   </span>
                   <div className="w-full flex flex-col gap-[10px]">
-                    <h4 className="text-xl/[39px] font-semibold font-avant-garde text-white tracking-[0.5px]">
+                    <h4 className="text-xl/[39px] font-semibold font-sans text-white tracking-[0.5px]">
                       Mission
                     </h4>
-                    <p className="text-base/[30.4px] font-normal font-avant-garde text-white tracking-[0.5px] flex flex-col gap-2">
+                    <p className="text-base/[30.4px] font-normal font-sans text-white tracking-[0.5px] flex flex-col gap-2">
                       Our mission is to give every African student a chance for
                       quality education.
                     </p>
@@ -46,16 +46,16 @@ export default function MissionAndVisionSection() {
                 </div>
               </div>
               <div className="flex gap-4 justify-center items-center">
-                <div className="h-full lg-md:h-[400px] py-2 bg-[#071C23] rounded-lg border border-solid border-[#A8A8A8] flex flex-col justify-center items-center">
+                <div className="h-full lg-md:h-[400px] py-2 bg-[#4D6C62] rounded-lg border border-solid border-[#A8A8A8] flex flex-col justify-center items-center">
                   <div className="max-w-[94vw] lg-md:w-[621px] xl:w-[550px] h-full flex flex-col gap-6 py-[45px] px-6 lg-md:px-[46px]">
                     <span className="w-[62px] h-[62px]">
                       <EyeVision />
                     </span>
                     <div className="w-full flex flex-col gap-[10px]">
-                      <h4 className="text-xl/[39px] font-semibold font-avant-garde text-white tracking-[0.5px]">
+                      <h4 className="text-xl/[39px] font-semibold font-sans text-white tracking-[0.5px]">
                         Vision
                       </h4>
-                      <p className="text-base/[30.4px] font-normal font-avant-garde text-white tracking-[0.5px]">
+                      <p className="text-base/[30.4px] font-normal font-sans text-white tracking-[0.5px]">
                         To become the Africa leader in providing access to
                         higher education, bridging skill gaps, and delivering
                         lifelong learning by leveraging technology and

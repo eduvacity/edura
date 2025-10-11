@@ -10,10 +10,10 @@ export default function AdmissionProcessSection() {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12 ">
         <div className="w-full max-w-[1280px] xl:py-12 flex flex-col gap-8 3xl:gap-[64px] px-4 xl:px-8 3xl:px-0">
           <div className="w-full flex flex-col gap-3">
-            <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+            <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
               How the admission process works
             </h2>
-            <p className="xl:w-[768px] text-lg font-avant-garde font-normal text-[#868B93]">
+            <p className="xl:w-[768px] text-lg font-sans font-normal text-[#868B93]">
               Vorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis.
             </p>
@@ -29,10 +29,10 @@ export default function AdmissionProcessSection() {
                       : "flex flex-col gap-1 border-l-4 border-solid border-[#F2F4F7] px-4"
                   }
                 >
-                  <h4 className="w-full font-medium font-avant-garde text-xl text-[#101828]">
+                  <h4 className="w-full font-medium font-sans text-xl text-[#101828]">
                     {v.title}
                   </h4>
-                  <p className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-sm/[26px] xl:text-base text-[#868B93]">
+                  <p className="w-full font-medium font-sans text-sm/[24px] lg:text-sm/[26px] xl:text-base text-[#868B93]">
                     {v.description}
                   </p>
                 </div>

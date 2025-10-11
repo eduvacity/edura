@@ -31,7 +31,7 @@ export default function LearningPathSection({ paths }: any) {
               }
               aria-controls={`panel${index + 1}d-content`}
               id={`panel${index + 1}d-header`}
-              className="w-full py-[10.5px] px-[15px] font-medium font-avant-garde text-base"
+              className="w-full py-[10.5px] px-[15px] font-medium font-sans text-base"
               style={{
                 height: expanded === `panel${index + 1}` ? "auto" : "53px",
               }}
@@ -44,14 +44,14 @@ export default function LearningPathSection({ paths }: any) {
                   return (
                     <p
                       key={i}
-                      className="w-full font-avant-garde font-medium text-left text-base text-[#788B8F] -tracking-[0.02em]"
+                      className="w-full font-sans font-medium text-left text-base text-[#788B8F] -tracking-[0.02em]"
                     >
                       <span>&bull;</span> {list.label}
                     </p>
                   )
                 })
               ) : (
-                <p className="w-full font-avant-garde font-medium text-left text-base text-[#788B8F]">
+                <p className="w-full font-sans font-medium text-left text-base text-[#788B8F]">
                   No content available.
                 </p>
               )}

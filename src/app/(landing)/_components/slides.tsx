@@ -109,10 +109,10 @@ export default function ImageSlider() {
                       exit="hidden"
                       className="absolute bottom-8 md:bottom-20 left-10  xl:left-5 2xl:left-20 flex flex-col gap-2 md:gap-4"
                     >
-                      <div className="w-full flex items-center gap-2 font-avant-garde font-bold text-lg  md:text-[31.79px]/[38.15px] text-white">
+                      <div className="w-full flex items-center gap-2 font-sans font-bold text-lg  md:text-[31.79px]/[38.15px] text-white">
                         <User2 /> {slide.name}
                       </div>
-                      <div className="w-full flex items-center gap-2 font-avant-garde font-medium text-lg md:text-[31.79px]/[38.15px] text-white">
+                      <div className="w-full flex items-center gap-2 font-sans font-medium text-lg md:text-[31.79px]/[38.15px] text-white">
                         <BookIcon /> {slide.course}
                       </div>
                     </motion.div>

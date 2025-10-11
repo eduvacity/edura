@@ -15,7 +15,7 @@ export default function LatestPostsSection() {
       <div className="w-full relative flex flex-col xl:flex-row justify-center items-center gap-12">
         <div className="w-full max-w-[1500px] xl:py-12 flex flex-col justify-center items-center 3xl:gap-[64px]">
           <div className="w-full xl:py-12 flex flex-col gap-8 3xl:gap-[64px] px-4 xl:px-8 3xl:px-0">
-            <h2 className="w-full text-2xl/[50px] lg-md:text-3xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+            <h2 className="w-full text-2xl/[50px] lg-md:text-3xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
               Recent blog posts
             </h2>
             <div className="flex flex-col xl:flex-row gap-[42.67px] xl:h-[576px]">

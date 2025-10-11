@@ -30,11 +30,11 @@ export default function ApplyForScholarship() {
                   className="w-[38px] h-[38px] lg-md:w-[60px] lg-md:h-[60px]"
                 />
               </span>{" "}
-              <h2 className="text-2xl lg-md:text-[40px]/[48px] font-semibold font-avant-garde text-pcolor -tracking-[0.02em] text-left flex gap-2">
+              <h2 className="text-2xl lg-md:text-[40px]/[48px] font-semibold font-sans text-pcolor -tracking-[0.02em] text-left flex gap-2">
                 Assetium Impact Scholarship Program
               </h2>
             </div>
-            <p className="w-full text-base lg-md:text-lg font-avant-garde font-normal text-[#868B93] text-center -tracking-[0.02em]">
+            <p className="w-full text-base lg-md:text-lg font-sans font-normal text-[#868B93] text-center -tracking-[0.02em]">
               Fill in your information are required to complete your scholarship
               application.
             </p>

@@ -144,8 +144,8 @@ export default function HomeLayout({
                         href={`/${updateKey(item.name.toLocaleLowerCase())}`}
                         className={
                           selected
-                            ? "w-auto font-semibold font-avant-garde lg-md:text-sm xl:text-sm text-pcolor tracking-[0.5px] hover:text-white"
-                            : "font-semibold font-avant-garde lg-md:text-sm xl:text-sm text-white tracking-[0.5px] hover:text-pcolor"
+                            ? "w-auto font-semibold font-sans lg-md:text-sm xl:text-sm text-pcolor tracking-[0.5px] hover:text-white"
+                            : "font-semibold font-sans lg-md:text-sm xl:text-sm text-white tracking-[0.5px] hover:text-pcolor"
                         }
                       >
                         {item.name}
@@ -157,14 +157,14 @@ export default function HomeLayout({
             </div>
             <div className="hidden xl:flex gap-4">
               <Link
-                href="https://portal.eduvacity.com/student-auth/signin"
-                className="w-full lg:w-fit h-[58px] flex items-center gap-2 text-white hover:text-white/90 text-sm xl:text-lg tracking-[0.5px] font-semibold font-avant-garde hover:scale-[0.99] cursor-pointer"
+                href="https://portal.Edura.com/student-auth/signin"
+                className="w-full lg:w-fit h-[58px] flex items-center gap-2 text-white hover:text-white/90 text-sm xl:text-lg tracking-[0.5px] font-semibold font-sans hover:scale-[0.99] cursor-pointer"
               >
                 <UserIcon /> Student portal
               </Link>
               <Link
-                href="https://portal.eduvacity.com/student-auth/signin"
-                className="w-full lg:w-fit h-[58px] font-bold font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer px-4"
+                href="https://portal.Edura.com/student-auth/signin"
+                className="w-full lg:w-fit h-[58px] font-bold font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer px-4"
               >
                 Apply now
               </Link>

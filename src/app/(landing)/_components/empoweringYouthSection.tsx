@@ -15,12 +15,12 @@ export default function EmpoweringSection() {
           bg-[url('/images/grid.png')] inset-0 bg-no-repeat bg-contain opacity-50 z-[1]`}
         ></div>
         <div
-          className={`w-full h-full px-4 xl:px-14 lg:rounded-[20px] bg-[#071C23] bg-[url('/images/grid.png')] bg-no-repeat bg-cover py-[40px] lg-md:py-[60px] z-10 grid grid-cols-1 xl:grid-cols-2`}
+          className={`w-full h-full px-4 xl:px-14 lg:rounded-[20px] bg-[#4D6C62] bg-[url('/images/grid.png')] bg-no-repeat bg-cover py-[40px] lg-md:py-[60px] z-10 grid grid-cols-1 xl:grid-cols-2`}
         >
           <div className="flex flex-col items-start justify-center gap-[25px] lg-md:w-[586px]">
             <p
               className={
-                "text-[28px]/[30px] lg:text-[50px]/[65px] lg-md:text-[50px]/[60px] xl:text-[40px]/[50px] -tracking-[0.02em] text-pcolor font-semibold font-avant-garde text-left"
+                "text-[28px]/[30px] lg:text-[50px]/[65px] lg-md:text-[50px]/[60px] xl:text-[40px]/[50px] -tracking-[0.02em] text-pcolor font-semibold font-sans text-left"
               }
             >
               <span className="text-[#fff]">We are</span> empowering <br />

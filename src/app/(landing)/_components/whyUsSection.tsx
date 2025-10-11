@@ -10,7 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 
-export default function WhyEduvacitySection() {
+export default function WhyEduraSection() {
   return (
     <motion.section
       className="w-full relative pb-14"
@@ -19,14 +19,14 @@ export default function WhyEduvacitySection() {
     >
       <div className="w-full max-w-[1586px] mx-auto flex flex-col gap-[43px]  px-2.5 xl:px-9 2xl:px-12 3xl:px-8">
         <div className="w-full flex flex-col px-2">
-          <Badge className="w-[120px] lg-md:w-[140px] px-[15px] py-[7px] text-[#071C23] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-avant-garde bg-[#FFF2DA] hover:bg-[#FFF2DA] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center">
-            Why Eduvacity
+          <Badge className="w-[120px] lg-md:w-[140px] px-[15px] py-[7px] text-[#4D6C62] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-sans bg-[#FFF2DA] hover:bg-[#FFF2DA] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center">
+            Why Edura
           </Badge>
           <div className="px-2 lg:px-0">
-            <h4 className="mt-4 lg-md:mt-0 w-full text-xl/[30px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left">
+            <h4 className="mt-4 lg-md:mt-0 w-full text-xl/[30px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left">
               We are Educating Africa&apos;s Next Billion Workforce.
             </h4>
-            <p className="text-base text-left font-medium font-avant-garde text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
+            <p className="text-base text-left font-medium font-sans text-[#3D3D3D] max-w-[640px] tracking-[0.5px]">
               Delivering World-Class Education to Africa, empowering local
               talent to thrive globally.
             </p>
@@ -41,10 +41,10 @@ export default function WhyEduvacitySection() {
               >
                 {v.icon}
                 <div className="w-full flex flex-col gap-[10px]">
-                  <h4 className="text-xl/[32px] font-semibold font-avant-garde text-[#071C23] tracking-[0.5px]">
+                  <h4 className="text-xl/[32px] font-semibold font-sans text-[#4D6C62] tracking-[0.5px]">
                     {v?.name}
                   </h4>
-                  <p className="text-base/[28px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                  <p className="text-base/[28px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                     {v.description}
                   </p>
                 </div>

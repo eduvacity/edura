@@ -1,7 +1,12 @@
 "use client"
+
+import { DrawerIcon } from "@/components/SVGs"
 import AppLogo from "@/components/SVGs/logo"
+import clsx from "clsx"
 import Link from "next/link"
-import { navLinks } from "./navLinks"
+import { useEffect, useState } from "react"
+import { accountNav, navLinks } from "./navLinks"
+import ProfileRow from "./profile/ProfileRow"
 
 interface SidebarProps {
   isSidebarOpen: boolean
@@ -9,55 +14,210 @@ interface SidebarProps {
   setIsSidebarOpen: (isOpen: boolean) => void
 }
 
-export default function Sidebar({ isSidebarOpen, pathname }: SidebarProps) {
+export default function Sidebar({
+  isSidebarOpen,
+  pathname,
+  setIsSidebarOpen,
+}: SidebarProps) {
+  const [collapsed, setCollapsed] = useState(false)
+
+  // restore/save collapsed pref
+  useEffect(() => {
+    const saved =
+      typeof window !== "undefined" && localStorage.getItem("sidebar:collapsed")
+    if (saved === "1") setCollapsed(true)
+  }, [])
+  useEffect(() => {
+    if (typeof window !== "undefined")
+      localStorage.setItem("sidebar:collapsed", collapsed ? "1" : "0")
+  }, [collapsed])
+
+  // close mobile drawer on route change
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024)
+      setIsSidebarOpen(false)
+  }, [pathname, setIsSidebarOpen])
+
+  const onToggleClick = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      setCollapsed((v) => !v) // desktop: toggle mini
+    } else {
+      setIsSidebarOpen(false) // mobile: close overlay
+    }
+  }
+
   return (
-    <aside
-      className={`fixed inset-y-0 left-0 z-30 py-4 w-[315px] bg-pdarkcolor shadow-[0px_4px_3px_0px_#0000000D] border-r border-[#0A323F] transition-transform transform ${
-        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } lg:translate-x-0 lg:static lg:shadow-none `}
-    >
-      <div className="flex flex-col gap-16">
-        <Link href="/" className="p-4">
-          <AppLogo className="w-[212px] h-[42.21px]" />
-        </Link>
-        <nav className="w-full relative">
-          <ul className="w-full flex flex-col gap-2">
-            {navLinks.map((link) => {
-              const selected = pathname.startsWith(`${link.href}`)
-              return (
-                <Link
-                  href={link.href}
-                  key={link.href}
-                  className={
-                    selected
-                      ? "w-full h-[60px] bg-[#38494E] p-1"
-                      : "w-full h-[60px] hover:bg-[#38494E]/15 p-1"
-                  }
-                >
-                  <div
-                    className={
-                      selected
-                        ? "w-full h-full border-l-4 border-pcolor text-pcolor flex items-center gap-[15px] px-4 rounded-[2px]"
-                        : "text-[#A7A7A7] w-full h-full flex items-center gap-[15px]  px-4"
-                    }
+    <>
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 z-20 bg-black/30 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        className={clsx(
+          "fixed top-0 left-0 z-30 bg-white border-r border-slate-100",
+          // width & collapse classes you already have...
+          "transition-transform duration-300 ease-out transform",
+          "lg:translate-x-0 lg:static",
+          isSidebarOpen
+            ? "translate-x-0 w-[266px]"
+            : "-translate-x-full w-[266px]",
+          "lg:transition-[width] lg:duration-300",
+          collapsed ? "lg:w-[84px]" : "lg:w-[266px]",
+
+          // NEW: height capped at 1024px, responsive to viewport
+          "max-h-[1024px]",
+          "supports-[height:100svh]:h-[min(100svh,1024px)]",
+          "h-[min(100vh,1024px)]"
+        )}
+      >
+        <div className="h-full max-h-full flex flex-col justify-between px-2 pt-8 pb-3 overflow-y-auto">
+          <div className="flex flex-col gap-5">
+            {/* HEADER — hide logo when collapsed, show only DrawerIcon */}
+            <div className={clsx("px-4")}>
+              <div
+                className={clsx(
+                  "flex items-center",
+                  collapsed ? "justify-center" : "justify-between"
+                )}
+              >
+                {!collapsed && (
+                  <Link
+                    href="/"
+                    aria-label="Go home"
+                    className="cursor-pointer"
                   >
-                    {link.icon}
-                    <span
-                      className={
-                        selected
-                          ? "font-satoshi font-medium text-[17px] leading-[22.95px] text-white text-left"
-                          : "font-satoshi font-medium text-[17px] leading-[22.95px] text-[#B0B0B0]"
-                      }
-                    >
-                      {link.name}
-                    </span>
-                  </div>
-                </Link>
-              )
-            })}
-          </ul>
-        </nav>
-      </div>
-    </aside>
+                    <AppLogo className="w-[75.1px] h-[19.97px]" />
+                  </Link>
+                )}
+
+                <button
+                  type="button"
+                  onClick={onToggleClick}
+                  className={clsx(
+                    "w-7 h-7 rounded-full bg-[#F5F5F5] flex items-center justify-center"
+                    // when expanded, keep at right; when collapsed, it's already centered
+                  )}
+                  aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+                  title={collapsed ? "Expand" : "Collapse"}
+                >
+                  <DrawerIcon aria-hidden className="cursor-pointer" />
+                </button>
+              </div>
+
+              <div className="mt-3 h-px w-full bg-[#F5F5F5] rounded-lg" />
+            </div>
+
+            {/* NAV */}
+            <nav className="px-3" aria-label="Primary">
+              <ul className="flex flex-col gap-2">
+                {navLinks.map((link) => {
+                  const selected = pathname.startsWith(link.href)
+                  return (
+                    <li key={link.href} className="group relative">
+                      <Link
+                        href={link.href}
+                        aria-current={selected ? "page" : undefined}
+                        title={link.name}
+                        className={clsx(
+                          "flex items-center rounded-[12px] p-3 transition-all",
+                          collapsed
+                            ? "w-[46px] justify-center"
+                            : "w-[226px] justify-start",
+                          "h-[46px] font-sans font-medium text-[16px] leading-[22px]",
+                          selected
+                            ? "text-white bg-[#38494E] border-[1.5px] shadow-[-4px_-2px_6px_0px_#1E1E1E33_inset]"
+                            : "text-[#424242] hover:bg-[#38494E]/15"
+                        )}
+                      >
+                        <span aria-hidden>{link.icon}</span>
+                        <span
+                          className={clsx(
+                            "ml-2 transition-opacity",
+                            collapsed
+                              ? "opacity-0 lg:sr-only absolute -left-[9999px]"
+                              : "opacity-100"
+                          )}
+                        >
+                          {link.name}
+                        </span>
+                      </Link>
+
+                      {collapsed && (
+                        <span className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-2 rounded-md bg-gray-900 text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100">
+                          {link.name}
+                        </span>
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+            </nav>
+
+            <div className="flex flex-col gap-4">
+              <div className="mt-3 h-px w-full bg-[#F5F5F5] rounded-lg" />
+
+              <nav className="px-3" aria-label="Primary">
+                <ul className="flex flex-col gap-2">
+                  {accountNav.map((link) => {
+                    const selected = pathname.startsWith(link.href)
+                    return (
+                      <li key={link.href} className="group relative">
+                        <Link
+                          href={link.href}
+                          aria-current={selected ? "page" : undefined}
+                          title={link.name}
+                          className={clsx(
+                            "flex items-center rounded-[12px] p-3 transition-all",
+                            collapsed
+                              ? "w-[46px] justify-center"
+                              : "w-[226px] justify-start",
+                            "h-[46px] font-sans font-medium text-[16px] leading-[22px]",
+                            selected
+                              ? "text-white bg-[#38494E] border-[1.5px] shadow-[-4px_-2px_6px_0px_#1E1E1E33_inset]"
+                              : "text-[#424242] hover:bg-[#38494E]/15"
+                          )}
+                        >
+                          <span aria-hidden>{link.icon}</span>
+                          <span
+                            className={clsx(
+                              "ml-2 transition-opacity",
+                              collapsed
+                                ? "opacity-0 lg:sr-only absolute -left-[9999px]"
+                                : "opacity-100"
+                            )}
+                          >
+                            {link.name}
+                          </span>
+                        </Link>
+
+                        {collapsed && (
+                          <span className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-2 rounded-md bg-gray-900 text-white text-xs px-2 py-1 opacity-0 group-hover:opacity-100">
+                            {link.name}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </nav>
+              <div className="mt-3 h-px w-full bg-[#F5F5F5] rounded-lg" />
+            </div>
+          </div>
+          <div className="mt-4">
+            <ProfileRow
+              name="Ibrahim Musa Abbah"
+              email="ibrahim.musa@gmail.com"
+              avatarSrc="/images/ibrahim-musa-abbah.jpg"
+              href="/instructor/settings"
+              collapsed={collapsed}
+            />
+          </div>
+        </div>
+      </aside>
+    </>
   )
 }

@@ -16,10 +16,10 @@ export default function ProgrammesCardsSection() {
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col">
             <div className="w-full flex flex-col gap-4">
-              <Badge className="w-[140px] px-[15px] py-[7px] text-[#071C23] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-avant-garde bg-[#D9F1FF] hover:bg-[#D9F1FF] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center capitalize">
+              <Badge className="w-[140px] px-[15px] py-[7px] text-[#4D6C62] text-xs/[24px] lg-md:text-sm/[24px] font-medium font-sans bg-[#D9F1FF] hover:bg-[#D9F1FF] rounded-[20px] border border-[#DBDBDB] flex justify-center items-center capitalize">
                 Programmes
               </Badge>
-              <h4 className="max-w-[722px] text-base/[50px] lg-md:text-2xl/[45px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+              <h4 className="max-w-[722px] text-base/[50px] lg-md:text-2xl/[45px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
                 Comprehensive Programmes for Professional Mastery
               </h4>
             </div>
@@ -33,23 +33,23 @@ export default function ProgrammesCardsSection() {
                 >
                   <Image src={v?.icon} width={40} height={40} alt="icon" />
                   <div className="w-full flex flex-col gap-[10px]">
-                    <h4 className="text-xl/[39px] font-semibold font-avant-garde text-[#071C23] tracking-[0.5px]">
+                    <h4 className="text-xl/[39px] font-semibold font-sans text-[#4D6C62] tracking-[0.5px]">
                       {v.name}
                     </h4>
-                    <p className="text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                    <p className="text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                       {v.description}
                     </p>
                     {!v.soon && (
                       <Link
                         href="/student/signup/details"
-                        className="flex gap-1 text-sm font-semibold font-avant-garde  text-pcolor hover:scale-[0.99]"
+                        className="flex gap-1 text-sm font-semibold font-sans  text-pcolor hover:scale-[0.99]"
                       >
                         Get Started
                         <EastIcon sx={{ fontSize: "18px" }} />
                       </Link>
                     )}
                     {v.soon && (
-                      <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-avant-garde py-[5px] mt-[20px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
+                      <Badge className="w-[110px] text-[#E3A229] bg-[#fff5e3] font-semibold font-sans py-[5px] mt-[20px] hover:bg-[#fff5e3] rounded-[20px] shadow-[0px] flex justify-center items-center">
                         Coming Soon
                       </Badge>
                     )}

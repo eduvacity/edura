@@ -40,12 +40,12 @@ export default function LeadershipSection() {
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px]">
           <div className="w-full flex flex-col px-2 lg-md:px-8 lg:mb-12 lg:pl-16 lg:pr-0">
             <div className="w-full flex flex-col gap-4">
-              <h4 className="max-w-[841px] text-xl/[50px] lg-md:text-2xl/[45px] xl:text-3xl/[45px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+              <h4 className="max-w-[841px] text-xl/[50px] lg-md:text-2xl/[45px] xl:text-3xl/[45px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
                 Our Leadership
               </h4>
-              <span className="max-w-[841px] text-[#788B8F] text-base lg-md:text-lg font-medium font-avant-garde">
+              <span className="max-w-[841px] text-[#788B8F] text-base lg-md:text-lg font-medium font-sans">
                 Meet the distinguished young and intelligent minds who guide and
-                inspire our community here at Eduvacity.
+                inspire our community here at Edura.
               </span>
             </div>
           </div>
@@ -119,10 +119,10 @@ export default function LeadershipSection() {
                             exit="hidden"
                             className="absolute bottom-8 lg-md:bottom-6 left-10 lg-md:left-10 flex flex-col"
                           >
-                            <div className="w-full flex items-center gap-2 font-avant-garde font-bold text-base  lg-md:text-lg text-white">
+                            <div className="w-full flex items-center gap-2 font-sans font-bold text-base  lg-md:text-lg text-white">
                               {slide.name}
                             </div>
-                            <div className="w-full flex items-center gap-2 font-avant-garde font-medium text-sm lg-md:text-base text-[#E3A22B] italic">
+                            <div className="w-full flex items-center gap-2 font-sans font-medium text-sm lg-md:text-base text-[#E3A22B] italic">
                               {slide.title}
                             </div>
                           </motion.div>
@@ -177,7 +177,7 @@ const leaders = [
   {
     name: "Ibrahim Musa Abbah",
     title: `Director/CEO`,
-    img: "/images/Ibrahim Musa Abbah.jpg",
+    img: "/images/ibrahim-musa-abbah.jpg",
   },
   {
     name: "Nasir Ibrahim Abbah",

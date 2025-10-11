@@ -1,32 +1,21 @@
 "use client"
 
-import { ArrowUp } from "@/components/SVGs"
 import { GreenArrowUp } from "@/components/SVGs/portal"
 import WavingPalm from "@/components/SVGs/portal/wavingPalm"
 import Image from "next/image"
+import CircularProgress from "../../_components/CircularProgressbar"
+import Badges from "./_components/badges"
 import QuizPerfomanceChart from "./_components/quizChart"
 import DashboardVideo from "./_components/video"
-import Badges from "./_components/badges"
-import CircularProgress from "../../_components/CircularProgressbar"
 
 export default function StudentDashboard() {
-  // Optional: Dynamic greeting logic
-  const currentHour = new Date().getHours()
-  const greeting =
-    currentHour < 12
-      ? "Good Morning"
-      : currentHour < 18
-      ? "Good Afternoon"
-      : "Good Evening"
-
   return (
     <div className="min-h-screen w-full relative p-2 lg:p-4 xl:p-6">
       {/* Greeting Section */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="mb-6">
         <h1 className="text-[26px] lg-md:text-[28px] lg:text-[32px] font-bold font-satoshi -tracking-[0.001em]">
-          {greeting} <span className="text-pcolor font-[900]">Charles</span>
+          Hello! Blessing
         </h1>
-        <WavingPalm />
       </div>
 
       {/* Layout Section */}
@@ -34,7 +23,7 @@ export default function StudentDashboard() {
         {/* Left Section */}
         <section className="flex-[1] xl:max-w-[920px] w-full flex flex-col gap-[17px]">
           <div className="relative w-full h-full min-h-[305px] xl:h-[305px] bg-white shadow-[0px_0px_27.9px_0px_#33404F05] overflow-hidden border border-solid border-[#DDDDDD] rounded-[17px]">
-            <div className="absolute inset-0 bg-pdarkcolor lg-md:bg-transparent lg-md:bg-[linear-gradient(90.33deg,_#071C23_40.59%,_rgba(49,50,50,0.9)_53.37%,_rgba(149,152,152,0.05)_94.41%)] z-[2] p-6">
+            <div className="absolute inset-0 bg-pdarkcolor lg-md:bg-transparent lg-md:bg-[linear-gradient(90.33deg,_#4D6C62_40.59%,_rgba(49,50,50,0.9)_53.37%,_rgba(149,152,152,0.05)_94.41%)] z-[2] p-6">
               <div className="w-full h-full flex flex-col justify-between">
                 <h4 className="text-[#CACACA] font-jost font-normal text-base leading-[23.12px] tracking-[0.02em]">
                   Your Learning performance

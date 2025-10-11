@@ -41,7 +41,7 @@ export default function CoursesPage() {
         />
         <div className="w-full max-w-[1280px] 3xl:px-24 3xl:py-8">
           <div className="w-full max-w-[708px] flex flex-col gap-1 px-1 lg:px-12 xl:px-1">
-            <h1 className="font-avant-garde font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
+            <h1 className="font-sans font-bold text-[28px]/[40px] lg-md:text-[45px]/[42px] lg:text-[30px]/[38px] xl:text-[38px]/[40px] 3xl:text-[48px]/[52px] tracking-[0.5px] text-left text-white px-4 lg-md:px-0">
               Choose top rated programs
             </h1>
             <p className="max-w-[600px] px-4 lg-md:px-0 font-normal font-arial text-sm/[24px] lg-md:text-xl lg:lg-md:text-[15px]/[24px] xl:text-xl 3xl:text-lg text-left text-[#959B9D] tracking-[0.5px]">

@@ -19,7 +19,7 @@ export default function CourseOverviewSection({ course }: any) {
     >
       <div className="w-full relative flex flex-col lg:flex-row xl:justify-center xl:items-center gap-6 lg-md:gap-12">
         <div className="w-full max-w-[1500px] flex flex-col gap-4 lg-md:gap-8 xl:gap-[16px] 3xl:gap-[43px] px-4 lg-md:px-0">
-          <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-avant-garde text-[#011B23] -tracking-[2%] text-left">
+          <h2 className="w-full text-2xl/[40px] lg-md:text-4xl/[60px] font-semibold font-sans text-[#011B23] -tracking-[2%] text-left">
             Course Overview
           </h2>
           <div className="w-full flex flex-col lg:flex-row gap-[61px] justify-between">
@@ -27,10 +27,10 @@ export default function CourseOverviewSection({ course }: any) {
               {overviews?.map((v, i) => {
                 return (
                   <div key={i} className="flex flex-col gap-1">
-                    <h4 className="w-full font-medium font-avant-garde text-2xl text-[#101828]">
+                    <h4 className="w-full font-medium font-sans text-2xl text-[#101828]">
                       {v.title}
                     </h4>
-                    <p className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-sm/[26px] xl:text-base text-[#868B93]">
+                    <p className="w-full font-medium font-sans text-sm/[24px] lg:text-sm/[26px] xl:text-base text-[#868B93]">
                       {v.description}
                     </p>
                   </div>
@@ -40,17 +40,17 @@ export default function CourseOverviewSection({ course }: any) {
 
             <div className="w-full xl:w-[430px] 3xl:w-[542px]  flex flex-col gap-8 shadow-[0px_4px_6px_-2px_#10182808,0px_12px_16px_-4px_#10182814 rounded-2xl">
               <div className="w-full flex-col gap-4 bg-white flex border-b border-[#EAECF0] px-4 py-8 xl:px-8 3xl:py-12 rounded-t-2xl">
-                <h4 className="text-xl text-[#011B23] font-medium font-avant-garde">
+                <h4 className="text-xl text-[#011B23] font-medium font-sans">
                   Programme Summary
                 </h4>
                 <div className="w-full flex flex-col gap-3">
                   <div className="w-full flex gap-3">
                     <GraduationCapIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93] capitalize">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93] capitalize">
                         Certification
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base lg-md:text-lg text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base lg-md:text-lg text-[#101828]">
                         {course?.courseName}
                       </span>
                     </div>
@@ -58,10 +58,10 @@ export default function CourseOverviewSection({ course }: any) {
                   <div className="w-full flex gap-3">
                     <GraduationCapIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93] capitalize">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93] capitalize">
                         Course type
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base lg-md:text-lg text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base lg-md:text-lg text-[#101828]">
                         {course?.courseType}
                       </span>
                     </div>
@@ -69,10 +69,10 @@ export default function CourseOverviewSection({ course }: any) {
                   <div className="w-full flex gap-3">
                     <MonitorComputerIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93]">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93]">
                         Learning Mode
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base text-[#101828]">
                         Online
                       </span>
                     </div>
@@ -81,10 +81,10 @@ export default function CourseOverviewSection({ course }: any) {
                     <div className="w-full flex gap-3">
                       <CreditCardIcon />
                       <div className="flex flex-col">
-                        <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93]">
+                        <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93]">
                           Application fees
                         </h4>
-                        <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base text-[#101828]">
+                        <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base text-[#101828]">
                           {course?.applicationFee
                             ? `₦${Number(course?.applicationFee).toLocaleString(
                                 undefined,
@@ -100,10 +100,10 @@ export default function CourseOverviewSection({ course }: any) {
                   <div className="w-full flex gap-3">
                     <RatioIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93]">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93]">
                         Teacher student ratio
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base text-[#101828]">
                         1:20
                       </span>
                     </div>
@@ -111,10 +111,10 @@ export default function CourseOverviewSection({ course }: any) {
                   <div className="w-full flex gap-3">
                     <VideoRcorderIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93]">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93]">
                         Hours of live session
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base text-[#101828]">
                         200+
                       </span>
                     </div>
@@ -122,10 +122,10 @@ export default function CourseOverviewSection({ course }: any) {
                   <div className="w-full flex gap-3">
                     <ClockIcon />
                     <div className="flex flex-col">
-                      <h4 className="w-full font-medium font-avant-garde text-xs lg-md:text-sm text-[#868B93]">
+                      <h4 className="w-full font-medium font-sans text-xs lg-md:text-sm text-[#868B93]">
                         Live sessions
                       </h4>
-                      <span className="w-full font-medium font-avant-garde text-sm/[24px] lg:text-base text-[#101828]">
+                      <span className="w-full font-medium font-sans text-sm/[24px] lg:text-base text-[#101828]">
                         25+
                       </span>
                     </div>
@@ -134,8 +134,8 @@ export default function CourseOverviewSection({ course }: any) {
               </div>
               <div className="w-full bg-[#F6F7F6] flex justify-center items-center py-2 px-4 h-[80px]">
                 <Link
-                  href="https://portal.eduvacity.com/student-auth/signin"
-                  className="w-full h-[56px] gap-2 rounded-[10px] flex justify-center items-center bg-pcolor hover:bg-pcolor/90 text-base text-[#E6F4ED] font-medium font-avant-garde hover:scale-[0.99]"
+                  href="https://portal.Edura.com/student-auth/signin"
+                  className="w-full h-[56px] gap-2 rounded-[10px] flex justify-center items-center bg-pcolor hover:bg-pcolor/90 text-base text-[#E6F4ED] font-medium font-sans hover:scale-[0.99]"
                 >
                   Start your application
                 </Link>

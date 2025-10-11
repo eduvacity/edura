@@ -18,22 +18,22 @@ export default function RequirementSection({
         <div className="w-full max-w-[1500px] flex flex-col gap-[43px] justify-center items-center">
           <div className="w-full max-w-[1280px] xl:py-12 flex flex-col gap-8 3xl:gap-[64px] px-4 xl:px-8 3xl:px-0">
             <div className="w-full flex flex-col">
-              <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize">
+              <h2 className="w-full text-base/[50px] lg-md:text-2xl/[60px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize">
                 Requirements
               </h2>
               {type?.toLowerCase() === "certificate" ? (
-                <p className="text-lg font-avant-garde font-normal text-[#868B93]">
+                <p className="text-lg font-sans font-normal text-[#868B93]">
                   {description ? description : null}
                 </p>
               ) : (
-                <p className="text-lg font-avant-garde font-normal text-[#868B93]">
+                <p className="text-lg font-sans font-normal text-[#868B93]">
                   No requirement
                 </p>
               )}
             </div>
             <div className="grid grid-cols-1 gap-[20px]">
               {type?.toLowerCase() === "certificate" ? (
-                <div className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]">
+                <div className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]">
                   <span className="flex-shrink-0">
                     <CheckCircled />
                   </span>
@@ -44,7 +44,7 @@ export default function RequirementSection({
                   return (
                     <div
                       key={i}
-                      className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-avant-garde text-[#4B4B4B] tracking-[0.5px]"
+                      className="w-full max-w-[502px] flex justify-start items-start gap-[12px] text-base/[30.4px] font-normal font-sans text-[#4B4B4B] tracking-[0.5px]"
                     >
                       <span className="flex-shrink-0">
                         <CheckCircled />
@@ -55,8 +55,8 @@ export default function RequirementSection({
                 })
               )}
               <Link
-                href="https://portal.eduvacity.com/student-auth/signin"
-                className="w-full mt-4 lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+                href="https://portal.Edura.com/student-auth/signin"
+                className="w-full mt-4 lg:w-1/2 lg-md:w-[170px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor hover:bg-pcolor/90 border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
               >
                 Enroll now <ArrwoUpCicled />
               </Link>

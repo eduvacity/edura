@@ -51,7 +51,7 @@ export default function StudentTopicAssignment({ params }: any) {
           </span>
         </div>
         <div className="w-[126px] h-[56px] flex flex-col">
-          <h4 className="font-bold font-satoshi text-[#071C23] text-xl/[27px] text-left">
+          <h4 className="font-bold font-satoshi text-[#4D6C62] text-xl/[27px] text-left">
             Due Date
           </h4>
           <p className="font-medium font-satoshi text-[#868686] text-left text-sm/[24.08px]">

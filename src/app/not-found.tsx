@@ -37,14 +37,14 @@ export default function PageNotFound() {
         <div className="w-full flex justify-center items-center flex-col gap-4">
           <NotFound />
 
-          <p className="font-medium font-avant-garde text-[28px]/[36px] tracking-normal text-pcolor capitalize z-[100]">
+          <p className="font-medium font-sans text-[28px]/[36px] tracking-normal text-pcolor capitalize z-[100]">
             Sorry page not found
           </p>
         </div>
         <div className="w-full flex flex-row justify-center items-center">
           <Link
             href="/"
-            className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-avant-garde text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+            className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
           >
             Go home <ArrwoUpCicled />
           </Link>

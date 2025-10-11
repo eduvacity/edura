@@ -18,10 +18,10 @@ export default function AboutUsPage() {
           <div className="w-full max-w-[380px] lg:max-w-[518px] flex justify-start items-center gap-2 lg-md:gap-4">
             <ABUZariaAffliate className="w-[48px] h-[48px] lg:w-[58px] lg:h-[58px]" />
             <div className="flex flex-col">
-              <h6 className="font-semibold font-avant-garde text-xs/[18px] italic tracking-[0.5px] text-left text-[#071C23]">
-                Eduvacity is Affiliated with
+              <h6 className="font-semibold font-sans text-xs/[18px] italic tracking-[0.5px] text-left text-[#4D6C62]">
+                Edura is Affiliated with
               </h6>
-              <h4 className="font-bold font-avant-garde text-base  lg-md:text-[21px]/[28px] tracking-[0.5px] text-left text-pcolor">
+              <h4 className="font-bold font-sans text-base  lg-md:text-[21px]/[28px] tracking-[0.5px] text-left text-pcolor">
                 Ahmadu Bello University, Zaria
               </h4>
             </div>

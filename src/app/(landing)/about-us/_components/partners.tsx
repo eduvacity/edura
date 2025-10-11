@@ -26,7 +26,7 @@ export default function PartnersSection() {
                     quality={100}
                     className="h-8"
                   />{" "}
-                  <span className="font-avant-garde -tracking-[0.02em] font-bold text-[#000000] text-xs lg:text-sm lg-md:text-xl">
+                  <span className="font-sans -tracking-[0.02em] font-bold text-[#000000] text-xs lg:text-sm lg-md:text-xl">
                     Assetium Capital Management Limited
                   </span>
                 </div>
@@ -39,7 +39,7 @@ export default function PartnersSection() {
                     quality={100}
                     className="h-8"
                   />{" "}
-                  <span className="font-avant-garde -tracking-[0.02em] font-bold text-[#000000] text-xs lg:text-sm lg-md:text-xl">
+                  <span className="font-sans -tracking-[0.02em] font-bold text-[#000000] text-xs lg:text-sm lg-md:text-xl">
                     Ahmadu Bello University
                   </span>
                 </div>

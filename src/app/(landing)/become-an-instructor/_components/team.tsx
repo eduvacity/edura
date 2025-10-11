@@ -59,10 +59,10 @@ export default function TeamSection() {
     >
       <div className="w-full relative flex flex-col justify-center items-center gap-6 lg:gap-12">
         <div className="w-full flex flex-col mb-8 gap-1 px-4 lg-md:px-6 xl:px-14">
-          <h4 className="max-w-[722px] text-[22px]/[45px] lg-md:text-3xl/[45px] xl:text-[36px]/[45px] font-semibold font-avant-garde text-[#011B23] tracking-[0.5px] text-left capitalize xl:px-12">
+          <h4 className="max-w-[722px] text-[22px]/[45px] lg-md:text-3xl/[45px] xl:text-[36px]/[45px] font-semibold font-sans text-[#011B23] tracking-[0.5px] text-left capitalize xl:px-12">
             We&apos;re a fast-growing team{" "}
           </h4>
-          <span className="max-w-[841px] text-[#788B8F] text-sm lg-md:text-lg font-medium font-avant-garde xl:px-12">
+          <span className="max-w-[841px] text-[#788B8F] text-sm lg-md:text-lg font-medium font-sans xl:px-12">
             We&apos;re always on the lookout for passionate, dynamic, and
             talented individuals.
           </span>
@@ -140,7 +140,7 @@ export default function TeamSection() {
                             exit="hidden"
                           >
                             <motion.div className="flex flex-col gap-6">
-                              <div className="w-full flex justify-between items-center gap-2 font-avant-garde font-bold text-lg  lg-md:text-xl text-white">
+                              <div className="w-full flex justify-between items-center gap-2 font-sans font-bold text-lg  lg-md:text-xl text-white">
                                 <h4 className="font-arial font-bold text-xl  lg-md:text-2xl text-white">
                                   {slide.name}
                                 </h4>
@@ -153,7 +153,7 @@ export default function TeamSection() {
                                 </Link>
                               </div>
                               <div className="w-full flex flex-col gap-1">
-                                <h4 className="w-full flex items-center gap-2 font-avant-garde font-semibold text-base  lg-md:text-lg text-white">
+                                <h4 className="w-full flex items-center gap-2 font-sans font-semibold text-base  lg-md:text-lg text-white">
                                   {slide.title}
                                 </h4>
                                 <h4 className="w-full flex items-center gap-2 font-arial font-norma text-sm text-white">
