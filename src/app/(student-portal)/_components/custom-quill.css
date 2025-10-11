@@ -1,0 +1,10 @@
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6 {
+  background-color: white; /* Set white background */
+  padding: 4px 8px; /* Optional padding for better spacing */
+  margin: 0; /* Reset margin for consistent styling */
+}
