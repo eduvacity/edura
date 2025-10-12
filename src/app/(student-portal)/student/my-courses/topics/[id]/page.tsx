@@ -16,7 +16,7 @@ export default function StudentClassDetail({ params }: any) {
           {course}
         </h1>
         <span className="font-satoshi font-medium text-sm leading-[24.08px] text-left text-[#868686]">
-          Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit amet.
+          Explore the topics in Introduction to Chemistry below.
         </span>
       </div>
 
@@ -26,7 +26,7 @@ export default function StudentClassDetail({ params }: any) {
         <section className="flex-[1] xl:max-w-[920px] w-full flex flex-col gap-[17px]">
           {data?.map((topic, index) => (
             <Link
-              href={`/student/classes/topics/topic/${topic.id}?topic=${topic.title}`}
+              href={`/student/my-courses/topics/topic/${topic.id}?topic=${topic.title}`}
               key={index}
               className="bg-white w-full h-[91px] p-5 rounded-[14px] border border-solid border-[#DDDDDD] flex flex-col"
             >
@@ -64,15 +64,15 @@ export default function StudentClassDetail({ params }: any) {
 const data = [
   {
     id: "2988493348",
-    title: "User-Centered Design",
+    title: "Introduction to Chemistry",
   },
   {
     id: "2988493318",
-    title: "User Journey Mapping",
+    title: "Atomic Structure and the Periodic Table",
   },
   {
     id: "1188493348",
-    title: "Wireframing and Prototyping",
+    title: "Chemical Reactions and Equations",
   },
   { id: "1188493348", title: "Clarity and Simplicity" },
   { id: "238493348", title: "Consistency and Standard" },

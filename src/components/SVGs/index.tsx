@@ -15,16 +15,16 @@ export function DrawerIcon({ className }: IconProps) {
       <path
         d="M6.14844 13.75H9.89844C13.0234 13.75 14.2734 12.5 14.2734 9.375V5.625C14.2734 2.5 13.0234 1.25 9.89844 1.25H6.14844C3.02344 1.25 1.77344 2.5 1.77344 5.625V9.375C1.77344 12.5 3.02344 13.75 6.14844 13.75Z"
         stroke="#212121"
-        stroke-width="0.9375"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="0.9375"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M6.14844 1.25V13.75"
         stroke="#212121"
-        stroke-width="0.9375"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="0.9375"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )

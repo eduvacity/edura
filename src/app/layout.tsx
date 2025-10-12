@@ -1,8 +1,10 @@
+// app/layout.tsx
 import theme from "@/components/theme/mui"
 import StoreProvider from "@/lib/redux/providers"
 import ScriptTags from "@/lib/scripts"
-import { CssBaseline, StyledEngineProvider, ThemeProvider } from "@mui/material"
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
+import { CssBaseline, ThemeProvider } from "@mui/material"
+// ✅ Use the Next 15 helper:
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 import "monaco-editor/min/vs/editor/editor.main.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
@@ -13,10 +15,8 @@ import "./globals.css"
 const dev = process.env.NODE_ENV !== "production"
 export const server = dev ? "http://localhost:3000" : "https://www.Edura.com"
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-}
+export const viewport: Viewport = { width: "device-width", initialScale: 1 }
+
 export const metadata: Metadata = {
   title: "Edura - learn today, build tomorrow",
   description:
@@ -58,7 +58,6 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon-180.png", sizes: "180x180" }],
   },
 }
-// Use a CSS variable so Tailwind + MUI can share it
 
 const outfit = localFont({
   src: [
@@ -79,9 +78,9 @@ const outfit = localFont({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className={`${outfit.variable} antialiased`}>
       <head>
@@ -89,13 +88,12 @@ export default function RootLayout({
       </head>
       <body className="font-sans">
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              <StoreProvider>{children}</StoreProvider>
-            </ThemeProvider>
-          </StyledEngineProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <StoreProvider>{children}</StoreProvider>
+          </ThemeProvider>
         </AppRouterCacheProvider>
+
         <ToastContainer position="top-right" autoClose={5000} />
       </body>
     </html>

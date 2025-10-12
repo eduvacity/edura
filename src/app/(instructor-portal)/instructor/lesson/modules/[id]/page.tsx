@@ -62,21 +62,20 @@ export default function LessonModules({ params }: any) {
 const data = [
   {
     id: "2988493348",
-    title: "Beta - Intro to Design Principle",
-    description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
-mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
+    title: "Introduction to Chemistry",
+    description: `Learn the basics of matter, elements, and compounds.`,
     published: true,
   },
   {
     id: "2988493318",
-    title: "Alpha - Layout Design",
-    description: `Faucibus hendrerit mattis tincidunt dictum lobortis morbi ornare bibendum amet. Libero aliquet at facilisis justo.`,
+    title: "Atomic Structure and the Periodic Table",
+    description: `Discover how atoms form and how elements are organized.`,
     published: false,
   },
   {
     id: "1188493348",
-    title: "Gamma - Prototyping",
-    description: `Faucibus hendrerit mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
+    title: "Chemical Reactions and Equations",
+    description: `Understand how substances combine and transform.`,
     published: false,
   },
 ]

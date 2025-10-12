@@ -72,10 +72,10 @@ export default function StudentDashboard() {
               <div className="w-full flex justify-between">
                 <div className="flex flex-col gap-3">
                   <h4 className="font-bold font-satoshi text-black text-[22px] leading-[20.57px] -tracking-[0.001em]">
-                    Introduction to UI/UX
+                    Chemistry
                   </h4>
                   <span className="font-normal font-satoshi text-black text-[20px] leading-[16.83px] -tracking-[0.001em]">
-                    Introduction to design system
+                    Introduction to chemistry
                   </span>
                 </div>
                 <CircularProgress percentage={65} />
@@ -98,7 +98,7 @@ export default function StudentDashboard() {
             {/* Course Performance (Quiz) */}
             <div className="bg-white w-full h-[305px] rounded-[17px] p-4 border-b-[3px] border-[#DDDDDD] flex flex-col gap-[22px]">
               <h4 className="text-[#263238] text-base leading-[22px] text-left font-bold font-satoshi">
-                Newly Earned Badge
+                Top quiz scorer of the week
               </h4>
 
               <Badges />

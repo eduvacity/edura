@@ -128,7 +128,7 @@ export default function StudentTopicDetail({ params }: any) {
                             module.title.toLowerCase() === "quiz"
                               ? () => {
                                   router.push(
-                                    `/student/classes/topics/topic/quiz/${topic.id}?topic=${topic.title}&description=${topic.description}`
+                                    `/student/my-courses/topics/topic/quiz/${topic.id}?topic=${topic.title}&description=${topic.description}`
                                   )
                                 }
                               : () => handleCurrentTopicChange(module)

@@ -214,7 +214,7 @@ function CourseCard({ course }: { course: Course }) {
           <span className="text-[#212121] font-medium">{course.progress}%</span>
         </span>
         <Link
-          href={`/student/courses/topics/${
+          href={`/student/my-courses/topics/${
             course.id
           }?course=${encodeURIComponent(course.title)}`}
           className="h-[28px] inline-flex items-center gap-1 rounded text-[#212121] px-3 py-1 text-[14px]/[16px] tracking-normal font-semibold border border-[#E0E0E0] bg-white transition cursor-pointer"

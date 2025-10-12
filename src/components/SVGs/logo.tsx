@@ -8,7 +8,7 @@ export default function AppLogo(props: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
     >
-      <g clip-path="url(#clip0_4_9677)">
+      <g clipPath="url(#clip0_4_9677)">
         <mask
           id="mask0_4_9677"
           style={{ maskType: "luminance" }}

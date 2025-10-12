@@ -545,7 +545,7 @@ export default function AddModule({ params }: any) {
     <div className="w-full pb-[104px] flex flex-col gap-[54px]">
       <div className="w-full flex flex-col lg-md:flex-row justify-between">
         <Link
-          href={`/instructor/lesson/topics/${params?.id}?course=${course}`}
+          href={`/instructor/lesson/modules/${params?.id}?course=${course}`}
           className="flex mb-6 gap-2 items-center cursor-pointer"
         >
           <ArrowRight className="transform rotate-180 text-[#4D6C62]" />

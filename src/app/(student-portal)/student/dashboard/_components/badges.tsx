@@ -27,12 +27,12 @@ export default function Badges() {
 const data = [
   {
     title: "Explorer",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, sed. Ut officiis quae non.`,
+    description: `Completed all modules with distinction`,
     icon: <ExplorerIcon />,
   },
   {
     title: "Ultimate",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, sed. Ut officiis quae non.`,
+    description: `Completed a course in record time`,
     icon: <ExplorerIcon />,
   },
 ]

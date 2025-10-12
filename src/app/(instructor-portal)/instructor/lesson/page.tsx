@@ -43,23 +43,23 @@ export default function InstructorLessons() {
 const data = [
   {
     id: "les01",
-    title: "Introduction to UI/UX designs",
+    title: "Chemistry",
     description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
 mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
-    imgSrc: "/images/uiux.png",
+    imgSrc: "/images/courses/chemistry.webp",
   },
   {
     id: "les02",
     title: "Elementary React Js 18.2.0",
     description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
 mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
-    imgSrc: "/images/react.png",
+    imgSrc: "/images/courses/coding-img.webp",
   },
   {
     id: "lez03",
-    title: "Introduction Modelling",
+    title: "Psychology",
     description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
 mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
-    imgSrc: "/images/science.png",
+    imgSrc: "/images/courses/psychology.webp",
   },
 ]
