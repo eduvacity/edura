@@ -77,10 +77,10 @@ export default function StudentSettings() {
               ) : (
                 <div
                   className={`w-full h-[120px] flex items-center gap-6 rounded-[14.02px] py-2 px-4 bg-white normal-case  ${
-                    value === index ? "text-pcolor" : "text-[#777777]"
+                    value === index ? "text-primary" : "text-[#777777]"
                   } ${
                     value === index
-                      ? "border-[0.93px] border-solid border-pcolor"
+                      ? "border-[0.93px] border-solid border-primary"
                       : "border-[0.93px] border-solid border-[#DDDDDD]"
                   }`}
                 >
@@ -88,7 +88,7 @@ export default function StudentSettings() {
                   <div className="flex flex-col gap-1">
                     <h3
                       className={`font-bold font-arial text-[19px]/[20.57px] -tracking-[0.001em] text-left ${
-                        value === index ? "text-pcolor" : "text-[#777777]"
+                        value === index ? "text-primary" : "text-[#777777]"
                       }`}
                     >
                       {tab.name}

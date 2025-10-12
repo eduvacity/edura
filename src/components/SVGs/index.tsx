@@ -1593,8 +1593,8 @@ export function ComingSoonIcon() {
           y2="83.5402"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#D0DADD" />
-          <stop offset="0.350715" stopColor="white" stopOpacity="0" />
+          <stop stoprimary="#D0DADD" />
+          <stop offset="0.350715" stoprimary="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1151_36590"
@@ -1604,8 +1604,8 @@ export function ComingSoonIcon() {
           y2="83.5401"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#D0DADD" />
-          <stop offset="0.350715" stopColor="white" stopOpacity="0" />
+          <stop stoprimary="#D0DADD" />
+          <stop offset="0.350715" stoprimary="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1151_36590"
@@ -1615,8 +1615,8 @@ export function ComingSoonIcon() {
           y2="83.5401"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#D0DADD" />
-          <stop offset="0.350715" stopColor="white" stopOpacity="0" />
+          <stop stoprimary="#D0DADD" />
+          <stop offset="0.350715" stoprimary="white" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

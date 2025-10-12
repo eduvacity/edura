@@ -11,7 +11,7 @@ const NotFound = dynamic(() => import("@/components/lottie/notfound"), {
 })
 export default function PageNotFound() {
   return (
-    <div className="w-full flex flex-col min-h-screen gap-16 3xl:gap-24 bg-pdarkcolor">
+    <div className="w-full flex flex-col min-h-screen gap-16 3xl:gap-24 bg-[#4D6C62]">
       <motion.div
         className="absolute bg-cover bg-center bg-repeat top-0 left-0 w-full h-full sclae-[0.5px]"
         style={{
@@ -37,14 +37,14 @@ export default function PageNotFound() {
         <div className="w-full flex justify-center items-center flex-col gap-4">
           <NotFound />
 
-          <p className="font-medium font-sans text-[28px]/[36px] tracking-normal text-pcolor capitalize z-[100]">
+          <p className="font-medium font-sans text-[28px]/[36px] tracking-normal text-primary capitalize z-[100]">
             Sorry page not found
           </p>
         </div>
         <div className="w-full flex flex-row justify-center items-center">
           <Link
             href="/"
-            className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-pcolor border border-solid border-pcolor rounded-xl hover:scale-[0.99] cursor-pointer"
+            className="w-full lg:w-1/2 lg-md:w-[200px] h-[58px] font-medium font-sans text-base xl:text-lg/[21.6px] text-white flex justify-center items-center gap-2 bg-primary border border-solid border-primary rounded-xl hover:scale-[0.99] cursor-pointer"
           >
             Go home <ArrwoUpCicled />
           </Link>

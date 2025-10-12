@@ -32,14 +32,10 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        pcolor: "#3FA46E",
+        primary: "#3FA46E",
         pdarkcolor: "#4D6C62",
         bgcolor: "#F9EDD7",
         orange: "#E3A22B",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

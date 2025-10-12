@@ -123,7 +123,7 @@ export default function PublishSection({ topic }: Props) {
                       </label>
                       <div className="w-full relative">
                         <div
-                          className={`w-full h-[60px] px-6 rounded-[7px] border-[0.99px] border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-[15.87px]/[18.25px] font-normal cursor-text text-[#4D4D4D] hover:border-pcolor focus:outline-none focus:border-pcolor disabled:bg-[#F8F8F8] focus:bg-[#F8F8F8] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F5F5F5]`}
+                          className={`w-full h-[60px] px-6 rounded-[7px] border-[0.99px] border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-[15.87px]/[18.25px] font-normal cursor-text text-[#4D4D4D] hover:border-primary focus:outline-none focus:border-primary disabled:bg-[#F8F8F8] focus:bg-[#F8F8F8] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F5F5F5]`}
                         >
                           http:Edura/ggdy38836d/ui/uxdesigncoures
                         </div>

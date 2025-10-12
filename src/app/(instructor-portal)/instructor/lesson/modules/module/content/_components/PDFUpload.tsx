@@ -296,7 +296,7 @@ export default function PdfUpload({ moduleId }: { moduleId: string }) {
             <div className="w-[246px] h-[48px] flex gap-3">
               <button
                 type="button"
-                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-pcolor font-satoshi text-base text-pcolor hover:scale-[0.99] flex justify-center items-center"
+                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-primary font-satoshi text-base text-primary hover:scale-[0.99] flex justify-center items-center"
               >
                 Cancel
               </button>

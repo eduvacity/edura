@@ -336,7 +336,7 @@ export default function VideoUpload({ moduleId }: { moduleId: string }) {
             <div className="w-[246px] h-[48px] flex gap-3">
               <button
                 type="button"
-                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-pcolor font-satoshi text-base text-pcolor hover:scale-[0.99] flex justify-center items-center"
+                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-primary font-satoshi text-base text-primary hover:scale-[0.99] flex justify-center items-center"
               >
                 Cancel
               </button>
@@ -482,7 +482,7 @@ export default function VideoUpload({ moduleId }: { moduleId: string }) {
                 value={pastedLink}
                 onChange={(e) => setPastedLink(e.target.value)}
                 placeholder="Paste your link here"
-                className="w-full max-w-[1499px] min-h-[56px] border border-solid border-[#DDDDDD] bg-[#F5F6F7] rounded-[7px] py-[18px] px-6 font-satoshi font-normal text-base tracking-normal text-[#333333] placeholder:text-[#7A8699] outline-none hover:border-pcolor focus:border-pcolor"
+                className="w-full max-w-[1499px] min-h-[56px] border border-solid border-[#DDDDDD] bg-[#F5F6F7] rounded-[7px] py-[18px] px-6 font-satoshi font-normal text-base tracking-normal text-[#333333] placeholder:text-[#7A8699] outline-none hover:border-primary focus:border-primary"
               />
             ) : null}
           </div>

@@ -188,7 +188,7 @@ export default function InstructorQuizPage() {
                 name="search"
                 value={search}
                 placeholder="Search for User"
-                className="bg-white w-full h-[55px] py-4 px-3 pl-10 appearance-none rounded-[7px] border border-solid border-[#BDBCBC] hover:border-pcolor outline-none focus:border-pcolor text-[#4D4D4D] font-arial font-normal text-base/[18.4px] tracking-normal placeholder:text-[#4D4D4D]"
+                className="bg-white w-full h-[55px] py-4 px-3 pl-10 appearance-none rounded-[7px] border border-solid border-[#BDBCBC] hover:border-primary outline-none focus:border-primary text-[#4D4D4D] font-arial font-normal text-base/[18.4px] tracking-normal placeholder:text-[#4D4D4D]"
                 onChange={(e) => setSearch(e.target.value)}
               />
               <div className="absolute left-4 top-5">
@@ -240,7 +240,7 @@ export default function InstructorQuizPage() {
           <div className="w-[65px] h-full flex gap-[3px]">
             <button
               aria-label="Previous page"
-              className="w-[31px] h-[31px] rounded-[3px] border-[0.59px] border-solid bg-pcolor disabled:bg-[#CDCDCD] flex justify-center items-center text-white"
+              className="w-[31px] h-[31px] rounded-[3px] border-[0.59px] border-solid bg-primary disabled:bg-[#CDCDCD] flex justify-center items-center text-white"
               disabled={page === 0}
               onClick={() => handlePageNavigation(PaginationDirection.Previous)}
             >
@@ -248,7 +248,7 @@ export default function InstructorQuizPage() {
             </button>
             <button
               aria-label="Next page"
-              className="w-[31px] h-[31px] rounded-[3px] border-[0.59px] border-solid bg-pcolor disabled:bg-[#CDCDCD] flex justify-center items-center text-white"
+              className="w-[31px] h-[31px] rounded-[3px] border-[0.59px] border-solid bg-primary disabled:bg-[#CDCDCD] flex justify-center items-center text-white"
               onClick={() => handlePageNavigation(PaginationDirection.Next)}
               disabled={page + 1 === totalPageemails || isEmpty(rows)}
             >

@@ -233,7 +233,7 @@ export default function ModuleContentDetail({ params }: any) {
           <div className="w-full max-w-[703px] h-[690px] rounded-[10px] border border-solid border-[#D7D7D7] bg-[#ECEDF1] flex flex-col gap-[24px]">
             <div className="w-full flex flex-col gap-[17px]">
               <div className="w-full bg-white h-[65px] flex items-center  rounded-t-[10px]">
-                <h2 className="w-full px-4 font-satoshi font-bold text-[18px]/[24.3px] text-pcolor tracking-normal ">
+                <h2 className="w-full px-4 font-satoshi font-bold text-[18px]/[24.3px] text-primary tracking-normal ">
                   Add Contents
                 </h2>
               </div>

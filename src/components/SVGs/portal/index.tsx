@@ -1639,8 +1639,8 @@ export function ExplorerIcon() {
           y2="60.3196"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_381_2721"
@@ -1650,8 +1650,8 @@ export function ExplorerIcon() {
           y2="49.8253"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_381_2721"
@@ -1661,8 +1661,8 @@ export function ExplorerIcon() {
           y2="38.5924"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_381_2721"
@@ -1672,8 +1672,8 @@ export function ExplorerIcon() {
           y2="51.151"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_381_2721"
@@ -1683,8 +1683,8 @@ export function ExplorerIcon() {
           y2="38.5915"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_381_2721"
@@ -1694,8 +1694,8 @@ export function ExplorerIcon() {
           y2="53.7523"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0BD3E3" />
-          <stop offset="1" stopColor="#017CCC" />
+          <stop stoprimary="#0BD3E3" />
+          <stop offset="1" stoprimary="#017CCC" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_381_2721"
@@ -1705,8 +1705,8 @@ export function ExplorerIcon() {
           y2="47.8021"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_381_2721"
@@ -1716,8 +1716,8 @@ export function ExplorerIcon() {
           y2="34.6235"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_381_2721"
@@ -1727,8 +1727,8 @@ export function ExplorerIcon() {
           y2="47.9226"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_381_2721"
@@ -1738,8 +1738,8 @@ export function ExplorerIcon() {
           y2="35.2425"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_381_2721"
@@ -1749,8 +1749,8 @@ export function ExplorerIcon() {
           y2="62.6561"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_381_2721"
@@ -1760,8 +1760,8 @@ export function ExplorerIcon() {
           y2="35.2965"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_381_2721"
@@ -1771,8 +1771,8 @@ export function ExplorerIcon() {
           y2="16.6461"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0BD3E3" />
-          <stop offset="1" stopColor="#017CCC" />
+          <stop stoprimary="#0BD3E3" />
+          <stop offset="1" stoprimary="#017CCC" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_381_2721"
@@ -1782,8 +1782,8 @@ export function ExplorerIcon() {
           y2="55.2232"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_381_2721"
@@ -1793,8 +1793,8 @@ export function ExplorerIcon() {
           y2="19.7906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FE9045" />
-          <stop offset="1" stopColor="#EA581F" />
+          <stop stoprimary="#FE9045" />
+          <stop offset="1" stoprimary="#EA581F" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_381_2721"
@@ -1804,8 +1804,8 @@ export function ExplorerIcon() {
           y2="10.432"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#C6DEF6" />
-          <stop offset="1" stopColor="#8CC3EA" />
+          <stop stoprimary="#C6DEF6" />
+          <stop offset="1" stoprimary="#8CC3EA" />
         </linearGradient>
         <clipPath id="clip0_381_2721">
           <rect
@@ -1916,8 +1916,8 @@ export function UltimateIcon() {
           y2="60.3196"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_381_2721"
@@ -1927,8 +1927,8 @@ export function UltimateIcon() {
           y2="49.8253"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_381_2721"
@@ -1938,8 +1938,8 @@ export function UltimateIcon() {
           y2="38.5924"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_381_2721"
@@ -1949,8 +1949,8 @@ export function UltimateIcon() {
           y2="51.151"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_381_2721"
@@ -1960,8 +1960,8 @@ export function UltimateIcon() {
           y2="38.5915"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_381_2721"
@@ -1971,8 +1971,8 @@ export function UltimateIcon() {
           y2="53.7523"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0BD3E3" />
-          <stop offset="1" stopColor="#017CCC" />
+          <stop stoprimary="#0BD3E3" />
+          <stop offset="1" stoprimary="#017CCC" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_381_2721"
@@ -1982,8 +1982,8 @@ export function UltimateIcon() {
           y2="47.8021"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_381_2721"
@@ -1993,8 +1993,8 @@ export function UltimateIcon() {
           y2="34.6235"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_381_2721"
@@ -2004,8 +2004,8 @@ export function UltimateIcon() {
           y2="47.9226"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_381_2721"
@@ -2015,8 +2015,8 @@ export function UltimateIcon() {
           y2="35.2425"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_381_2721"
@@ -2026,8 +2026,8 @@ export function UltimateIcon() {
           y2="62.6561"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#81CD4F" />
-          <stop offset="1" stopColor="#48952D" />
+          <stop stoprimary="#81CD4F" />
+          <stop offset="1" stoprimary="#48952D" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_381_2721"
@@ -2037,8 +2037,8 @@ export function UltimateIcon() {
           y2="35.2965"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#EDF1F4" />
-          <stop offset="1" stopColor="#D8DFE7" />
+          <stop stoprimary="#EDF1F4" />
+          <stop offset="1" stoprimary="#D8DFE7" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_381_2721"
@@ -2048,8 +2048,8 @@ export function UltimateIcon() {
           y2="16.6461"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0BD3E3" />
-          <stop offset="1" stopColor="#017CCC" />
+          <stop stoprimary="#0BD3E3" />
+          <stop offset="1" stoprimary="#017CCC" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_381_2721"
@@ -2059,8 +2059,8 @@ export function UltimateIcon() {
           y2="55.2232"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FECC2B" />
-          <stop offset="1" stopColor="#FC9A13" />
+          <stop stoprimary="#FECC2B" />
+          <stop offset="1" stoprimary="#FC9A13" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_381_2721"
@@ -2070,8 +2070,8 @@ export function UltimateIcon() {
           y2="19.7906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FE9045" />
-          <stop offset="1" stopColor="#EA581F" />
+          <stop stoprimary="#FE9045" />
+          <stop offset="1" stoprimary="#EA581F" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_381_2721"
@@ -2081,8 +2081,8 @@ export function UltimateIcon() {
           y2="10.432"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#C6DEF6" />
-          <stop offset="1" stopColor="#8CC3EA" />
+          <stop stoprimary="#C6DEF6" />
+          <stop offset="1" stoprimary="#8CC3EA" />
         </linearGradient>
         <clipPath id="clip0_381_2721">
           <rect

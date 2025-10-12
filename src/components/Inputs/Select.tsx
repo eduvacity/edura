@@ -44,7 +44,7 @@ const MultiValueRemove = (props: any) => {
 }
 
 const controlStyles = {
-  base: "peer w-full h-[54px] px-6 rounded-[6.94px] border border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#4D6C62] hover:border-pcolor focus:outline-none focus:border-pcolor disabled:bg-[#F4F4F4] focus:bg-[#F4F4F4] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F4F4F4]",
+  base: "peer w-full h-[54px] px-6 rounded-[6.94px] border border-solid border-[#BDBCBC] justify-start items-center gap-3 flex font-arial text-sm lg-md:textbase/[18.4px] font-normal cursor-text text-[#4D6C62] hover:border-primary focus:outline-none focus:border-primary disabled:bg-[#F4F4F4] focus:bg-[#F4F4F4] disabled:hover:border-[#5C5C5C] disabled:cursor-not-allowed disabled:text-[#5C5C5C] placeholder:text-[#4D4D4D] bg-[#F4F4F4]",
   focus: "border-[#BDBCBC]",
   nonFocus: "border-[#BDBCBC]",
   error:

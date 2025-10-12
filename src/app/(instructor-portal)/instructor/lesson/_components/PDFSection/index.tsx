@@ -9,8 +9,8 @@ const PDFSection: React.FC = () => {
       <div className="w-full flex justify-between items-center gap-[17px]">
         <div className="w-full lg-md:h-[57px] flex gap-[17px]">
           <div className="flex items-center gap-[10px]">
-            <PPTIcon className="text-pcolor w-[59px] h-[22px]" />
-            <span className="font-satoshi font-medium text-base/[21.6px] tracking-normal text-pcolor">
+            <PPTIcon className="text-primary w-[59px] h-[22px]" />
+            <span className="font-satoshi font-medium text-base/[21.6px] tracking-normal text-primary">
               PPT
             </span>
           </div>

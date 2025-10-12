@@ -40,21 +40,21 @@ export default function CookiePolicy() {
             Our App uses the following types of cookies for the purposes set out
             below:
           </p>
-          <div className="w-full overflow-hidden rounded-lg border border-solid border-pcolor">
+          <div className="w-full overflow-hidden rounded-lg border border-solid border-primary">
             <table className="table-fixed py-8 table min-w-full border-collapse">
               <thead>
-                <tr className="w-full border-b border-solid border-pcolor px-4">
-                  <th className="text-left w-[200px] text-[20px]/[24.2px] font-medium font-sans text-[#011B23] border-r border-solid border-pcolor p-4">
+                <tr className="w-full border-b border-solid border-primary px-4">
+                  <th className="text-left w-[200px] text-[20px]/[24.2px] font-medium font-sans text-[#011B23] border-r border-solid border-primary p-4">
                     Type of cookie
                   </th>
-                  <th className="text-left text-[20px]/[30px] font-medium font-sans text-[#011B23] border-r border-solid border-pcolor p-4">
+                  <th className="text-left text-[20px]/[30px] font-medium font-sans text-[#011B23] border-r border-solid border-primary p-4">
                     Purpose
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="w-full border-b border-solid border-pcolor py-8 px-4">
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                <tr className="w-full border-b border-solid border-primary py-8 px-4">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Essential Cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">
@@ -67,8 +67,8 @@ export default function CookiePolicy() {
                     only use these cookies to provide you with those services.
                   </td>
                 </tr>
-                <tr className="border-b border-solid border-pcolor">
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                <tr className="border-b border-solid border-primary">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Functionality Cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">
@@ -81,8 +81,8 @@ export default function CookiePolicy() {
                     re-enter your preferences every time you visit our App.
                   </td>
                 </tr>
-                <tr className="border-b border-solid border-pcolor">
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                <tr className="border-b border-solid border-primary">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Analytics and Performance Cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">
@@ -110,8 +110,8 @@ export default function CookiePolicy() {
                     </span>
                   </td>
                 </tr>
-                <tr className="border-b border-solid border-pcolor">
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                <tr className="border-b border-solid border-primary">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Targeted and advertising cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">
@@ -122,8 +122,8 @@ export default function CookiePolicy() {
                     interests. Based
                   </td>
                 </tr>
-                <tr className="border-b border-solid border-pcolor">
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                <tr className="border-b border-solid border-primary">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Targeted and advertising cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">
@@ -151,7 +151,7 @@ export default function CookiePolicy() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-pcolor">
+                  <td className="p-4 text-left font-arial font-normal text-base text-[#011B23] border-r border-solid border-primary">
                     Social Media Cookies
                   </td>
                   <td className="text-left font-arial font-normal text-base text-[#011B23] p-4">

@@ -26,7 +26,7 @@ export default function StudentDashboard() {
       {/* Greeting Section */}
       <div className="flex items-center gap-3 mb-6">
         <h1 className="text-[26px] lg-md:text-[28px] lg:text-[32px] font-bold font-satoshi -tracking-[0.001em]">
-          {greeting} <span className="text-pcolor font-[900]">Charles</span>
+          {greeting} <span className="text-primary font-[900]">Charles</span>
         </h1>
         <WavingPalm />
       </div>

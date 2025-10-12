@@ -195,7 +195,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
             <div className="w-[246px] h-[48px] flex gap-3">
               <button
                 type="button"
-                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-pcolor font-satoshi text-base text-pcolor hover:scale-[0.99] flex justify-center items-center"
+                className="w-[123px] h-full py-[18px] px-[36px] rounded-[7px] border border-primary font-satoshi text-base text-primary hover:scale-[0.99] flex justify-center items-center"
                 onClick={() => toast.info("Submission cancelled")}
               >
                 Cancel
@@ -241,7 +241,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                       ] || ""
                     )
                   }}
-                  className="w-full h-[50px] border border-solid border-[#DDDDDD] bg-[#F5F6F7] rounded-[7px] py-1 px-6 font-satoshi font-normal text-base tracking-normal text-[#333333] placeholder:text-[#7A8699] outline-none hover:border-pcolor focus:border-pcolor flex appearance-none "
+                  className="w-full h-[50px] border border-solid border-[#DDDDDD] bg-[#F5F6F7] rounded-[7px] py-1 px-6 font-satoshi font-normal text-base tracking-normal text-[#333333] placeholder:text-[#7A8699] outline-none hover:border-primary focus:border-primary flex appearance-none "
                 >
                   {Object.keys(LANGUAGE_VERSIONS)?.map((lang) => (
                     <option key={lang} value={lang}>
