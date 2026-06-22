@@ -11,41 +11,81 @@ import {
 } from "@/components/SVGs/portal"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { IconButton } from "@mui/material"
-import ExcelJS from "exceljs"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
+import { readSheet } from "read-excel-file/browser"
 import { useRef, useState } from "react"
-import { Controller, useFieldArray, useForm } from "react-hook-form"
+import {
+  Controller,
+  useFieldArray,
+  useForm,
+  type Control,
+  type UseFieldArrayUpdate,
+  type UseFormGetValues,
+  type UseFormSetValue,
+} from "react-hook-form"
 import { z } from "zod"
+
 import DeleteSection from "./delete"
 import EditSection from "./edit"
 import PublishSection from "./publish"
 
 // -------------------------------------
-// ZOD SCHEMA + TYPE
+// Zod schema and form types
 // -------------------------------------
-const validationSchema = z.object({
-  modules: z.array(
-    z.object({
-      name: z.string().min(1, { message: "Module name is required" }),
-      lessons: z.array(
-        z.object({
-          title: z.string().min(1, { message: "Lesson title is required" }),
-          isPublished: z.boolean(),
-        })
-      ),
-    })
-  ),
+const lessonSchema = z.object({
+  title: z.string().min(1, {
+    message: "Lesson title is required",
+  }),
+  isPublished: z.boolean(),
 })
+
+const moduleSchema = z.object({
+  name: z.string().min(1, {
+    message: "Module name is required",
+  }),
+  lessons: z.array(lessonSchema),
+})
+
+const validationSchema = z.object({
+  modules: z.array(moduleSchema),
+})
+
 type FormData = z.infer<typeof validationSchema>
+type ModuleData = FormData["modules"][number]
+
+type ModuleItemProps = {
+  control: Control<FormData>
+  module: ModuleData & { id: string }
+  moduleIndex: number
+  editMode: Record<string, boolean>
+  toggleEditMode: (
+    type: "module" | "lesson",
+    index: number,
+    moduleIndex?: number,
+  ) => void
+  removeModule: (index: number) => void
+  getValues: UseFormGetValues<FormData>
+  setValue: UseFormSetValue<FormData>
+  updateField: UseFieldArrayUpdate<FormData, "modules">
+  handleLessonDragStart: (
+    event: React.DragEvent<HTMLDivElement>,
+    moduleIndex: number,
+    lessonIndex: number,
+  ) => void
+  handleLessonDragOver: (event: React.DragEvent<HTMLDivElement>) => void
+  handleLessonDrop: (
+    event: React.DragEvent<HTMLDivElement>,
+    targetModuleIndex: number,
+    targetLessonIndex: number | null,
+  ) => void
+}
 
 // -------------------------------------
-// ModuleItem Component
+// Module item
 // -------------------------------------
-// Renders a module with its lessons and native drag/drop support for lessons.
 function ModuleItem({
   control,
-  module,
   moduleIndex,
   editMode,
   toggleEditMode,
@@ -56,32 +96,7 @@ function ModuleItem({
   handleLessonDragStart,
   handleLessonDragOver,
   handleLessonDrop,
-}: {
-  control: any
-  module: any
-  moduleIndex: number
-  editMode: Record<string, boolean>
-  toggleEditMode: (
-    type: "module" | "lesson",
-    index: number,
-    moduleIndex?: number
-  ) => void
-  removeModule: (index: number) => void
-  getValues: any
-  setValue: any
-  updateField: (index: number, value: any) => void
-  handleLessonDragStart: (
-    e: React.DragEvent<HTMLDivElement>,
-    moduleIndex: number,
-    lessonIndex: number
-  ) => void
-  handleLessonDragOver: (e: React.DragEvent<HTMLDivElement>) => void
-  handleLessonDrop: (
-    e: React.DragEvent<HTMLDivElement>,
-    targetModuleIndex: number,
-    targetLessonIndex: number | null
-  ) => void
-}) {
+}: ModuleItemProps) {
   const {
     fields: lessonFields,
     append: appendLesson,
@@ -91,64 +106,98 @@ function ModuleItem({
     name: `modules.${moduleIndex}.lessons`,
   })
 
-  const handleSave = () => {
-    const updatedValue = getValues(`modules.${moduleIndex}.name`)
-    updateField(moduleIndex, { ...module, name: updatedValue })
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
+
+  const handleSaveModule = () => {
+    const updatedName = getValues(`modules.${moduleIndex}.name`)
+
+    const lessons = getValues(`modules.${moduleIndex}.lessons`)
+
+    updateField(moduleIndex, {
+      name: updatedName,
+      lessons,
+    })
+
     toggleEditMode("module", moduleIndex)
   }
 
   const handleAddLesson = () => {
-    const newIndex = lessonFields.length
-    appendLesson({ title: "", isPublished: false })
-    toggleEditMode("lesson", newIndex, moduleIndex)
+    const newLessonIndex = lessonFields.length
+
+    appendLesson({
+      title: "",
+      isPublished: false,
+    })
+
+    toggleEditMode("lesson", newLessonIndex, moduleIndex)
   }
 
-  const fileInputRef = useRef<HTMLInputElement | null>(null)
-
   const handleBulkUploadLessons = async (
-    e: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    const file = e.target.files?.[0]
+    const file = event.target.files?.[0]
+
     if (!file) return
 
     try {
-      const arrayBuffer = await file.arrayBuffer()
-      const workbook = new ExcelJS.Workbook()
-      await workbook.xlsx.load(arrayBuffer)
-      const worksheet = workbook.worksheets[0]
+      const rows = await readSheet(file)
 
-      const newLessons: any[] = []
-      let isFirstRow = true
-      worksheet.eachRow({ includeEmpty: false }, (row) => {
-        if (isFirstRow) {
-          isFirstRow = false
-          return
-        }
-        const lessonTitleCell = row.getCell(1).value
-        const isPublishedCell = row.getCell(2).value
-        const lessonTitle = lessonTitleCell
-          ? lessonTitleCell.toString().trim()
-          : "Untitled Lesson"
-        const isPublished = isPublishedCell
-          ? ["yes", "true"].includes(isPublishedCell.toString().toLowerCase())
-          : false
-        newLessons.push({ title: lessonTitle, isPublished })
-      })
-
-      const currentModules = getValues("modules")
-      if (currentModules.length === 0) {
-        alert("No modules available. Please add a module first.")
+      if (rows.length <= 1) {
+        alert("The spreadsheet does not contain any lesson records.")
         return
       }
-      const latestModuleIndex = currentModules.length - 1
-      const updatedLessons = [
-        ...currentModules[latestModuleIndex].lessons,
-        ...newLessons,
-      ]
-      setValue(`modules.${latestModuleIndex}.lessons`, updatedLessons)
-      e.target.value = ""
+
+      const newLessons = rows
+        .slice(1)
+        .map((row) => {
+          const lessonTitleCell = row[0]
+          const isPublishedCell = row[1]
+
+          const title =
+            lessonTitleCell === null || lessonTitleCell === undefined
+              ? ""
+              : String(lessonTitleCell).trim()
+
+          const publishedValue =
+            isPublishedCell === null || isPublishedCell === undefined
+              ? ""
+              : String(isPublishedCell).trim().toLowerCase()
+
+          const isPublished = ["yes", "true", "1", "published"].includes(
+            publishedValue,
+          )
+
+          return {
+            title,
+            isPublished,
+          }
+        })
+        .filter((lesson) => lesson.title.length > 0)
+
+      if (newLessons.length === 0) {
+        alert("No valid lessons were found in the spreadsheet.")
+        return
+      }
+
+      const currentLessons = getValues(`modules.${moduleIndex}.lessons`) ?? []
+
+      setValue(
+        `modules.${moduleIndex}.lessons`,
+        [...currentLessons, ...newLessons],
+        {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        },
+      )
     } catch (error) {
       console.error("Error uploading lessons:", error)
+
+      alert(
+        "The spreadsheet could not be read. Please upload a valid .xlsx file.",
+      )
+    } finally {
+      event.target.value = ""
     }
   }
 
@@ -157,65 +206,76 @@ function ModuleItem({
   }
 
   return (
-    <div className="w-full min-h-[380px] flex flex-col gap-10 rounded-[16px] border border-[#DDDDDD] bg-white pl-5">
-      <div className="w-full flex justify-between items-start gap-6 relative">
-        <IconButton disableRipple className="flex-shrink-0 relative top-6">
+    <div className="flex min-h-[380px] w-full flex-col gap-10 rounded-[16px] border border-[#DDDDDD] bg-white pl-5">
+      <div className="relative flex w-full items-start justify-between gap-6">
+        <IconButton disableRipple className="relative top-6 flex-shrink-0">
           <DragAndDropIcon />
         </IconButton>
-        <div className="w-full flex flex-col">
-          {/* MODULE Header */}
-          <div className="w-full py-6 pl-10 pr-5 border border-[#F3F5F6] flex justify-between items-center gap-6">
+
+        <div className="flex w-full flex-col">
+          {/* Module header */}
+          <div className="flex w-full items-center justify-between gap-6 border border-[#F3F5F6] py-6 pl-10 pr-5">
             {editMode[`module-${moduleIndex}`] ? (
               <Controller
                 name={`modules.${moduleIndex}.name`}
                 control={control}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    placeholder="New Module"
-                    className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-[#DDDDDD] text-[#4D6C62] bg-[#F5F6F7] focus:outline-none"
-                  />
+                render={({ field, fieldState }) => (
+                  <div className="w-full">
+                    <input
+                      {...field}
+                      autoFocus
+                      placeholder="New Module"
+                      className="h-[56px] w-full rounded-[7px] border border-[#DDDDDD] bg-[#F5F6F7] px-6 py-[18px] text-[#4D6C62] focus:outline-none"
+                    />
+
+                    {fieldState.error?.message && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {fieldState.error.message}
+                      </p>
+                    )}
+                  </div>
                 )}
               />
             ) : (
-              <span className="font-normal font-satoshi text-xl text-[#091E42]">
-                {module?.name || "Untitled Module"}
+              <span className="font-satoshi text-xl font-normal text-[#091E42]">
+                {getValues(`modules.${moduleIndex}.name`) || "Untitled Module"}
               </span>
             )}
 
             {editMode[`module-${moduleIndex}`] ? (
-              <div className="w-[191px] h-[46px] flex gap-3">
+              <div className="flex h-[46px] w-[191px] gap-3">
                 <button
                   type="button"
-                  className="w-[75px] py-2 px-4 rounded-[7px] border border-[#DFE2E6] font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
-                  onClick={() => removeModule(moduleIndex)}
-                  // onClick={() => toggleEditMode("module", moduleIndex)}
+                  className="w-[75px] rounded-[7px] border border-[#DFE2E6] px-4 py-2 font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
+                  onClick={() => toggleEditMode("module", moduleIndex)}
                 >
                   Cancel
                 </button>
+
                 <button
                   type="button"
-                  onClick={handleSave}
-                  className="w-[81px] py-[11px] px-4 rounded-[7px] bg-[#011B23] border border-[#DFE2E6] font-satoshi text-base text-white hover:scale-[0.99]"
+                  onClick={handleSaveModule}
+                  className="w-[81px] rounded-[7px] border border-[#DFE2E6] bg-[#011B23] px-4 py-[11px] font-satoshi text-base text-white hover:scale-[0.99]"
                 >
                   Save
                 </button>
               </div>
             ) : (
-              <div className="w-[111px] h-[46px] flex gap-3">
+              <div className="flex h-[46px] w-[111px] gap-3">
                 <button
                   type="button"
                   onClick={() => toggleEditMode("module", moduleIndex)}
-                  className="w-[75px] py-2 px-4 rounded-[7px] border border-[#DFE2E6] font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
+                  className="w-[75px] rounded-[7px] border border-[#DFE2E6] px-4 py-2 font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
                 >
                   Edit
                 </button>
+
                 <Callout
                   FirstActionButton={
                     <button
-                      className="w-[162px] h-[46px] py-[13px] px-4 flex justify-start items-center bg-white font-arial text-base/[18.4px] text-left text-[#FB9797]"
                       type="button"
                       onClick={() => removeModule(moduleIndex)}
+                      className="flex h-[46px] w-[162px] items-center justify-start bg-white px-4 py-[13px] text-left font-arial text-base/[18.4px] text-[#FB9797]"
                     >
                       Delete Module
                     </button>
@@ -225,145 +285,157 @@ function ModuleItem({
             )}
           </div>
 
-          {/* LESSONS List (using native drag and drop) */}
-          {/* Outer container allows dropping at the end of the list */}
+          {/* Lessons */}
           <div
-            className="w-full flex flex-col"
+            className="flex w-full flex-col"
             onDragOver={handleLessonDragOver}
-            onDrop={(e) => handleLessonDrop(e, moduleIndex, null)}
+            onDrop={(event) => handleLessonDrop(event, moduleIndex, null)}
           >
-            {lessonFields.map((lesson, lessonIndex) => (
-              <div
-                key={lesson.id}
-                draggable
-                onDragStart={(e) => {
-                  console.log("Lesson drag start:", moduleIndex, lessonIndex)
-                  handleLessonDragStart(e, moduleIndex, lessonIndex)
-                }}
-                onDragOver={(e) => {
-                  e.stopPropagation()
-                  handleLessonDragOver(e)
-                }}
-                onDrop={(e) => {
-                  console.log("Lesson drop:", moduleIndex, lessonIndex)
-                  handleLessonDrop(e, moduleIndex, lessonIndex)
-                }}
-              >
-                <div className="w-full py-6 pl-10 pr-5 border border-[#F3F5F6] flex justify-between items-center gap-6">
-                  <IconButton disableRipple>
-                    <DragAndDropIcon />
-                  </IconButton>
-                  <div className="w-full flex justify-between items-center gap-10">
-                    {editMode[`module-${moduleIndex}-lesson-${lessonIndex}`] ? (
-                      <Controller
-                        name={`modules.${moduleIndex}.lessons.${lessonIndex}.title`}
-                        control={control}
-                        render={({ field }) => (
-                          <input
-                            {...field}
-                            placeholder="New Lesson"
-                            onBlur={() =>
+            {lessonFields.map((lesson, lessonIndex) => {
+              const lessonEditKey = `module-${moduleIndex}-lesson-${lessonIndex}`
+
+              return (
+                <div
+                  key={lesson.id}
+                  draggable
+                  onDragStart={(event) => {
+                    event.stopPropagation()
+
+                    handleLessonDragStart(event, moduleIndex, lessonIndex)
+                  }}
+                  onDragOver={(event) => {
+                    event.stopPropagation()
+                    handleLessonDragOver(event)
+                  }}
+                  onDrop={(event) => {
+                    event.stopPropagation()
+
+                    handleLessonDrop(event, moduleIndex, lessonIndex)
+                  }}
+                >
+                  <div className="flex w-full items-center justify-between gap-6 border border-[#F3F5F6] py-6 pl-10 pr-5">
+                    <IconButton disableRipple>
+                      <DragAndDropIcon />
+                    </IconButton>
+
+                    <div className="flex w-full items-center justify-between gap-10">
+                      {editMode[lessonEditKey] ? (
+                        <Controller
+                          name={`modules.${moduleIndex}.lessons.${lessonIndex}.title`}
+                          control={control}
+                          render={({ field, fieldState }) => (
+                            <div className="w-full">
+                              <input
+                                {...field}
+                                autoFocus
+                                placeholder="New Lesson"
+                                className="h-[56px] w-full rounded-[7px] border border-[#DDDDDD] bg-[#F5F6F7] px-6 py-[18px] font-arial text-sm text-[#4D6C62] focus:outline-none lg-md:text-base/[18.4px]"
+                              />
+
+                              {fieldState.error?.message && (
+                                <p className="mt-1 text-sm text-red-500">
+                                  {fieldState.error.message}
+                                </p>
+                              )}
+                            </div>
+                          )}
+                        />
+                      ) : (
+                        <span className="font-satoshi text-base text-[#091E42]">
+                          {getValues(
+                            `modules.${moduleIndex}.lessons.${lessonIndex}.title`,
+                          ) || "Untitled Lesson"}
+                        </span>
+                      )}
+
+                      {editMode[lessonEditKey] ? (
+                        <div className="flex h-[46px] w-[191px] gap-3">
+                          <button
+                            type="button"
+                            className="w-[75px] rounded-[7px] border border-[#DFE2E6] px-4 py-2 font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
+                            onClick={() =>
                               toggleEditMode("lesson", lessonIndex, moduleIndex)
                             }
-                            autoFocus
-                            className="peer w-full h-[56px] py-[18px] px-6 rounded-[7px] border border-solid border-[#DDDDDD] font-arial text-sm lg-md:text-base/[18.4px] text-[#4D6C62] bg-[#F5F6F7] focus:outline-none"
-                          />
-                        )}
-                      />
-                    ) : (
-                      <span>
-                        {getValues(
-                          `modules.${moduleIndex}.lessons.${lessonIndex}.title`
-                        ) || ""}
-                      </span>
-                    )}
-                    {editMode[`module-${moduleIndex}-lesson-${lessonIndex}`] ? (
-                      <div className="w-[191px] h-[46px] flex gap-3">
-                        <button
-                          type="button"
-                          className="w-[75px] py-2 px-4 rounded-[7px] border border-[#DFE2E6] font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
-                          onClick={() =>
-                            toggleEditMode("lesson", lessonIndex, moduleIndex)
-                          }
-                        >
-                          Cancel
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            toggleEditMode("lesson", lessonIndex, moduleIndex)
-                          }
-                          className="w-[81px] py-[11px] px-4 rounded-[7px] bg-[#011B23] border border-[#DFE2E6] font-satoshi text-base text-white hover:scale-[0.99]"
-                        >
-                          Save
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="w-auto h-[46px] flex gap-3 items-center">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            toggleEditMode("lesson", lessonIndex, moduleIndex)
-                          }
-                          className="w-[75px] py-2 px-4 rounded-[7px] border border-[#DFE2E6] font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
-                        >
-                          Edit
-                        </button>
-                        {/* View button navigates to the lesson view page */}
+                          >
+                            Cancel
+                          </button>
 
-                        <Callout
-                          FirstActionButton={
-                            <Link
-                              href={`/instructor/lesson/modules/module/${lesson.id}`}
-                            >
-                              <button
-                                type="button"
-                                className="w-fit py-2 px-4 rounded-[7px] font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
+                          <button
+                            type="button"
+                            onClick={() =>
+                              toggleEditMode("lesson", lessonIndex, moduleIndex)
+                            }
+                            className="w-[81px] rounded-[7px] border border-[#DFE2E6] bg-[#011B23] px-4 py-[11px] font-satoshi text-base text-white hover:scale-[0.99]"
+                          >
+                            Save
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex h-[46px] w-auto items-center gap-3">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              toggleEditMode("lesson", lessonIndex, moduleIndex)
+                            }
+                            className="w-[75px] rounded-[7px] border border-[#DFE2E6] px-4 py-2 font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
+                          >
+                            Edit
+                          </button>
+
+                          <Callout
+                            FirstActionButton={
+                              <Link
+                                href={`/instructor/lesson/modules/module/${lesson.id}`}
+                                className="block w-fit rounded-[7px] px-4 py-2 font-satoshi text-base text-[#091E42] hover:scale-[0.99]"
                               >
                                 View
+                              </Link>
+                            }
+                            SecondActionButton={
+                              <button
+                                type="button"
+                                onClick={() => removeLesson(lessonIndex)}
+                                className="flex h-[46px] w-[162px] items-center justify-start bg-white px-4 py-[13px] text-left font-arial text-base/[18.4px] text-[#FB9797]"
+                              >
+                                Delete Lesson
                               </button>
-                            </Link>
-                          }
-                          SecondActionButton={
-                            <button
-                              className="w-[162px] h-[46px] py-[13px] px-4 flex justify-start items-center bg-white font-arial text-base/[18.4px] text-left text-[#FB9797]"
-                              type="button"
-                              onClick={() => removeLesson(lessonIndex)}
-                            >
-                              Delete Lesson
-                            </button>
-                          }
-                        />
-                      </div>
-                    )}
+                            }
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
-          {/* Add Lesson & Bulk Upload Buttons */}
-          <div className="w-full py-6 pl-10 pr-5 border border-[#F3F5F6] flex items-center gap-6">
+          {/* Add lesson and bulk upload */}
+          <div className="flex w-full items-center gap-6 border border-[#F3F5F6] py-6 pl-10 pr-5">
             <button
               type="button"
               onClick={handleAddLesson}
-              className="w-fit h-[40px] py-2 px-0 flex items-center gap-4 font-satoshi text-base text-[#011B23] hover:scale-[0.99]"
+              className="flex h-[40px] w-fit items-center gap-4 px-0 py-2 font-satoshi text-base text-[#011B23] hover:scale-[0.99]"
             >
-              <SquaredPlusIcon /> Add Lesson
+              <SquaredPlusIcon />
+              Add Lesson
             </button>
+
             <div className="flex items-center gap-4">
               <button
-                className="w-fit h-[40px] py-2 px-0 flex items-center gap-4 font-satoshi text-base text-[#011B23] hover:scale-[0.99]"
                 type="button"
                 onClick={handleUploadButtonClick}
+                className="flex h-[40px] w-fit items-center gap-4 px-0 py-2 font-satoshi text-base text-[#011B23] hover:scale-[0.99]"
               >
-                <UploadIcon /> Bulk Upload
+                <UploadIcon />
+                Bulk Upload
               </button>
+
               <input
                 ref={fileInputRef}
                 type="file"
-                accept=".xlsx, .xls"
-                style={{ display: "none" }}
+                accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                className="hidden"
                 onChange={handleBulkUploadLessons}
               />
             </div>
@@ -375,27 +447,34 @@ function ModuleItem({
 }
 
 // -------------------------------------
-// Main AddModule Component
+// Main component
 // -------------------------------------
-export default function AddModule({ params }: any) {
+type AddModuleProps = {
+  params: {
+    id: string
+  }
+}
+
+export default function AddModule({ params }: AddModuleProps) {
   const searchParams = useSearchParams()
   const course = searchParams.get("course")
-  const [editMode, setEditMode] = useState<{ [key: string]: boolean }>({
-    ["module-0"]: true,
+
+  const [editMode, setEditMode] = useState<Record<string, boolean>>({
+    "module-0": true,
   })
 
-  const { control, handleSubmit, setValue, getValues, watch } =
-    useForm<FormData>({
-      resolver: zodResolver(validationSchema),
-      defaultValues: {
-        modules: [
-          {
-            name: "",
-            lessons: [],
-          },
-        ],
-      },
-    })
+  const { control, handleSubmit, setValue, getValues } = useForm<FormData>({
+    resolver: zodResolver(validationSchema),
+    defaultValues: {
+      modules: [
+        {
+          name: "",
+          lessons: [],
+        },
+      ],
+    },
+  })
+
   const {
     fields: moduleFields,
     append: appendModule,
@@ -406,153 +485,204 @@ export default function AddModule({ params }: any) {
     control,
     name: "modules",
   })
-  const modules = watch("modules")
 
-  // -------------------------------------
-  // Global Drag Item Ref (for modules & lessons)
-  // -------------------------------------
   const dragItemRef = useRef<{
     type: "module" | "lesson"
     moduleIndex: number
     lessonIndex?: number
   } | null>(null)
 
-  // Module drag handlers
   const handleModuleDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
-    moduleIndex: number
+    event: React.DragEvent<HTMLDivElement>,
+    moduleIndex: number,
   ) => {
-    console.log("Module drag start:", moduleIndex)
-    dragItemRef.current = { type: "module", moduleIndex }
-    e.dataTransfer.effectAllowed = "move"
-    e.dataTransfer.setData("text/plain", "module") // Needed for some browsers
+    dragItemRef.current = {
+      type: "module",
+      moduleIndex,
+    }
+
+    event.dataTransfer.effectAllowed = "move"
+
+    event.dataTransfer.setData("text/plain", "module")
   }
 
-  const handleModuleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.dataTransfer.dropEffect = "move"
+  const handleModuleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    event.dataTransfer.dropEffect = "move"
   }
 
   const handleModuleDrop = (
-    e: React.DragEvent<HTMLDivElement>,
-    targetModuleIndex: number
+    event: React.DragEvent<HTMLDivElement>,
+    targetModuleIndex: number,
   ) => {
-    e.preventDefault()
-    if (dragItemRef.current && dragItemRef.current.type === "module") {
-      const sourceModuleIndex = dragItemRef.current.moduleIndex
-      console.log("Module drop:", sourceModuleIndex, "->", targetModuleIndex)
+    event.preventDefault()
+
+    const draggedItem = dragItemRef.current
+
+    if (!draggedItem || draggedItem.type !== "module") {
+      return
+    }
+
+    const sourceModuleIndex = draggedItem.moduleIndex
+
+    if (sourceModuleIndex !== targetModuleIndex) {
       moveModule(sourceModuleIndex, targetModuleIndex)
     }
+
     dragItemRef.current = null
   }
 
-  // Lesson drag handlers
   const handleLessonDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
+    event: React.DragEvent<HTMLDivElement>,
     sourceModuleIndex: number,
-    sourceLessonIndex: number
+    sourceLessonIndex: number,
   ) => {
-    console.log("Lesson drag start:", sourceModuleIndex, sourceLessonIndex)
+    event.stopPropagation()
+
     dragItemRef.current = {
       type: "lesson",
       moduleIndex: sourceModuleIndex,
       lessonIndex: sourceLessonIndex,
     }
-    e.dataTransfer.effectAllowed = "move"
-    e.dataTransfer.setData("text/plain", "lesson") // Needed for some browsers
+
+    event.dataTransfer.effectAllowed = "move"
+
+    event.dataTransfer.setData("text/plain", "lesson")
   }
 
-  const handleLessonDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.dataTransfer.dropEffect = "move"
+  const handleLessonDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    event.dataTransfer.dropEffect = "move"
   }
 
   const handleLessonDrop = (
-    e: React.DragEvent<HTMLDivElement>,
+    event: React.DragEvent<HTMLDivElement>,
     targetModuleIndex: number,
-    targetLessonIndex: number | null
+    targetLessonIndex: number | null,
   ) => {
-    e.preventDefault()
-    if (dragItemRef.current && dragItemRef.current.type === "lesson") {
-      const { moduleIndex: sourceModuleIndex, lessonIndex: sourceLessonIndex } =
-        dragItemRef.current
-      console.log(
-        "Lesson drop:",
-        sourceModuleIndex,
-        sourceLessonIndex,
-        "->",
-        targetModuleIndex,
-        targetLessonIndex
-      )
-      if (sourceModuleIndex === targetModuleIndex) {
-        // Reorder lessons within the same module
-        const lessons = [...getValues(`modules.${sourceModuleIndex}.lessons`)]
-        const [movedLesson] = lessons.splice(sourceLessonIndex!, 1)
-        if (targetLessonIndex === null) {
-          lessons.push(movedLesson)
-        } else {
-          lessons.splice(targetLessonIndex, 0, movedLesson)
-        }
-        setValue(`modules.${sourceModuleIndex}.lessons`, lessons)
-      } else {
-        // Cross-module lesson move
-        const sourceLessons = [
-          ...getValues(`modules.${sourceModuleIndex}.lessons`),
-        ]
-        const [movedLesson] = sourceLessons.splice(sourceLessonIndex!, 1)
-        setValue(`modules.${sourceModuleIndex}.lessons`, sourceLessons)
-        const targetLessons = [
-          ...getValues(`modules.${targetModuleIndex}.lessons`),
-        ]
-        if (targetLessonIndex === null) {
-          targetLessons.push(movedLesson)
-        } else {
-          targetLessons.splice(targetLessonIndex, 0, movedLesson)
-        }
-        setValue(`modules.${targetModuleIndex}.lessons`, targetLessons)
-      }
+    event.preventDefault()
+    event.stopPropagation()
+
+    const draggedItem = dragItemRef.current
+
+    if (
+      !draggedItem ||
+      draggedItem.type !== "lesson" ||
+      draggedItem.lessonIndex === undefined
+    ) {
+      return
     }
+
+    const sourceModuleIndex = draggedItem.moduleIndex
+
+    const sourceLessonIndex = draggedItem.lessonIndex
+
+    const sourceLessons = [
+      ...(getValues(`modules.${sourceModuleIndex}.lessons`) ?? []),
+    ]
+
+    const [movedLesson] = sourceLessons.splice(sourceLessonIndex, 1)
+
+    if (!movedLesson) {
+      dragItemRef.current = null
+      return
+    }
+
+    if (sourceModuleIndex === targetModuleIndex) {
+      let insertionIndex =
+        targetLessonIndex === null ? sourceLessons.length : targetLessonIndex
+
+      if (targetLessonIndex !== null && sourceLessonIndex < targetLessonIndex) {
+        insertionIndex -= 1
+      }
+
+      sourceLessons.splice(Math.max(0, insertionIndex), 0, movedLesson)
+
+      setValue(`modules.${sourceModuleIndex}.lessons`, sourceLessons, {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      })
+    } else {
+      const targetLessons = [
+        ...(getValues(`modules.${targetModuleIndex}.lessons`) ?? []),
+      ]
+
+      const insertionIndex =
+        targetLessonIndex === null ? targetLessons.length : targetLessonIndex
+
+      targetLessons.splice(insertionIndex, 0, movedLesson)
+
+      setValue(`modules.${sourceModuleIndex}.lessons`, sourceLessons, {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      })
+
+      setValue(`modules.${targetModuleIndex}.lessons`, targetLessons, {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      })
+    }
+
     dragItemRef.current = null
   }
 
   const toggleEditMode = (
     type: "module" | "lesson",
     index: number,
-    moduleIndex?: number
+    moduleIndex?: number,
   ) => {
     const key =
       type === "module"
         ? `module-${index}`
         : `module-${moduleIndex}-lesson-${index}`
-    setEditMode((prev) => ({
-      ...prev,
-      [key]: !prev[key],
+
+    setEditMode((previous) => ({
+      ...previous,
+      [key]: !previous[key],
     }))
   }
 
   const addNewModule = () => {
-    const newIndex = moduleFields.length
-    appendModule({ name: "", lessons: [] })
-    setEditMode((prev) => ({ ...prev, [`module-${newIndex}`]: true }))
+    const newModuleIndex = moduleFields.length
+
+    appendModule({
+      name: "",
+      lessons: [],
+    })
+
+    setEditMode((previous) => ({
+      ...previous,
+      [`module-${newModuleIndex}`]: true,
+    }))
   }
 
   const onSubmit = (data: FormData) => {
     console.log("Form Data:", data)
-    // ... handle submission logic
   }
 
+  const backHref = course
+    ? `/instructor/lesson/modules/${params.id}?course=${encodeURIComponent(
+        course,
+      )}`
+    : `/instructor/lesson/modules/${params.id}`
+
   return (
-    <div className="w-full pb-[104px] flex flex-col gap-[54px]">
-      <div className="w-full flex flex-col lg-md:flex-row justify-between">
+    <div className="flex w-full flex-col gap-[54px] pb-[104px]">
+      <div className="flex w-full flex-col justify-between lg-md:flex-row">
         <Link
-          href={`/instructor/lesson/modules/${params?.id}?course=${course}`}
-          className="flex mb-6 gap-2 items-center cursor-pointer"
+          href={backHref}
+          className="mb-6 flex cursor-pointer items-center gap-2"
         >
-          <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
-          <h1 className="text-[26px] lg-md:text-[26px] leading-[34.8px] font-bold font-satoshi -tracking-[0.001em] text-[#4D6C62]">
+          <ArrowRight className="rotate-180 transform text-[#4D6C62]" />
+
+          <h1 className="font-satoshi text-[26px] font-bold leading-[34.8px] -tracking-[0.001em] text-[#4D6C62]">
             Create your Module
           </h1>
         </Link>
+
         <ButtonCallout
           FirstActionButton={<PublishSection />}
           SecondActionButton={<EditSection />}
@@ -562,15 +692,15 @@ export default function AddModule({ params }: any) {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full flex flex-col gap-6"
+        className="flex w-full flex-col gap-6"
       >
         {moduleFields.map((module, moduleIndex) => (
           <div
             key={module.id}
             draggable
-            onDragStart={(e) => handleModuleDragStart(e, moduleIndex)}
+            onDragStart={(event) => handleModuleDragStart(event, moduleIndex)}
             onDragOver={handleModuleDragOver}
-            onDrop={(e) => handleModuleDrop(e, moduleIndex)}
+            onDrop={(event) => handleModuleDrop(event, moduleIndex)}
           >
             <ModuleItem
               control={control}
@@ -588,15 +718,21 @@ export default function AddModule({ params }: any) {
             />
           </div>
         ))}
-        <div className="w-full h-[72px] py-4 px-6 rounded-[16px] border border-dashed border-[#646566] flex items-center">
+
+        <div className="flex h-[72px] w-full items-center rounded-[16px] border border-dashed border-[#646566] px-6 py-4">
           <button
             type="button"
             onClick={addNewModule}
-            className="w-fit h-[40px] py-2 px-0 flex items-center gap-4 font-arial font-bold text-base text-[#011B23] hover:scale-[0.99]"
+            className="flex h-[40px] w-fit items-center gap-4 px-0 py-2 font-arial text-base font-bold text-[#011B23] hover:scale-[0.99]"
           >
-            <CircledPlusIcon /> New Module
+            <CircledPlusIcon />
+            New Module
           </button>
         </div>
+
+        <button type="submit" className="hidden">
+          Submit
+        </button>
       </form>
     </div>
   )
