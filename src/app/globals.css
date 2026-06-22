@@ -38,7 +38,8 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 30;
-  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+  box-shadow:
+    inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
     inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,8 +59,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-xlt-webfont.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-xlt-webfont.woff2") format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-xlt-webfont.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -68,7 +69,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-xlight_oblique-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-xlight_oblique-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-xlight_oblique-webfont.woff")
       format("woff");
@@ -79,8 +81,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-book-webfont.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-book-webfont.woff2") format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-book-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -89,7 +91,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-book_oblique-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-book_oblique-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-book_oblique-webfont.woff")
       format("woff");
@@ -100,7 +103,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-medium-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-medium-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-medium-webfont.woff") format("woff");
   font-weight: 500;
@@ -110,7 +114,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-medium_oblique-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-medium_oblique-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-medium_oblique-webfont.woff")
       format("woff");
@@ -121,8 +126,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-demi-webfont.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-demi-webfont.woff2") format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-demi-webfont.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -131,7 +136,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-demi_oblique-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-demi_oblique-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-demi_oblique-webfont.woff")
       format("woff");
@@ -142,8 +148,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-bold-webfont.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-bold-webfont.woff2") format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -152,7 +158,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "ITC Avant Garde Gothic";
-  src: url("/fonts/itc_avant_garde_gothic_pro-bold_oblique-webfont.woff2")
+  src:
+    url("/fonts/itc_avant_garde_gothic_pro-bold_oblique-webfont.woff2")
       format("woff2"),
     url("/fonts/itc_avant_garde_gothic_pro-bold_oblique-webfont.woff")
       format("woff");
@@ -193,7 +200,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 @font-face {
   font-family: "Jost";
-  src: url("/fonts/jost-variablefont_wght-webfont.woff") format("woff"),
+  src:
+    url("/fonts/jost-variablefont_wght-webfont.woff") format("woff"),
     url("/fonts/jost-variablefont_wght-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -284,8 +292,9 @@ select:-webkit-autofill:focus {
 .ql-snow {
   border: none !important;
 }
+
 .ql-toolbar,
-.ql-snow +,
+.ql-toolbar.ql-snow + .ql-container.ql-snow,
 .ql-container,
 .ql-snow {
   border-radius: 8px !important;
