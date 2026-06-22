@@ -49,41 +49,41 @@ const data = [
     title: "Design Foundations",
     description:
       "Build the mental models every great designer relies on through visual hierarchy, Gestalt principles, colour theory, typography, grids, and layout systems.",
-    imgSrc: "/images/courses/chemistry.webp",
+    imgSrc: "/images/courses/ui-1.webp",
   },
   {
     id: "user-research-empathy",
     title: "User Research & Empathy",
     description:
       "Discover how to uncover real user needs through research planning, user interviews, usability testing, observation, synthesis, and affinity mapping.",
-    imgSrc: "/images/courses/biology.webp",
+    imgSrc: "/images/courses/ui-2.webp",
   },
   {
     id: "information-architecture",
     title: "Information Architecture",
     description:
       "Structure content and navigation so users understand where they are and where they can go using taxonomy, card sorting, site maps, flows, and navigation patterns.",
-    imgSrc: "/images/courses/psychology.webp",
+    imgSrc: "/images/courses/ui-3.webp",
   },
   {
     id: "wireframing-ideation",
     title: "Wireframing & Ideation",
     description:
       "Move from abstract ideas to tangible structures through sketching, Crazy-8s, low-fidelity wireframes, design patterns, critique, and rapid iteration.",
-    imgSrc: "/images/courses/math.webp",
+    imgSrc: "/images/courses/ui-4.webp",
   },
   {
     id: "interaction-design-prototyping",
     title: "Interaction Design & Prototyping",
     description:
       "Give designs motion and logic through interaction principles, Figma prototyping, component states, micro-interactions, motion, and transitions.",
-    imgSrc: "/images/courses/geography.webp",
+    imgSrc: "/images/courses/ui-5.webp",
   },
   {
     id: "ui-design-design-systems",
     title: "UI Design & Design Systems",
     description:
       "Craft polished interfaces and reusable design systems using UI components, Figma variables, design tokens, documentation, and developer handoff.",
-    imgSrc: "/images/courses/coding-img.webp",
+    imgSrc: "/images/courses/ui-6.webp",
   },
 ]

@@ -312,7 +312,7 @@ const COURSES: Course[] = [
     title: "Design Foundations",
     description:
       "Build the mental models every great designer relies on through visual principles, design history, colour, typography, grids, and the language of UI.",
-    image: "/images/courses/chemistry.webp",
+    image: "/images/courses/ui-1.webp",
     topics: 4,
     points: 100,
     status: "Ongoing",
@@ -324,7 +324,7 @@ const COURSES: Course[] = [
     title: "User Research & Empathy",
     description:
       "Discover how to uncover real user needs through research planning, interviews, usability testing, observation, and synthesis before drawing a single pixel.",
-    image: "/images/courses/biology.webp",
+    image: "/images/courses/ui-2.webp",
     topics: 4,
     points: 100,
     status: "Upcoming",
@@ -336,7 +336,7 @@ const COURSES: Course[] = [
     title: "Information Architecture",
     description:
       "Structure content and navigation using mental models, taxonomy, card sorting, site maps, user flows, and navigation patterns.",
-    image: "/images/courses/psychology.webp",
+    image: "/images/courses/ui-3.webp",
     topics: 4,
     points: 100,
     status: "Upcoming",
@@ -348,7 +348,7 @@ const COURSES: Course[] = [
     title: "Wireframing & Ideation",
     description:
       "Move from abstract ideas to tangible structures through sketching, Crazy-8s, low-fidelity wireframes, design patterns, critique, and rapid iteration.",
-    image: "/images/courses/math.webp",
+    image: "/images/courses/ui-4.webp",
     topics: 4,
     points: 100,
     status: "Upcoming",
@@ -360,7 +360,7 @@ const COURSES: Course[] = [
     title: "Interaction Design & Prototyping",
     description:
       "Give designs motion and logic by applying interaction principles, Figma prototyping, micro-interactions, transitions, and realistic testable flows.",
-    image: "/images/courses/geography.webp",
+    image: "/images/courses/ui-5.webp",
     topics: 4,
     points: 100,
     status: "Upcoming",
@@ -372,7 +372,7 @@ const COURSES: Course[] = [
     title: "UI Design & Design Systems",
     description:
       "Create pixel-perfect interfaces, reusable UI components, Figma variables, design tokens, documentation, and complete developer handoffs.",
-    image: "/images/courses/coding-img.webp",
+    image: "/images/courses/ui-6.webp",
     topics: 4,
     points: 100,
     status: "Upcoming",
