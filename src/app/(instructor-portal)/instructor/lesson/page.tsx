@@ -20,15 +20,18 @@ export default function InstructorLessons() {
                 backgroundImage: `url(${course.imgSrc})`,
               }}
             ></div>
+
             <div className="w-full flex flex-col gap-3 px-4 py-4">
               <div className="w-full flex justify-between gap-[14px]">
                 <h4 className="font-satoshi font-bold text-lg leading-[24.3px] -tracking-[0.001em] text-left text-[#4D6C62]">
                   {course.title}
                 </h4>
+
                 <div className="w-20px] h-[20px] flex justify-end items-end transform rotate-[270deg]">
                   <ArrowDown />
                 </div>
               </div>
+
               <span className="max-w-[436px] font-satoshi font-normal text-sm leading-[24.08px] text-left text-[#868686] line-clamp-3">
                 {course.description}
               </span>
@@ -42,24 +45,45 @@ export default function InstructorLessons() {
 
 const data = [
   {
-    id: "les01",
-    title: "Chemistry",
-    description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
-mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
+    id: "design-foundations",
+    title: "Design Foundations",
+    description:
+      "Build the mental models every great designer relies on through visual hierarchy, Gestalt principles, colour theory, typography, grids, and layout systems.",
     imgSrc: "/images/courses/chemistry.webp",
   },
   {
-    id: "les02",
-    title: "Elementary React Js 18.2.0",
-    description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
-mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
-    imgSrc: "/images/courses/coding-img.webp",
+    id: "user-research-empathy",
+    title: "User Research & Empathy",
+    description:
+      "Discover how to uncover real user needs through research planning, user interviews, usability testing, observation, synthesis, and affinity mapping.",
+    imgSrc: "/images/courses/biology.webp",
   },
   {
-    id: "lez03",
-    title: "Psychology",
-    description: `Lorem ipsum dolor sit amet consectetur. Faucibus hendrerit 
-mattis tincidunt dictum lobortis morbi ornare bibendum amet.`,
+    id: "information-architecture",
+    title: "Information Architecture",
+    description:
+      "Structure content and navigation so users understand where they are and where they can go using taxonomy, card sorting, site maps, flows, and navigation patterns.",
     imgSrc: "/images/courses/psychology.webp",
+  },
+  {
+    id: "wireframing-ideation",
+    title: "Wireframing & Ideation",
+    description:
+      "Move from abstract ideas to tangible structures through sketching, Crazy-8s, low-fidelity wireframes, design patterns, critique, and rapid iteration.",
+    imgSrc: "/images/courses/math.webp",
+  },
+  {
+    id: "interaction-design-prototyping",
+    title: "Interaction Design & Prototyping",
+    description:
+      "Give designs motion and logic through interaction principles, Figma prototyping, component states, micro-interactions, motion, and transitions.",
+    imgSrc: "/images/courses/geography.webp",
+  },
+  {
+    id: "ui-design-design-systems",
+    title: "UI Design & Design Systems",
+    description:
+      "Craft polished interfaces and reusable design systems using UI components, Figma variables, design tokens, documentation, and developer handoff.",
+    imgSrc: "/images/courses/coding-img.webp",
   },
 ]

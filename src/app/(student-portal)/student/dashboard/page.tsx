@@ -1,7 +1,6 @@
 "use client"
 
 import { GreenArrowUp } from "@/components/SVGs/portal"
-import WavingPalm from "@/components/SVGs/portal/wavingPalm"
 import Image from "next/image"
 import CircularProgress from "../../_components/CircularProgressbar"
 import Badges from "./_components/badges"
@@ -26,35 +25,39 @@ export default function StudentDashboard() {
             <div className="absolute inset-0 bg-pdarkcolor lg-md:bg-transparent lg-md:bg-[linear-gradient(90.33deg,_#4D6C62_40.59%,_rgba(49,50,50,0.9)_53.37%,_rgba(149,152,152,0.05)_94.41%)] z-[2] p-6">
               <div className="w-full h-full flex flex-col justify-between">
                 <h4 className="text-[#CACACA] font-jost font-normal text-base leading-[23.12px] tracking-[0.02em]">
-                  Your Learning performance
+                  UI/UX Design Month 1 Curriculum
                 </h4>
+
                 <div className="w-full flex gap-8">
                   <p className="text-[#FFFFFF] font-satoshi font-[900] text-[50px] flex flex-col">
-                    2 Hrs{" "}
+                    24{" "}
                     <span className="font-medium text-sm">
-                      Average Daily Attendance
+                      Curriculum Modules
                     </span>
                   </p>
+
                   <p className="text-[#FFFFFF] font-satoshi font-[900] text-[50px] flex flex-col">
-                    10 Hrs{" "}
+                    12{" "}
                     <span className="font-medium text-sm">
-                      Average weekly Attendance
+                      Course Deliverables
                     </span>
                   </p>
                 </div>
+
                 <div className="flex gap-2 items-center">
                   <GreenArrowUp />
                   <p className="text-[#00FF40] font-jost font-normal text-lg leading-[24.31px] -tracking-[0.001em]">
-                    6% from last week
+                    6 sections across 4 weeks
                   </p>
                 </div>
               </div>
             </div>
+
             {/* Image that covers the container */}
             <div className="hidden lg-md:block absolute top-0 right-0 w-[552px] h-[305px] z-0">
               <Image
                 src="/images/dashboard-image.png"
-                alt="Hero Image"
+                alt="UI/UX Design student learning dashboard"
                 width={552}
                 height={305}
                 className="w-full h-full object-cover transform scale-x-[-1]"
@@ -62,23 +65,27 @@ export default function StudentDashboard() {
             </div>
           </div>
 
-          {/*Learning Continuation */}
+          {/* Learning Continuation */}
           <div className="bg-white w-full rounded-[17px] border-2 border-solid border-[#DDDDDD] py-[18px] px-[9px] gap-[10px]">
             <div className="w-full flex flex-col gap-[22px]">
               <h4 className="text-[#263238] text-base leading-[21.6px] text-left font-bold font-satoshi">
-                Learning Continuation
+                Continue Learning
               </h4>
+
               <DashboardVideo video="/videos/vid-3.mp4" />
+
               <div className="w-full flex justify-between">
                 <div className="flex flex-col gap-3">
                   <h4 className="font-bold font-satoshi text-black text-[22px] leading-[20.57px] -tracking-[0.001em]">
-                    Chemistry
+                    Design Foundations
                   </h4>
+
                   <span className="font-normal font-satoshi text-black text-[20px] leading-[16.83px] -tracking-[0.001em]">
-                    Introduction to chemistry
+                    Visual Hierarchy & Gestalt
                   </span>
                 </div>
-                <CircularProgress percentage={65} />
+
+                <CircularProgress percentage={25} />
               </div>
             </div>
           </div>
@@ -87,18 +94,19 @@ export default function StudentDashboard() {
         {/* Right Section */}
         <section className="flex-[541/1461] xl:max-w-[541px] w-full">
           <div className="w-full grid grid-cols-1 gap-4">
-            {/* Course Performance (Quiz) */}
+            {/* Course Performance */}
             <div className="bg-white w-full h-[305px] rounded-[17px] border border-solid border-[#E5E5E5]">
               <h4 className="text-[#263238] text-base leading-[21.6px] text-left font-bold font-satoshi p-4 border-b-[3px] border-[#F0F0F0]">
-                Course Performance (Quiz)
+                UI/UX Course Performance
               </h4>
 
               <QuizPerfomanceChart />
             </div>
-            {/* Course Performance (Quiz) */}
+
+            {/* Learning Achievement */}
             <div className="bg-white w-full h-[305px] rounded-[17px] p-4 border-b-[3px] border-[#DDDDDD] flex flex-col gap-[22px]">
               <h4 className="text-[#263238] text-base leading-[22px] text-left font-bold font-satoshi">
-                Top quiz scorer of the week
+                Design achievement of the week
               </h4>
 
               <Badges />

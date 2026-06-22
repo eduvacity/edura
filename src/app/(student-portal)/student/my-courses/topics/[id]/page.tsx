@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
+import { useParams, useSearchParams } from "next/navigation"
 import QuizPerformanceChart from "../../../dashboard/_components/quizChart"
 
-export default function StudentClassDetail({ params }: any) {
+export default function StudentClassDetail() {
+  const params = useParams<{ id: string }>()
   const searchParams = useSearchParams()
   const course = searchParams.get("course")
 
@@ -16,7 +17,7 @@ export default function StudentClassDetail({ params }: any) {
           {course}
         </h1>
         <span className="font-satoshi font-medium text-sm leading-[24.08px] text-left text-[#868686]">
-          Explore the topics in Introduction to Chemistry below.
+          Explore the topics in {course || "this course"} below.
         </span>
       </div>
 
@@ -24,9 +25,11 @@ export default function StudentClassDetail({ params }: any) {
       <div className="min-h-screen flex flex-col xl:flex-row gap-6">
         {/* Left Section */}
         <section className="flex-[1] xl:max-w-[920px] w-full flex flex-col gap-[17px]">
-          {data?.map((topic, index) => (
+          {(COURSE_TOPICS[params.id] || []).map((topic, index) => (
             <Link
-              href={`/student/my-courses/topics/topic/${topic.id}?topic=${topic.title}`}
+              href={`/student/my-courses/topics/topic/${
+                topic.id
+              }?topic=${encodeURIComponent(topic.title)}`}
               key={index}
               className="bg-white w-full h-[91px] p-5 rounded-[14px] border border-solid border-[#DDDDDD] flex flex-col"
             >
@@ -61,19 +64,123 @@ export default function StudentClassDetail({ params }: any) {
   )
 }
 
-const data = [
-  {
-    id: "2988493348",
-    title: "Introduction to Chemistry",
-  },
-  {
-    id: "2988493318",
-    title: "Atomic Structure and the Periodic Table",
-  },
-  {
-    id: "1188493348",
-    title: "Chemical Reactions and Equations",
-  },
-  { id: "1188493348", title: "Clarity and Simplicity" },
-  { id: "238493348", title: "Consistency and Standard" },
-]
+type CourseTopic = {
+  id: string
+  title: string
+}
+
+const COURSE_TOPICS: Record<string, CourseTopic[]> = {
+  "design-foundations": [
+    {
+      id: "visual-hierarchy-gestalt",
+      title: "Visual Hierarchy & Gestalt",
+    },
+    {
+      id: "color-theory-screens",
+      title: "Color Theory for Screens",
+    },
+    {
+      id: "typography-essentials",
+      title: "Typography Essentials",
+    },
+    {
+      id: "grid-layout-systems",
+      title: "Grid & Layout Systems",
+    },
+  ],
+
+  "user-research-empathy": [
+    {
+      id: "research-planning",
+      title: "Research Planning",
+    },
+    {
+      id: "user-interviews",
+      title: "User Interviews",
+    },
+    {
+      id: "usability-testing",
+      title: "Usability Testing",
+    },
+    {
+      id: "synthesis-affinity-mapping",
+      title: "Synthesis & Affinity Mapping",
+    },
+  ],
+
+  "information-architecture": [
+    {
+      id: "mental-models-taxonomy",
+      title: "Mental Models & Taxonomy",
+    },
+    {
+      id: "card-sorting",
+      title: "Card Sorting",
+    },
+    {
+      id: "site-maps-flows",
+      title: "Site Maps & Flows",
+    },
+    {
+      id: "navigation-patterns",
+      title: "Navigation Patterns",
+    },
+  ],
+
+  "wireframing-ideation": [
+    {
+      id: "sketching-techniques",
+      title: "Sketching Techniques",
+    },
+    {
+      id: "lo-fi-wireframing",
+      title: "Lo-Fi Wireframing",
+    },
+    {
+      id: "design-patterns-library",
+      title: "Design Patterns Library",
+    },
+    {
+      id: "critique-iteration",
+      title: "Critique & Iteration",
+    },
+  ],
+
+  "interaction-design-prototyping": [
+    {
+      id: "interaction-principles",
+      title: "Interaction Principles",
+    },
+    {
+      id: "figma-prototyping",
+      title: "Figma Prototyping",
+    },
+    {
+      id: "micro-interactions",
+      title: "Micro-interactions",
+    },
+    {
+      id: "motion-transitions",
+      title: "Motion & Transitions",
+    },
+  ],
+
+  "ui-design-design-systems": [
+    {
+      id: "ui-component-design",
+      title: "UI Component Design",
+    },
+    {
+      id: "figma-variables-tokens",
+      title: "Figma Variables & Tokens",
+    },
+    {
+      id: "design-system-documentation",
+      title: "Design System Documentation",
+    },
+    {
+      id: "handoff-developer-collaboration",
+      title: "Handoff & Developer Collaboration",
+    },
+  ],
+}

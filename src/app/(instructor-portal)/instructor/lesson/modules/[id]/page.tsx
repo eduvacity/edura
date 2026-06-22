@@ -24,9 +24,11 @@ export default function LessonModules({ params }: any) {
 
       {/* Layout Section */}
       <div className="w-full flex flex-col lg-md:flex-row gap-6">
-        {data?.map((course, index) => (
+        {(COURSE_MODULES[params.id] || [])?.map((course, index) => (
           <Link
-            href={`/instructor/lesson/modules/${params.id}/add?course=${course?.id}`}
+            href={`/instructor/lesson/modules/${params.id}/add?course=${encodeURIComponent(
+              course.id,
+            )}`}
             key={index}
             className="bg-white w-full h-[177px] py-5 px-4 rounded-[14px] border border-solid border-[#DDDDDD] flex flex-col transition-all  duration-300 hover:scale-[0.99] cursor-pointer"
           >
@@ -59,23 +61,197 @@ export default function LessonModules({ params }: any) {
   )
 }
 
-const data = [
-  {
-    id: "2988493348",
-    title: "Introduction to Chemistry",
-    description: `Learn the basics of matter, elements, and compounds.`,
-    published: true,
-  },
-  {
-    id: "2988493318",
-    title: "Atomic Structure and the Periodic Table",
-    description: `Discover how atoms form and how elements are organized.`,
-    published: false,
-  },
-  {
-    id: "1188493348",
-    title: "Chemical Reactions and Equations",
-    description: `Understand how substances combine and transform.`,
-    published: false,
-  },
-]
+type LessonModule = {
+  id: string
+  title: string
+  description: string
+  published: boolean
+}
+
+const COURSE_MODULES: Record<string, LessonModule[]> = {
+  "design-foundations": [
+    {
+      id: "visual-hierarchy-gestalt",
+      title: "Visual Hierarchy & Gestalt",
+      description:
+        "Learn how the eye moves across a screen and how to direct attention using size, contrast, alignment, and proximity.",
+      published: true,
+    },
+    {
+      id: "color-theory-screens",
+      title: "Color Theory for Screens",
+      description:
+        "Understand hue, saturation, and value while building accessible, consistent, and on-brand colour palettes for digital products.",
+      published: true,
+    },
+    {
+      id: "typography-essentials",
+      title: "Typography Essentials",
+      description:
+        "Explore type anatomy, pairing logic, scale systems, readability, and typography best practices for digital interfaces.",
+      published: false,
+    },
+    {
+      id: "grid-layout-systems",
+      title: "Grid & Layout Systems",
+      description:
+        "Use columns, gutters, spacing, and baseline grids to create structured, balanced, and scannable interface layouts.",
+      published: false,
+    },
+  ],
+
+  "user-research-empathy": [
+    {
+      id: "research-planning",
+      title: "Research Planning",
+      description:
+        "Define research goals, select appropriate methods, and prepare discussion guides that produce meaningful user insights.",
+      published: true,
+    },
+    {
+      id: "user-interviews",
+      title: "User Interviews",
+      description:
+        "Learn facilitation techniques, active listening, and how to ask effective questions without leading participants.",
+      published: true,
+    },
+    {
+      id: "usability-testing",
+      title: "Usability Testing",
+      description:
+        "Plan moderated and unmoderated usability tests, define tasks, record observations, and reduce research bias.",
+      published: false,
+    },
+    {
+      id: "synthesis-affinity-mapping",
+      title: "Synthesis & Affinity Mapping",
+      description:
+        "Turn research notes into patterns, affinity diagrams, insight statements, and validated design opportunities.",
+      published: false,
+    },
+  ],
+
+  "information-architecture": [
+    {
+      id: "mental-models-taxonomy",
+      title: "Mental Models & Taxonomy",
+      description:
+        "Understand how users categorise information and organise content in ways that reduce cognitive load.",
+      published: true,
+    },
+    {
+      id: "card-sorting",
+      title: "Card Sorting",
+      description:
+        "Run open and closed card-sorting sessions, analyse the findings, and translate results into clear content structures.",
+      published: true,
+    },
+    {
+      id: "site-maps-flows",
+      title: "Site Maps & Flows",
+      description:
+        "Create site maps and task flows that clearly communicate product structure and user journeys.",
+      published: false,
+    },
+    {
+      id: "navigation-patterns",
+      title: "Navigation Patterns",
+      description:
+        "Explore global navigation, local navigation, tabs, breadcrumbs, and when each pattern should be used.",
+      published: false,
+    },
+  ],
+
+  "wireframing-ideation": [
+    {
+      id: "sketching-techniques",
+      title: "Sketching Techniques",
+      description:
+        "Use Crazy-8s, storyboards, and thumbnail wireframes to explore design ideas quickly and effectively.",
+      published: true,
+    },
+    {
+      id: "lo-fi-wireframing",
+      title: "Lo-Fi Wireframing",
+      description:
+        "Translate sketches into grayscale digital wireframes in Figma using components, structure, and annotations.",
+      published: true,
+    },
+    {
+      id: "design-patterns-library",
+      title: "Design Patterns Library",
+      description:
+        "Study common interface patterns such as forms, modals, carousels, cards, and empty states.",
+      published: false,
+    },
+    {
+      id: "critique-iteration",
+      title: "Critique & Iteration",
+      description:
+        "Run structured design critiques, give actionable feedback, and improve designs through purposeful iteration.",
+      published: false,
+    },
+  ],
+
+  "interaction-design-prototyping": [
+    {
+      id: "interaction-principles",
+      title: "Interaction Principles",
+      description:
+        "Apply feedback, affordance, discoverability, and mapping to create intuitive digital interactions.",
+      published: true,
+    },
+    {
+      id: "figma-prototyping",
+      title: "Figma Prototyping",
+      description:
+        "Use Smart Animate, component states, overlays, and scrolling interactions to create realistic prototypes.",
+      published: true,
+    },
+    {
+      id: "micro-interactions",
+      title: "Micro-interactions",
+      description:
+        "Design loading states, button feedback, form validation, and other small moments that improve the user experience.",
+      published: false,
+    },
+    {
+      id: "motion-transitions",
+      title: "Motion & Transitions",
+      description:
+        "Use easing, duration, and motion principles to communicate hierarchy, feedback, and changes in interface state.",
+      published: false,
+    },
+  ],
+
+  "ui-design-design-systems": [
+    {
+      id: "ui-component-design",
+      title: "UI Component Design",
+      description:
+        "Design reusable buttons, inputs, cards, badges, and other interface components with all required states.",
+      published: true,
+    },
+    {
+      id: "figma-variables-tokens",
+      title: "Figma Variables & Tokens",
+      description:
+        "Create colour, typography, spacing, and other design tokens and apply them consistently across a design system.",
+      published: true,
+    },
+    {
+      id: "design-system-documentation",
+      title: "Design System Documentation",
+      description:
+        "Write clear usage guidelines, accessibility notes, and do-and-don't examples for reusable components.",
+      published: false,
+    },
+    {
+      id: "handoff-developer-collaboration",
+      title: "Handoff & Developer Collaboration",
+      description:
+        "Prepare specifications, use Figma Dev Mode, document design decisions, and collaborate effectively with developers.",
+      published: false,
+    },
+  ],
+}

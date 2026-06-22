@@ -16,12 +16,15 @@ export default function StudentCourses() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
+
     return COURSES.filter((c) => {
       const matchesText =
         !q ||
         c.title.toLowerCase().includes(q) ||
         c.description.toLowerCase().includes(q)
+
       const matchesCat = category === "All courses" || c.category === category
+
       return matchesText && matchesCat
     })
   }, [query, category])
@@ -39,14 +42,17 @@ export default function StudentCourses() {
             <div className="w-10 h-10 rounded-[8px] p-2 bg-[#E8F5E9] text-[#2E7D32]">
               <ClosedBook />
             </div>
+
             <div className="text-[28px]/[48px] font-extrabold text-[#212121] tracking-normal">
               {total}
             </div>
           </div>
+
           <div className="font-normal text-[14px]/[20px] text-[#212121]">
-            Total courses
+            Total sections
           </div>
         </div>
+
         <div
           className={`h-[159px] rounded-[12px] py-[18px] px-3  flex flex-col justify-between gap-[10px] bg-white p-4 lg:col-span-2 font-sans tracking-normal`}
         >
@@ -54,14 +60,17 @@ export default function StudentCourses() {
             <div className="w-10 h-10 rounded-[8px] p-2 bg-[#FFF8E1] text-[#E0AB00]">
               <ClosedBook />
             </div>
+
             <div className="text-[28px]/[48px] font-extrabold text-[#212121]">
               {ongoing}
             </div>
           </div>
+
           <div className="font-normal text-[14px]/[20px] text-[#212121]">
-            Courses ongoing
+            Sections ongoing
           </div>
         </div>
+
         <div
           className={`h-[159px] rounded-[12px] py-[18px] px-3  flex flex-col justify-between gap-[10px] bg-white p-4 lg:col-span-2 font-sans tracking-normal`}
         >
@@ -69,12 +78,14 @@ export default function StudentCourses() {
             <div className="w-10 h-10 rounded-[8px] p-2 bg-[#DCE6E2] text-[#4D6C62]">
               <ClosedBook />
             </div>
+
             <div className="text-[28px]/[48px] font-extrabold text-[#212121] tracking-normal">
               {completed}
             </div>
           </div>
+
           <div className="font-normal text-[14px]/[20px] text-[#212121]">
-            Courses completed
+            Sections completed
           </div>
         </div>
       </div>
@@ -83,12 +94,13 @@ export default function StudentCourses() {
       <div className="flex flex-col gap-[48px] lg:flex-row lg:items-center lg:justify-between">
         <div className="h-[49px] flex flex-col text-[12px]/[16px] gap-2 font-normal font-sans tracking-normal">
           <h4 className="text-[16px]/[25px] text-[#212121] font-extrabold">
-            All courses
+            UI/UX Design Curriculum
           </h4>
+
           <div className="flex items-center gap-2 font-medium font-sans text-[#6E9988]">
-            <span>300 level</span>
+            <span>Month 1</span>
             <span>|</span>
-            <span>Second semester</span>
+            <span>Beginner to Intermediate</span>
           </div>
         </div>
 
@@ -101,10 +113,12 @@ export default function StudentCourses() {
                 className="appearance-none w-40 rounded-[8px] border border-[#E0E0E0] bg-white py-2 pl-10 pr-8 text-sm focus:outline-none focus:ring-[0.5px] focus:ring-[#4D6C62]/30"
               >
                 <option>All courses</option>
+
                 {CATEGORIES.map((c) => (
                   <option key={c}>{c}</option>
                 ))}
               </select>
+
               <Filter className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
             </div>
           </div>
@@ -113,9 +127,10 @@ export default function StudentCourses() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search"
+              placeholder="Search UI/UX sections"
               className="w-full rounded-[8px] border border-[#E0E0E0] bg-white py-2 pl-10 pr-3 text-sm focus:outline-none focus:ring-[0.5px] focus:ring-[#4D6C62]/30"
             />
+
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
           </div>
 
@@ -126,7 +141,7 @@ export default function StudentCourses() {
             }}
             className="inline-flex items-center justify-center rounded-[8px] border border-[#E0E0E0] bg-white px-4 py-2 text-sm font-medium transition hover:bg-gray-50"
           >
-            View all courses
+            View all sections
           </button>
         </div>
       </div>
@@ -144,6 +159,7 @@ export default function StudentCourses() {
 function Banner() {
   const bg = "/images/courses/course-card-bg.svg"
   const bgUrl = encodeURI(bg)
+
   return (
     <div
       className="w-full relative overflow-hidden rounded-2xl p-5 lg:col-span-6 xl:col-span-6 bg-[#EAF5F0]"
@@ -156,10 +172,13 @@ function Banner() {
     >
       {/* Text block with background illustration */}
       <div className="flex flex-col items-start gap-3 relative w-full p-4 pr-40 min-h-[86px] text-white font-sans tracking-normal">
-        <h2 className="text-[22px]/[30px] font-extrabold ">Keep going! 🎯</h2>
+        <h2 className="text-[22px]/[30px] font-extrabold ">
+          Build better experiences! 🎯
+        </h2>
+
         <p className="font-normal max-w-[34ch] text-[16px]/[22px]">
-          Every module takes you closer to mastery. Learning is a journey.
-          You&apos;re doing great.
+          Progress from design fundamentals to a complete, testable UI design
+          system in four structured weeks.
         </p>
       </div>
     </div>
@@ -186,6 +205,7 @@ function CourseCard({ course }: { course: Course }) {
           <h3 className="text-[16px]/[16px] font-semibold text-[#212121]">
             {course.title}
           </h3>
+
           <p className="font-normal line-clamp-2 text-[12px]/[16px] text-[#616161]">
             {course.description}
           </p>
@@ -195,24 +215,29 @@ function CourseCard({ course }: { course: Course }) {
           <div className="w-full flex flex-wrap items-center gap-2">
             <div className="bg-[#F5F5F5] h-[24px] rounded py-1 px-2">
               <span className="mr-1 text-[#424242] font-normal font-sans text-[12px]/[16px]">
-                {course.topics} topics
+                {course.topics} modules
               </span>
             </div>
+
             <div className="flex items-center gap-1">
               <div className="bg-[#FFF8E1] h-[24px] rounded py-1 px-2 border-[0.5px] border-[#F5BB00]">
                 🏆 Points: 100 XP
               </div>
+
               <Info className="text-[#C7C7C7] w-[13.33px] h-[13.33px] cursor-pointer" />
             </div>
           </div>
+
           <StatusPill status={course.status} />
         </div>
       </div>
+
       <div className="flex items-center justify-between">
         <span className="text-[#7E7E7E] font-sans font-normal text-[12px]/[16px]">
           Progress:{" "}
           <span className="text-[#212121] font-medium">{course.progress}%</span>
         </span>
+
         <Link
           href={`/student/my-courses/topics/${
             course.id
@@ -243,6 +268,7 @@ function StatusPill({ status }: { status: Course["status"] }) {
   } as const
 
   const cfg = map[status] || map.Ongoing
+
   return (
     <span
       className={`inline-flex items-center rounded-full border px-2.5 py-1 text-[12px] ${cfg.className}`}
@@ -278,85 +304,79 @@ type Course = {
   category: string
 }
 
-const CATEGORIES = [
-  "Science",
-  "Humanities",
-  "Technology",
-  "Mathematics",
-  "Social Studies",
-]
+const CATEGORIES = ["Week 1", "Week 2", "Week 3", "Week 4"]
 
 const COURSES: Course[] = [
   {
-    id: "chem-101",
-    title: "Chemistry",
+    id: "design-foundations",
+    title: "Design Foundations",
     description:
-      "Welcome to the world of atoms, elements, and reactions. This course introduces you to the core principles of chemistry in a fun and simplified way.",
+      "Build the mental models every great designer relies on through visual principles, design history, colour, typography, grids, and the language of UI.",
     image: "/images/courses/chemistry.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
     status: "Ongoing",
-    progress: 0,
-    category: "Science",
+    progress: 25,
+    category: "Week 1",
   },
   {
-    id: "bio-101",
-    title: "Biology 101",
+    id: "user-research-empathy",
+    title: "User Research & Empathy",
     description:
-      "Discover the building blocks of life in this beginner's biology course. You'll explore how living organisms work, from cells to complex systems in plants and animals.",
+      "Discover how to uncover real user needs through research planning, interviews, usability testing, observation, and synthesis before drawing a single pixel.",
     image: "/images/courses/biology.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
-    status: "Ongoing",
+    status: "Upcoming",
     progress: 0,
-    category: "Science",
+    category: "Week 2",
   },
   {
-    id: "psy-101",
-    title: "Introduction to Psychology",
+    id: "information-architecture",
+    title: "Information Architecture",
     description:
-      "Take a deep dive into how the human mind works. This course will introduce you to behavior, thought patterns, memory, and emotions.",
+      "Structure content and navigation using mental models, taxonomy, card sorting, site maps, user flows, and navigation patterns.",
     image: "/images/courses/psychology.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
-    status: "Ongoing",
+    status: "Upcoming",
     progress: 0,
-    category: "Humanities",
+    category: "Week 2",
   },
   {
-    id: "math-101",
-    title: "Math Foundations",
+    id: "wireframing-ideation",
+    title: "Wireframing & Ideation",
     description:
-      "Strengthen your math skills with this foundational course. Ideal for students who want to build confidence in solving everyday math problems.",
+      "Move from abstract ideas to tangible structures through sketching, Crazy-8s, low-fidelity wireframes, design patterns, critique, and rapid iteration.",
     image: "/images/courses/math.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
-    status: "Ongoing",
+    status: "Upcoming",
     progress: 0,
-    category: "Mathematics",
+    category: "Week 3",
   },
   {
-    id: "geo-101",
-    title: "Geography",
+    id: "interaction-design-prototyping",
+    title: "Interaction Design & Prototyping",
     description:
-      "Explore the world from your screen! This course introduces continents, landforms, climates, and how humans interact with their environment.",
+      "Give designs motion and logic by applying interaction principles, Figma prototyping, micro-interactions, transitions, and realistic testable flows.",
     image: "/images/courses/geography.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
-    status: "Ongoing",
+    status: "Upcoming",
     progress: 0,
-    category: "Social Studies",
+    category: "Week 4",
   },
   {
-    id: "code-101",
-    title: "Intro to Coding",
+    id: "ui-design-systems",
+    title: "UI Design & Design Systems",
     description:
-      "Get started with the basics of computer programming. In this course, you'll learn how code works, write your first lines of code, and build simple projects—no prior experience required.",
+      "Create pixel-perfect interfaces, reusable UI components, Figma variables, design tokens, documentation, and complete developer handoffs.",
     image: "/images/courses/coding-img.webp",
-    topics: 10,
+    topics: 4,
     points: 100,
-    status: "Ongoing",
+    status: "Upcoming",
     progress: 0,
-    category: "Technology",
+    category: "Week 4",
   },
 ]

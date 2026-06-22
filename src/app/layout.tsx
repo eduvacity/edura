@@ -1,11 +1,9 @@
-// app/layout.tsx
 import theme from "@/components/theme/mui"
 import StoreProvider from "@/lib/redux/providers"
 import ScriptTags from "@/lib/scripts"
 import { CssBaseline, ThemeProvider } from "@mui/material"
-// ✅ Use the Next 15 helper:
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
-import "monaco-editor/min/vs/editor/editor.main.css"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter"
+// import "monaco-editor/min/vs/editor/editor.main.css"
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import { ToastContainer } from "react-toastify"

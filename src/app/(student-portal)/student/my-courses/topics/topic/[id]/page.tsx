@@ -24,6 +24,7 @@ import PDFSection from "../../../_components/PDFSection"
 import PPTSection from "../../../_components/PPTSection"
 import TextSection from "../../../_components/TextSection"
 import VideoSection from "../../../_components/VideoSection"
+import { cn } from "@/lib/utils"
 
 const AudioPlayer = dynamic(() => import("../../../_components/AudioPlayer"), {
   ssr: false,
@@ -73,7 +74,7 @@ export default function StudentTopicDetail({ params }: any) {
         <section className="flex-[541/1461] xl:max-w-[541px] w-full">
           <div className="w-full grid grid-cols-1 gap-4">
             {/* Course Performance (Quiz) */}
-            <div className="w-full flex flex-col gap-[19px] ">
+            <div className="w-full flex flex-col gap-[19px]">
               {data?.map((topic, index) => {
                 const isExpanded = expanded === `panel${index + 1}`
                 return (
@@ -82,11 +83,12 @@ export default function StudentTopicDetail({ params }: any) {
                     expanded={isExpanded}
                     onChange={handleChange(`panel${index + 1}`)}
                     elevation={0}
-                    className={
+                    className={cn(
+                      "px-4",
                       isExpanded
                         ? "w-full bg-white border border-solid border-[#DDDDDD] shadow-none first:rounded-t-[17px] rounded-t-[17px]"
-                        : "w-full bg-white border border-solid border-[#DDDDDD] shadow-none first:rounded-t-[10px] last:rounded-b-[10px] rounded-[10px] "
-                    }
+                        : "w-full bg-white border border-solid border-[#DDDDDD] shadow-none first:rounded-t-[10px] last:rounded-b-[10px] rounded-[10px] ",
+                    )}
                     sx={{
                       "&.MuiAccordion-root:before": {
                         backgroundColor: "white",
@@ -128,7 +130,7 @@ export default function StudentTopicDetail({ params }: any) {
                             module.title.toLowerCase() === "quiz"
                               ? () => {
                                   router.push(
-                                    `/student/my-courses/topics/topic/quiz/${topic.id}?topic=${topic.title}&description=${topic.description}`
+                                    `/student/my-courses/topics/topic/quiz/${topic.id}?topic=${topic.title}&description=${topic.description}`,
                                   )
                                 }
                               : () => handleCurrentTopicChange(module)

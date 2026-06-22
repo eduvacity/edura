@@ -9,9 +9,8 @@ import {
   HorizontalRotationIcon,
 } from "@/components/SVGs/portal"
 import { CODE_SNIPPETS, LANGUAGE_VERSIONS } from "@/lib/utils/constants"
-import { Editor, loader } from "@monaco-editor/react"
+import { Editor } from "@monaco-editor/react"
 import { AppBar, IconButton, Toolbar } from "@mui/material"
-import monacoThemes from "monaco-themes/themes/themelist.json"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
@@ -24,15 +23,15 @@ const TerminalComponent = dynamic(() => import("./terminal"), {
 })
 
 export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
-  const editorRef = useRef<HTMLDivElement | null>(null)
+  const editorRef = useRef<any>(null)
   const [isRowOnLarge, setIsRowOnLarge] = useState(true)
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [language, setLanguage] = useState<string>("java")
   const [terminalLogs, setTerminalLogs] = useState<string[]>([])
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState<string>("vs")
   const [code, setCode] = useState<string>(
-    CODE_SNIPPETS[language as keyof typeof CODE_SNIPPETS]
+    CODE_SNIPPETS[language as keyof typeof CODE_SNIPPETS],
   )
   const [output, setOutput] = useState<string[] | null>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -45,21 +44,26 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
   /**
    * Extract logs and final return value from the code execution output.
    */
-  const extractLogsAndOutput = (output: string): [string[], string | null] => {
-    const lines = output.split("\n")
+  const extractLogsAndOutput = (
+    rawOutput: string,
+  ): [string[], string | null] => {
+    const lines = rawOutput.split("\n")
     const logs = lines.slice(0, -1)
     const returnValue = lines[lines.length - 1] || null
+
     return [logs, returnValue]
   }
 
   const runCode = async () => {
-    if (!code) {
+    if (!code.trim()) {
       toast.warn("Please write some code before executing!")
       return
     }
 
     try {
       setIsLoading(true)
+      setIsError(null)
+      setOutput(null)
       setTerminalLogs([])
 
       const startTime = performance.now()
@@ -73,32 +77,45 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
         const timeTaken = ((endTime - startTime) / 1000).toFixed(1)
         const modules = Math.floor(Math.random() * 5000) + 2000
 
-        setRawLogData({ timeTaken, modules })
+        setRawLogData({
+          timeTaken,
+          modules,
+        })
 
         if (language === "javascript") {
-          const [logs] = extractLogsAndOutput(rawOutput)
-          setOutput(logs.length > 0 ? logs : null)
+          const [logs, returnValue] = extractLogsAndOutput(rawOutput)
+
+          const javascriptOutput = returnValue ? [...logs, returnValue] : logs
+
+          setOutput(javascriptOutput.length > 0 ? javascriptOutput : null)
         } else {
-          setOutput(rawOutput.split("\n"))
+          setOutput(
+            rawOutput.split("\n").filter((line: string) => line.length > 0),
+          )
         }
-      } else {
-        setTerminalLogs([`\x1b[31m[ERROR]\x1b[0m No output generated.`])
-        setOutput(null)
+      } else if (!rawErrors) {
+        const message = "No output generated."
+
+        setIsError(message)
+        setTerminalLogs([`\x1b[31m[ERROR]\x1b[0m ${message}`])
       }
 
       if (rawErrors) {
-        setTerminalLogs((prevLogs) => [
-          ...prevLogs,
+        setIsError(rawErrors)
+
+        setTerminalLogs((previousLogs) => [
+          ...previousLogs,
           `\x1b[31m[ERROR]\x1b[0m ${rawErrors}`,
         ])
       }
     } catch (error: any) {
-      toast.error(error?.message || "Unable to run code")
-      setTerminalLogs([
-        `\x1b[31m[ERROR]\x1b[0m ${
-          error?.message || "Unexpected error occurred."
-        }`,
-      ])
+      const message = error?.message || "Unexpected error occurred."
+
+      toast.error(message)
+      setIsError(message)
+      setOutput(null)
+
+      setTerminalLogs([`\x1b[31m[ERROR]\x1b[0m ${message}`])
     } finally {
       setIsLoading(false)
     }
@@ -109,8 +126,8 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
 
     const { timeTaken, modules } = rawLogData
 
-    const greenColor = `\x1b[38;2;54;135;91m`
-    const textColor = isDarkMode ? `\x1b[38;2;255;255;255m` : `\x1b[38;2;0;0;0m`
+    const greenColor = "\x1b[38;2;54;135;91m"
+    const textColor = isDarkMode ? "\x1b[38;2;255;255;255m" : "\x1b[38;2;0;0;0m"
 
     const checkIcon = `${greenColor}✓\x1b[0m`
     const compiledText = `${greenColor}Compiled\x1b[0m`
@@ -122,32 +139,17 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
     setTerminalLogs([compiledLog])
   }, [isDarkMode, rawLogData])
 
+  useEffect(() => {
+    setTheme(isDarkMode ? "vs-dark" : "vs")
+  }, [isDarkMode])
+
   const toggleLayout = () => {
-    setIsRowOnLarge(!isRowOnLarge)
+    setIsRowOnLarge((previous) => !previous)
   }
 
   const handleThemeChange = () => {
-    setIsDarkMode(!isDarkMode)
+    setIsDarkMode((previous) => !previous)
   }
-
-  useEffect(() => {
-    loader.init().then(async (monacoInstance) => {
-      const molokaiThemePath = monacoThemes["github-dark"]
-      const lightThemePath = monacoThemes["github-light"]
-
-      if (molokaiThemePath && lightThemePath) {
-        const [molokaiTheme, lightTheme] = await Promise.all([
-          import(`monaco-themes/themes/${molokaiThemePath}`),
-          import(`monaco-themes/themes/${lightThemePath}`),
-        ])
-
-        monacoInstance.editor.defineTheme("molokai", molokaiTheme)
-        monacoInstance.editor.defineTheme("light", lightTheme)
-
-        setTheme(isDarkMode ? "molokai" : "light")
-      }
-    })
-  }, [isDarkMode])
 
   const onMount = (editor: any) => {
     editorRef.current = editor
@@ -159,10 +161,15 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
       toast.warn("Please write some code before submitting!")
       return
     }
+
     try {
-      const payload = { language, code }
+      const payload = {
+        language,
+        code,
+      }
+
       console.log("Submitting payload:", payload)
-      // Replace with API call if needed.
+
       toast.success("Code snippet submitted successfully!")
       setIsSubmitted(true)
     } catch (error: any) {
@@ -187,11 +194,13 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                 className="flex gap-2 items-center cursor-pointer"
               >
                 <ArrowRight className="transform rotate-180 text-[#4D6C62]" />
+
                 <h1 className="text-xl lg-md:text-[24px] leading-[30.8px] font-bold font-satoshi tracking-normal text-[#4D6C62]">
                   Code Example Block
                 </h1>
               </Link>
             </div>
+
             <div className="w-[246px] h-[48px] flex gap-3">
               <button
                 type="button"
@@ -200,6 +209,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
               >
                 Cancel
               </button>
+
               <SubmitButton
                 onClick={handleSubmit}
                 className="w-[107px] h-full py-[18px] px-[36px] rounded-[7px]"
@@ -208,6 +218,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
               </SubmitButton>
             </div>
           </div>
+
           <div className="w-full flex flex-col gap-[10px]">
             <div className="w-full max-w-[636px] flex flex-col gap-[10px]">
               <p className="font-arial font-normal text-base leading-[27.2px] tracking-normal text-[#535353]">
@@ -215,7 +226,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                 submit
               </p>
             </div>
-            {/* Native select for language selection using LANGUAGE_VERSIONS */}
+
             <div className="max-w-[300px]">
               <label
                 htmlFor="language"
@@ -223,22 +234,19 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
               >
                 Select Language:
               </label>
+
               <div className="w-full relative">
                 <select
                   id="language"
                   value={language}
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-                    const newLanguage = e.target.value
-                    console.log("New language selected:", newLanguage)
-                    console.log(
-                      "New code snippet:",
-                      CODE_SNIPPETS[newLanguage as keyof typeof CODE_SNIPPETS]
-                    )
+                  onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                    const newLanguage = event.target.value
+
                     setLanguage(newLanguage)
                     setCode(
                       CODE_SNIPPETS[
                         newLanguage as keyof typeof CODE_SNIPPETS
-                      ] || ""
+                      ] || "",
                     )
                   }}
                   className="w-full h-[50px] border border-solid border-[#DDDDDD] bg-[#F5F6F7] rounded-[7px] py-1 px-6 font-satoshi font-normal text-base tracking-normal text-[#333333] placeholder:text-[#7A8699] outline-none hover:border-primary focus:border-primary flex appearance-none "
@@ -255,11 +263,13 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                     </option>
                   ))}
                 </select>
+
                 <span className="absolute top-5 right-3">
                   <AngleDown />
                 </span>
               </div>
             </div>
+
             <div
               className={`min-h-screen flex flex-col ${
                 isDarkMode
@@ -282,7 +292,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                       edge="start"
                       color="inherit"
                       onClick={toggleLayout}
-                      aria-label="close"
+                      aria-label="change editor layout"
                       className="bg-transparent"
                     >
                       <HorizontalRotationIcon
@@ -291,6 +301,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                         } ${isDarkMode ? "text-white" : "text-[#7E7E7E]"}`}
                       />
                     </IconButton>
+
                     <IconButton
                       disableRipple
                       edge="start"
@@ -306,6 +317,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                   </div>
                 </Toolbar>
               </AppBar>
+
               <div
                 className={`w-full ${isRowOnLarge ? "min-h-screen" : ""} p-4 ${
                   isRowOnLarge
@@ -326,25 +338,31 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                     } justify-between`}
                   >
                     <Editor
-                      key={language} // Forces remount when language changes.
+                      key={language}
                       width="100%"
-                      height={`${isRowOnLarge ? "80%" : "100%"}`}
+                      height={isRowOnLarge ? "80%" : "100%"}
                       language={language}
                       value={code}
                       onMount={onMount}
                       theme={theme}
-                      onChange={(value: string | undefined) => {
-                        if (value !== undefined) {
-                          setCode(value)
-                        }
+                      onChange={(value) => {
+                        setCode(value ?? "")
                       }}
                       options={{
                         fontSize: 14,
-                        padding: { top: 20, bottom: 20 },
+                        padding: {
+                          top: 20,
+                          bottom: 20,
+                        },
                         selectOnLineNumbers: true,
                         smoothScrolling: true,
+                        automaticLayout: true,
+                        minimap: {
+                          enabled: false,
+                        },
                       }}
                     />
+
                     <TerminalComponent
                       isDarkMode={isDarkMode}
                       isRowOnLarge={isRowOnLarge}
@@ -352,6 +370,7 @@ export default function EmbeddedUpload({ moduleId }: { moduleId: string }) {
                     />
                   </div>
                 </div>
+
                 <div
                   className={`${
                     isRowOnLarge ? "w-1/2 h-[85vh]" : "w-full h-[50vh]"
