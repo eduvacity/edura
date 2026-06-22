@@ -1,6 +1,7 @@
 steps:
-  # Build the container image
-  - name: "gcr.io/cloud-builders/docker"
+  # Build the Docker image
+  - id: "Build Docker image"
+    name: "gcr.io/cloud-builders/docker"
     args:
       - "build"
       - "--build-arg"
@@ -12,39 +13,47 @@ steps:
       - "--build-arg"
       - "NEXT_PUBLIC_CLOUDINARY_API_KEY=${_NEXT_PUBLIC_CLOUDINARY_API_KEY}"
       - "-t"
-      - "us-central1-docker.pkg.dev/$PROJECT_ID/edura/edura-website:$COMMIT_SHA"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA"
       - "."
 
-  # Push the container image to Artifact Registry
-  - name: "gcr.io/cloud-builders/docker"
+  # Push the image to Artifact Registry
+  - id: "Push Docker image"
+    name: "gcr.io/cloud-builders/docker"
     args:
       - "push"
-      - "us-central1-docker.pkg.dev/$PROJECT_ID/edura/edura-website:$COMMIT_SHA"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA"
 
-  # Deploy the container image to Cloud Run
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  # Deploy the image to Cloud Run
+  - id: "Deploy to Cloud Run"
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
     args:
       - "run"
       - "deploy"
-      - "edura-website"
+      - "${_CLOUD_RUN_SERVICE}"
       - "--image"
-      - "us-central1-docker.pkg.dev/$PROJECT_ID/edura/edura-website:$COMMIT_SHA"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA"
       - "--region"
-      - "us-central1"
+      - "${_REGION}"
       - "--platform"
       - "managed"
       - "--allow-unauthenticated"
       - "--port"
       - "8080"
+      - "--quiet"
 
 images:
-  - "us-central1-docker.pkg.dev/$PROJECT_ID/edura/edura-website:$COMMIT_SHA"
+  - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA"
 
 options:
   logging: CLOUD_LOGGING_ONLY
 
 substitutions:
+  _REGION: "us-central1"
+  _AR_REPOSITORY: "edura"
+  _IMAGE_NAME: "edura-website"
+  _CLOUD_RUN_SERVICE: "edura-website"
+
   _STRIPE_PUBLIC_KEY: ""
   _NEXT_PUBLIC_BASE_URL: ""
   _NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ""
