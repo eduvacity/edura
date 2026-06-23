@@ -18,7 +18,7 @@ import AccordionSummary from "@mui/material/AccordionSummary"
 import dynamic from "next/dynamic"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
-import CodeSection from "../../../_components/Code"
+// import CodeSection from "../../../_components/Code"
 import EmbeddedSection from "../../../_components/EmbeddedSection"
 import PDFSection from "../../../_components/PDFSection"
 import PPTSection from "../../../_components/PPTSection"
@@ -215,7 +215,7 @@ export default function StudentTopicDetail({ params }: any) {
         </section>
         {/* Right Section */}
         <section className="flex-[1] min-h-screen xl:max-w-[920px] w-full flex flex-col gap-[17px] overflow-y-auto">
-          {currentTopic?.code === true && <CodeSection />}
+          {/* {currentTopic?.code === true && <CodeSection />} */}
           {currentTopic?.audio === true && <AudioPlayer />}
           {currentTopic?.video === true && <VideoSection />}
           {currentTopic?.text === true && <TextSection />}
@@ -236,9 +236,9 @@ const data = [
     modules: [
       {
         title: "Empathy: Understand users' needs, goals, and behaviors.",
-        code: true,
+        code: false,
         text: true,
-        pdf: false,
+        pdf: true,
         ppt: false,
         video: false,
         audio: false,
@@ -250,7 +250,7 @@ const data = [
         code: false,
         text: true,
         pdf: false,
-        ppt: false,
+        ppt: true,
         video: true,
         audio: false,
         embedded: false,
@@ -270,7 +270,7 @@ const data = [
       {
         title: "Contextual understanding: Study users.",
         code: false,
-        text: false,
+        text: true,
         pdf: false,
         ppt: false,
         video: true,
@@ -298,12 +298,12 @@ const data = [
     modules: [
       {
         title: "Empathy: Understand users' needs, goals, and behaviors.",
-        code: true,
+        code: false,
         text: true,
         pdf: false,
         ppt: false,
         video: false,
-        audio: false,
+        audio: true,
         embedded: false,
         progress: 65,
       },
@@ -360,7 +360,7 @@ const data = [
     modules: [
       {
         title: "Empathy: Understand users' needs, goals, and behaviors.",
-        code: true,
+        code: false,
         text: true,
         pdf: false,
         ppt: false,
@@ -422,7 +422,7 @@ const data = [
     modules: [
       {
         title: "Empathy: Understand users' needs, goals, and behaviors.",
-        code: true,
+        code: false,
         text: true,
         pdf: false,
         ppt: false,
@@ -484,7 +484,7 @@ const data = [
     modules: [
       {
         title: "Empathy: Understand users' needs, goals, and behaviors.",
-        code: true,
+        code: false,
         text: true,
         pdf: false,
         ppt: false,

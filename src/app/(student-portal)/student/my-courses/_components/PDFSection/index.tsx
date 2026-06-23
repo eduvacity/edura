@@ -2,29 +2,46 @@
 
 import { PDFIcon } from "@/components/SVGs/portal"
 
+const PDF_URL = "/documents/Eduvacity_Philosophy_of_UIUX_Design.pdf"
+
 const PDFSection: React.FC = () => {
+  const handleOpenPDF = () => {
+    window.open(PDF_URL, "_blank", "noopener,noreferrer")
+  }
+
   return (
-    <div className="w-full grid grid-cols-1 bg-white rounded-[17px] border border-solid border-[#DDDDDD] p-[29px_23px_21.3px_27px]">
-      {/* Title and Description */}
-      <div className="w-full flex justify-between items-center gap-[17px]">
-        <div className="w-full lg-md:h-[57px] flex gap-[17px]">
-          <div className="flex items-center gap-[10px]">
-            <PDFIcon className="text-primary w-[59px] h-[22px]" />
-            <span className="font-satoshi font-medium text-base/[21.6px] tracking-normal text-primary">
+    <div className="w-full grid grid-cols-1 rounded-[17px] border border-solid border-[#DDDDDD] bg-white p-[29px_23px_21.3px_27px]">
+      <div className="flex w-full flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex w-full flex-col gap-[17px] sm:flex-row sm:items-center">
+          <div className="flex shrink-0 items-center gap-[10px]">
+            <PDFIcon className="h-[22px] w-[59px] text-primary" />
+
+            <span className="font-satoshi text-base/[21.6px] font-medium tracking-normal text-primary">
               PDF
             </span>
           </div>
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold">User-Centered Design</h3>
-            <span className="font-satoshi font-medium text-left text-base/[21.6px] text-[#3FA46E]">
-              Iterative design: Refine design based on user feedback.
+
+          <div className="flex min-w-0 flex-col">
+            <h3 className="text-lg font-semibold text-[#1F1F1F]">
+              Philosophy of UI/UX Design
+            </h3>
+
+            <span className="font-satoshi text-left text-base/[21.6px] font-medium text-[#3FA46E]">
+              Learn the principles, ethics and philosophy behind effective
+              user-centred design.
             </span>
           </div>
         </div>
-        <div className="flex justify-end items-end">
-          <div className="w-fit h-[44px] py-[11px] px-[17px] gap-[10px] rounded-[7px] bg-[#E9E9EF] flex justify-center items-center border border-solid border-[#ACACAC] transform duration-300 hover:scale-[0.99] cursor-pointer">
+
+        <div className="flex shrink-0 items-center sm:justify-end">
+          <button
+            type="button"
+            onClick={handleOpenPDF}
+            className="flex h-[44px] w-full cursor-pointer items-center justify-center gap-[10px] rounded-[7px] border border-solid border-[#ACACAC] bg-[#E9E9EF] px-[17px] py-[11px] font-medium transition duration-300 hover:scale-[0.99] hover:bg-[#DEDEE7] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-fit"
+            aria-label="Open Philosophy of UI/UX Design PDF"
+          >
             Open
-          </div>
+          </button>
         </div>
       </div>
     </div>
