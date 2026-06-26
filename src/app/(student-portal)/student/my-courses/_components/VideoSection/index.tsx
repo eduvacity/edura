@@ -1,10 +1,13 @@
 "use client"
+
 import CircularProgress from "@/app/(student-portal)/_components/CircularProgressbar"
 import { PlayButtonAlt } from "@/components/SVGs"
 import { SquaredBracketArrow } from "@/components/SVGs/portal"
 import { IconButton } from "@mui/material"
 import Image from "next/image"
 import { useRef, useState } from "react"
+
+const YOUTUBE_VIDEO_ID = "34URw81_5mg"
 
 const VideoSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -14,86 +17,113 @@ const VideoSection: React.FC = () => {
     setIsPlaying(true)
   }
 
-  const toggleFullscreen = () => {
+  const toggleFullscreen = async () => {
     const container = videoContainerRef.current
-    if (container) {
+
+    if (!container) return
+
+    try {
       if (!document.fullscreenElement) {
-        container.requestFullscreen().catch((err) => {
-          console.error(`Failed to enter fullscreen mode: ${err.message}`)
-        })
+        await container.requestFullscreen()
       } else {
-        document.exitFullscreen().catch((err) => {
-          console.error(`Failed to exit fullscreen mode: ${err.message}`)
-        })
+        await document.exitFullscreen()
       }
+    } catch (error) {
+      console.error("Failed to change fullscreen mode:", error)
     }
   }
 
   return (
-    <div
-      ref={videoContainerRef}
-      className="w-full grid grid-cols-1 bg-white rounded-[9.52px] border-[0.56px] border-solid border-[#DDDDDD] p-3.5"
-    >
-      <div className="w-full flex flex-col gap-[22px]">
-        <div className="relative w-full">
+    <div className="grid w-full grid-cols-1 rounded-[9.52px] border-[0.56px] border-solid border-[#DDDDDD] bg-white p-3.5">
+      <div className="flex w-full flex-col gap-[22px]">
+        <div
+          ref={videoContainerRef}
+          className="relative aspect-video w-full overflow-hidden rounded-[15.52px] bg-black"
+        >
           {!isPlaying ? (
-            <div className="relative w-full h-[420.42px]">
-              <div className="absolute inset-0 h-full bg-[linear-gradient(91.35deg,_#4D6C62_-4.16%,_rgba(49,_50,_50,_0.9)_22.82%,_rgba(149,_152,_152,_0.05)_109.42%)] z-10 rounded-[15.52px]" />
+            <>
               <Image
                 src="/images/thumbnail1.jpeg"
-                alt="course introduction video thumbnail"
+                alt="Course introduction video thumbnail"
                 fill
                 sizes="(max-width: 768px) 100vw,
-                     (max-width: 1024px) 100vw,
-                     (max-width: 1280px) 100vw,
-                     1020px"
+                       (max-width: 1024px) 100vw,
+                       (max-width: 1280px) 100vw,
+                       1020px"
                 priority
-                className="absolute inset-0 object-cover rounded-[15.52px]"
+                className="object-cover"
               />
 
+              <div className="absolute inset-0 z-10 bg-[linear-gradient(91.35deg,_#4D6C62_-4.16%,_rgba(49,_50,_50,_0.9)_22.82%,_rgba(149,_152,_152,_0.05)_109.42%)]" />
+
               <button
+                type="button"
                 onClick={handlePlay}
-                className="absolute inset-0 flex justify-center items-center z-[30]"
-                aria-label="Play video"
+                className="absolute inset-0 z-30 flex items-center justify-center"
+                aria-label="Play User-Centered Design video"
               >
                 <PlayButtonAlt />
               </button>
-              <div className="absolute inset-0 left-auto top-auto bottom-4 right-2 z-[30]">
-                <IconButton onClick={toggleFullscreen} disableRipple>
+
+              <div className="absolute bottom-4 right-2 z-40">
+                <IconButton
+                  type="button"
+                  onClick={toggleFullscreen}
+                  disableRipple
+                  aria-label="Open video in fullscreen"
+                >
                   <SquaredBracketArrow />
                 </IconButton>
               </div>
-            </div>
+            </>
           ) : (
-            <div className="relative w-full h-[420.42px]">
-              <video
-                className="absolute inset-0 w-full h-full object-cover rounded-[15.52px]"
-                src="/videos/vid-3.mp4"
-                controls
-                autoPlay
+            <>
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
+                title="User-Centered Design course video"
+                className="absolute inset-0 h-full w-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               />
-              <div className="absolute inset-0 left-auto top-auto bottom-4 right-2 z-[30]">
-                <IconButton onClick={toggleFullscreen} disableRipple>
+
+              <div className="absolute bottom-14 right-2 z-40">
+                <IconButton
+                  type="button"
+                  onClick={toggleFullscreen}
+                  disableRipple
+                  aria-label="Toggle fullscreen"
+                  sx={{
+                    backgroundColor: "rgba(0, 0, 0, 0.35)",
+                    "&:hover": {
+                      backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    },
+                  }}
+                >
                   <SquaredBracketArrow />
                 </IconButton>
               </div>
-            </div>
+            </>
           )}
         </div>
 
-        <div className="w-full lg-md:h-[57px] flex gap-[17px] justify-between">
-          <div className="flex flex-col">
-            <h3 className="text-lg/[24.3px] font-satoshi text-left font-bold text-[#0C2B36]">
+        <div className="flex w-full items-start justify-between gap-[17px] lg-md:h-[57px]">
+          <div className="flex min-w-0 flex-col">
+            <h3 className="text-left font-satoshi text-lg/[24.3px] font-bold text-[#0C2B36]">
               User-Centered Design
             </h3>
-            <span className="font-satoshi font-medium text-left text-base/[21.6px] text-[#3FA46E]">
+
+            <span className="font-satoshi text-left text-base/[21.6px] font-medium text-[#3FA46E]">
               Iterative design: Refine design based on user feedback.
             </span>
           </div>
-          <CircularProgress percentage={65} />
+
+          <div className="shrink-0">
+            <CircularProgress percentage={65} />
+          </div>
         </div>
 
-        <p className="font-arial font-normal text-lg/[37.8px] text-left text-[#4A4949]">
+        <p className="text-left font-arial text-base font-normal leading-8 text-[#4A4949] sm:text-lg sm:leading-[37.8px]">
           User-Centered Design (UCD) is a design approach that puts users at the
           forefront of the design process. It&apos;s a methodology that
           emphasizes understanding users&apos; needs, goals, and behaviors to
