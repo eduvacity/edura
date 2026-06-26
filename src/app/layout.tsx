@@ -84,7 +84,7 @@ export default function RootLayout({
       <head>
         <ScriptTags />
       </head>
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

@@ -1,6 +1,6 @@
 "use client"
 
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import AppBar from "./_components/Appbar"
 import Sidebar from "./_components/Sidebar"
@@ -9,6 +9,7 @@ export default function InstructorPortalLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname()
+  const router = useRouter()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   // Lock body scroll when mobile drawer is open
@@ -48,6 +49,7 @@ export default function InstructorPortalLayout({
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
             activePath={pathname}
+            onAskAI={() => router.push("/ask-edura-ai")}
           />
 
           {/* Page Content */}
