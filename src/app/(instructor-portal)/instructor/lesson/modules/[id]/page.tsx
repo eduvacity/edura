@@ -72,7 +72,7 @@ const COURSE_MODULES: Record<string, LessonModule[]> = {
   "design-foundations": [
     {
       id: "visual-hierarchy-gestalt",
-      title: "Visual Hierarchy & Gestalt",
+      title: "Introduction",
       description:
         "Learn how the eye moves across a screen and how to direct attention using size, contrast, alignment, and proximity.",
       published: true,

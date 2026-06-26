@@ -68,7 +68,7 @@ const VideoSection: React.FC = () => {
             <div className="relative w-full h-[420.42px]">
               <video
                 className="absolute inset-0 w-full h-full object-cover rounded-[15.52px]"
-                src="/videos/malik-eduvacity.mp4"
+                src="/videos/vid-3.mp4"
                 controls
                 autoPlay
               />

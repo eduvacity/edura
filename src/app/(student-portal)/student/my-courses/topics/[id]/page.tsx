@@ -73,7 +73,7 @@ const COURSE_TOPICS: Record<string, CourseTopic[]> = {
   "design-foundations": [
     {
       id: "visual-hierarchy-gestalt",
-      title: "Visual Hierarchy & Gestalt",
+      title: "Introduction",
     },
     {
       id: "color-theory-screens",
