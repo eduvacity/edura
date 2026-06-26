@@ -18,13 +18,13 @@ import AccordionSummary from "@mui/material/AccordionSummary"
 import dynamic from "next/dynamic"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
-import CodeSection from "../../../_components/Code"
+// import CodeSection from "../../../_components/Code"
+import { cn } from "@/lib/utils"
 import EmbeddedSection from "../../../_components/EmbeddedSection"
 import PDFSection from "../../../_components/PDFSection"
 import PPTSection from "../../../_components/PPTSection"
 import TextSection from "../../../_components/TextSection"
 import VideoSection from "../../../_components/VideoSection"
-import { cn } from "@/lib/utils"
 
 const AudioPlayer = dynamic(() => import("../../../_components/AudioPlayer"), {
   ssr: false,
