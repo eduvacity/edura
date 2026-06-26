@@ -72,7 +72,7 @@ export default function StudentDashboard() {
                 Continue Learning
               </h4>
 
-              <DashboardVideo video="/videos/vid-3.mp4" />
+              <DashboardVideo video="/videos/malik-eduvacity.mp4" />
 
               <div className="w-full flex justify-between">
                 <div className="flex flex-col gap-3">
