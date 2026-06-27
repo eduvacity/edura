@@ -29,7 +29,7 @@ export default function StudentPortalLayout({
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
           activePath={pathname}
-          onAskAI={() => router.push("/ask-edura-ai")}
+          onAskAI={() => router.push("/student/live-conferences")}
         />
 
         {/* Page Content */}

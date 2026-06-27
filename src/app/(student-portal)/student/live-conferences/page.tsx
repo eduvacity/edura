@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { ConversationProvider, useConversation } from "@elevenlabs/react"
 import {
   Bot,
   Camera,
@@ -19,6 +19,15 @@ import {
   X,
 } from "lucide-react"
 import Image from "next/image"
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type Dispatch,
+  type ReactNode,
+  type SetStateAction,
+} from "react"
 
 type ConferenceStatus = "ready" | "connecting" | "active"
 
@@ -30,15 +39,77 @@ type ChatMessage = {
   isAi?: boolean
 }
 
+const EDURA_AI_AGENT_ID = "agent_6701kvzcx6gne1zvv7ag1f1r5grt"
+const EDURA_AI_BRANCH_ID = "agtbrch_2301kvzcx6gpf898yqvbe58889sy"
+const EDURA_AI_TOKEN_ENDPOINT =
+  "https://api.elevenlabs.io/v1/convai/conversation/token"
+
+type TokenResponse = {
+  token?: string
+  detail?: string | { message?: string }
+}
+
+type LiveConferenceRoomProps = {
+  isMicrophoneEnabled: boolean
+  setIsMicrophoneEnabled: Dispatch<SetStateAction<boolean>>
+}
+
+function getTokenErrorMessage(data: TokenResponse | null) {
+  if (!data?.detail) return null
+  if (typeof data.detail === "string") return data.detail
+  return data.detail.message || null
+}
+
+async function getConversationToken() {
+  const params = new URLSearchParams({
+    agent_id: EDURA_AI_AGENT_ID,
+    branch_id: EDURA_AI_BRANCH_ID,
+  })
+  const response = await fetch(`${EDURA_AI_TOKEN_ENDPOINT}?${params}`)
+  const data = (await response.json().catch(() => null)) as TokenResponse | null
+
+  if (!response.ok) {
+    throw new Error(
+      getTokenErrorMessage(data) || `Unable to start call (${response.status})`
+    )
+  }
+
+  if (!data?.token) {
+    throw new Error("Unable to start call: missing conversation token")
+  }
+
+  return data.token
+}
+
 export default function LiveConferences() {
-  const [status, setStatus] = useState<ConferenceStatus>("ready")
   const [isMicrophoneEnabled, setIsMicrophoneEnabled] = useState(true)
+
+  return (
+    <ConversationProvider
+      isMuted={!isMicrophoneEnabled}
+      onMutedChange={(isMuted) => setIsMicrophoneEnabled(!isMuted)}
+    >
+      <LiveConferenceRoom
+        isMicrophoneEnabled={isMicrophoneEnabled}
+        setIsMicrophoneEnabled={setIsMicrophoneEnabled}
+      />
+    </ConversationProvider>
+  )
+}
+
+function LiveConferenceRoom({
+  isMicrophoneEnabled,
+  setIsMicrophoneEnabled,
+}: LiveConferenceRoomProps) {
+  const [status, setStatus] = useState<ConferenceStatus>("ready")
   const [isCameraEnabled, setIsCameraEnabled] = useState(true)
   const [isScreenSharing, setIsScreenSharing] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(true)
   const [isParticipantsOpen, setIsParticipantsOpen] = useState(false)
   const [message, setMessage] = useState("")
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
+  const [callError, setCallError] = useState<string | null>(null)
+  const [callNotice, setCallNotice] = useState<string | null>(null)
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const mediaStreamRef = useRef<MediaStream | null>(null)
@@ -53,6 +124,39 @@ export default function LiveConferences() {
       isAi: true,
     },
   ])
+  const conversation = useConversation({
+    onError: (message) => {
+      setCallError(message || "Unable to start live conference")
+      setCallNotice(null)
+      setStatus("ready")
+    },
+    onConnect: () => {
+      setCallError(null)
+      setCallNotice("Edura Joined")
+      setStatus("active")
+    },
+    onDisconnect: (details) => {
+      setCallNotice(null)
+      setStatus("ready")
+      if (details.reason === "error") {
+        setCallError(details.message || "Edura disconnected")
+      }
+    },
+    onMessage: (payload) => {
+      if (payload.role !== "agent" || !payload.message.trim()) return
+
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        {
+          id: crypto.randomUUID(),
+          sender: "Edura AI",
+          message: payload.message,
+          time: "Now",
+          isAi: true,
+        },
+      ])
+    },
+  })
 
   const stopMediaStream = useCallback(() => {
     mediaStreamRef.current?.getTracks().forEach((track) => track.stop())
@@ -69,7 +173,7 @@ export default function LiveConferences() {
 
       const stream = await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: true,
+        audio: false,
       })
 
       mediaStreamRef.current = stream
@@ -79,57 +183,70 @@ export default function LiveConferences() {
       }
 
       setIsCameraEnabled(true)
-      setIsMicrophoneEnabled(true)
     } catch (error) {
-      console.error("Unable to access camera or microphone:", error)
+      console.error("Unable to access camera:", error)
 
       setIsCameraEnabled(false)
-      setIsMicrophoneEnabled(false)
     }
   }, [stopMediaStream])
 
   const startConference = async () => {
+    if (status !== "ready") return
+
     setStatus("connecting")
+    setCallError(null)
+    setCallNotice("Edura is joining")
 
-    await startCamera()
-
-    // ElevenLabs integration will go here later.
-    // Example:
-    // await conversation.startSession({
-    //   agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID!,
-    // })
-
-    window.setTimeout(() => {
-      setStatus("active")
-    }, 700)
+    try {
+      await startCamera()
+      const conversationToken = await getConversationToken()
+      conversation.startSession({ conversationToken })
+    } catch (error) {
+      setCallError(
+        error instanceof Error ? error.message : "Unable to start live session"
+      )
+      setCallNotice(null)
+      setStatus("ready")
+    }
   }
 
   const endConference = () => {
     stopMediaStream()
-
-    // ElevenLabs integration will go here later.
-    // Example:
-    // await conversation.endSession()
+    conversation.endSession()
 
     setStatus("ready")
     setElapsedSeconds(0)
     setIsScreenSharing(false)
     setIsChatOpen(true)
     setIsParticipantsOpen(false)
+    setCallError(null)
+    setCallNotice(null)
   }
 
   const toggleMicrophone = () => {
     const nextState = !isMicrophoneEnabled
 
-    mediaStreamRef.current?.getAudioTracks().forEach((track) => {
-      track.enabled = nextState
-    })
+    if (conversation.status === "connected") {
+      try {
+        conversation.setMuted(!nextState)
+      } catch (error) {
+        setCallError(
+          error instanceof Error ? error.message : "Unable to update microphone"
+        )
+      }
+      return
+    }
 
     setIsMicrophoneEnabled(nextState)
   }
 
-  const toggleCamera = () => {
+  const toggleCamera = async () => {
     const nextState = !isCameraEnabled
+
+    if (nextState && !mediaStreamRef.current?.getVideoTracks().length) {
+      await startCamera()
+      return
+    }
 
     mediaStreamRef.current?.getVideoTracks().forEach((track) => {
       track.enabled = nextState
@@ -187,19 +304,27 @@ export default function LiveConferences() {
 
     setMessage("")
 
-    window.setTimeout(() => {
+    if (conversation.status !== "connected") {
       setMessages((currentMessages) => [
         ...currentMessages,
         {
           id: crypto.randomUUID(),
           sender: "Edura AI",
-          message:
-            "I have received your question. ElevenLabs will provide the live voice response when the integration is added.",
+          message: "Start the live conference first so I can respond.",
           time: "Now",
           isAi: true,
         },
       ])
-    }, 600)
+      return
+    }
+
+    try {
+      conversation.sendUserMessage(cleanMessage)
+    } catch (error) {
+      setCallError(
+        error instanceof Error ? error.message : "Unable to send message"
+      )
+    }
   }
 
   useEffect(() => {
@@ -213,12 +338,36 @@ export default function LiveConferences() {
   }, [status])
 
   useEffect(() => {
+    if (status !== "ready") return
+
+    stopMediaStream()
+    setIsScreenSharing(false)
+  }, [status, stopMediaStream])
+
+  useEffect(() => {
     return () => stopMediaStream()
   }, [stopMediaStream])
 
   const formattedDuration = new Date(elapsedSeconds * 1000)
     .toISOString()
     .slice(11, 19)
+  const isAgentSpeaking = status === "active" && conversation.isSpeaking
+  const agentStatusText =
+    status === "connecting"
+      ? "Edura is joining"
+      : isAgentSpeaking
+        ? "Speaking"
+        : status === "active" && conversation.isListening
+          ? "Listening"
+          : status === "active"
+            ? "Ready for your question"
+            : "Waiting to join"
+  const sessionStatusText =
+    status === "connecting"
+      ? "Edura is joining"
+      : status === "active"
+        ? "Edura Joined"
+        : "Ready to go live"
 
   if (status === "ready" || status === "connecting") {
     return (
@@ -260,7 +409,7 @@ export default function LiveConferences() {
             {status === "connecting" ? (
               <>
                 <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-                Connecting...
+                Edura is joining
               </>
             ) : (
               <>
@@ -269,6 +418,18 @@ export default function LiveConferences() {
               </>
             )}
           </button>
+
+          {(callError || callNotice) && (
+            <p
+              className={`mt-4 rounded-[10px] px-4 py-3 text-sm font-medium ${
+                callError
+                  ? "bg-[#FCEAEA] text-[#D94242]"
+                  : "bg-[#E8F2EE] text-[#4D6C62]"
+              }`}
+            >
+              {callError || callNotice}
+            </p>
+          )}
         </section>
       </main>
     )
@@ -287,7 +448,7 @@ export default function LiveConferences() {
           </div>
 
           <p className="mt-1 text-xs text-[#737373]">
-            Session duration: {formattedDuration}
+            {sessionStatusText} · Session duration: {formattedDuration}
           </p>
         </div>
 
@@ -353,17 +514,22 @@ export default function LiveConferences() {
               </h2>
 
               <p className="mt-2 max-w-[310px] px-5 text-center text-sm leading-6 text-[#67736F]">
-                Your AI learning assistant is listening and ready to respond.
+                {agentStatusText}
               </p>
 
               <div className="mt-6 flex h-9 items-end gap-1">
                 {[16, 25, 12, 31, 20, 34, 15, 27, 18].map((height, index) => (
                   <span
                     key={`${height}-${index}`}
-                    className="w-1.5 animate-pulse rounded-full bg-[#587B70]"
+                    className={`w-1.5 origin-bottom rounded-full ${
+                      isAgentSpeaking
+                        ? "animate-bounce bg-[#587B70]"
+                        : "bg-[#587B70]/35"
+                    }`}
                     style={{
                       height: `${height}px`,
                       animationDelay: `${index * 90}ms`,
+                      animationDuration: "780ms",
                     }}
                   />
                 ))}
@@ -375,6 +541,18 @@ export default function LiveConferences() {
               </div>
             </article>
           </div>
+
+          {(callError || callNotice) && (
+            <div
+              className={`mt-4 rounded-[14px] px-4 py-3 text-center text-sm font-medium ${
+                callError
+                  ? "bg-[#FCEAEA] text-[#D94242]"
+                  : "bg-[#E8F2EE] text-[#4D6C62]"
+              }`}
+            >
+              {callError || callNotice}
+            </div>
+          )}
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3 rounded-[16px] bg-white p-4 shadow-sm">
             <ConferenceControl
@@ -554,8 +732,8 @@ export default function LiveConferences() {
 type ConferenceControlProps = {
   label: string
   isActive: boolean
-  onClick: () => void
-  icon: React.ReactNode
+  onClick: () => void | Promise<void>
+  icon: ReactNode
 }
 
 const ConferenceControl = ({
